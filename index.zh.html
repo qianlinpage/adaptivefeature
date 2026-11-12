@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Adaptive Feature 自适应特征 | 林乾与合作者</title>
+  <meta name="description" content="独立介绍林乾与合作者的 Adaptive Feature 研究：核心思想、可交互的序列模型示例、理论脉络与代表论文。">
+  <meta name="theme-color" content="#143e38">
+  <meta property="og:title" content="Adaptive Feature 自适应特征 | 林乾与合作者">
+  <meta property="og:description" content="独立介绍林乾与合作者的 Adaptive Feature 研究：核心思想、可交互的序列模型示例、理论脉络与代表论文。">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/site.css">
+  <link rel="alternate" hreflang="en" href="index.html">
+  <link rel="alternate" hreflang="zh-CN" href="index.zh.html">
+  <script src="assets/model.js" defer></script>
+  <script src="assets/site.js" defer></script>
+</head>
+<body id="top">
+  <a class="skip-link" href="#main">跳转到正文</a>
+  <header class="site-header">
+    <div class="header-inner wrap">
+      <a class="brand" href="index.zh.html" aria-label="Adaptive Feature"><img src="assets/favicon.svg" width="34" height="34" alt=""><span>Adaptive<span class="brand-light">Feature</span></span></a>
+      <nav aria-label="主导航"><a href="#idea">核心思想</a><a href="#playground">交互示例</a><a href="#research">研究脉络</a><a href="#about">关于林乾</a></nav>
+      <div class="languages" aria-label="Language / 语言"><a href="index.zh.html" lang="zh-CN" hreflang="zh-CN" aria-current="page">中文</a><a href="index.html" lang="en" hreflang="en">EN</a></div>
+    </div>
+  </header>
+  <main id="main">
+    <section class="hero wrap" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="tiny-dot"></span>统计学习中的一个研究纲领</p>
+        <h1 id="hero-title">让特征，<br><em>也参与学习。</em></h1>
+        <p class="hero-intro">从统计视角理解特征学习、泛化能力，以及训练中不断演化的表示结构。</p>
+        <p class="byline">林乾与合作者 · 清华大学</p>
+        <div class="hero-actions"><a class="button primary" href="#idea">了解核心思想 <span>↗</span></a><a class="text-link" href="#research">阅读研究论文 <span>↓</span></a></div>
+      </div>
+      <figure class="hero-visual">
+        <div class="visual-label"><span>自适应特征的视角</span><span>Φ → Φ<sub>t</sub></span></div>
+        <svg viewBox="0 0 520 320" aria-hidden="true" focusable="false">
+          <defs><pattern id="grid" width="26" height="26" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="#143e38" opacity=".10"/></pattern><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#548b7a"/></marker></defs>
+          <rect x="0" y="0" width="520" height="320" fill="url(#grid)"/>
+          <g fill="none" stroke="#abc4b6" stroke-width="1.5"><path d="M54 90C104 90 95 124 144 124M54 142C106 142 98 124 144 124M54 194C110 194 95 124 144 124M54 246C112 246 95 124 144 124"/><path d="M54 90C99 90 110 208 144 208M54 142C103 142 103 208 144 208M54 194C100 194 101 208 144 208M54 246C100 246 102 208 144 208"/></g>
+          <g fill="#d48157" stroke="#f6f4e9" stroke-width="4"><circle cx="54" cy="90" r="9"/><circle cx="54" cy="142" r="9"/><circle cx="54" cy="194" r="9"/><circle cx="54" cy="246" r="9"/></g>
+          <rect x="144" y="64" width="205" height="215" rx="18" fill="#fffef8" stroke="#a9c1ae"/>
+          <text x="169" y="99" fill="#315f51" font-family="Georgia,serif" font-size="21">Φ<tspan baseline-shift="sub" font-size="13">η(t)</tspan></text>
+          <g fill="#1a7565"><rect x="170" y="120" width="140" height="13" rx="6"/><rect x="170" y="146" width="66" height="13" rx="6" opacity=".45"/><rect x="170" y="172" width="110" height="13" rx="6" opacity=".7"/><rect x="170" y="198" width="40" height="13" rx="6" opacity=".3"/><rect x="170" y="224" width="153" height="13" rx="6"/></g>
+          <path d="M349 170H404" fill="none" stroke="#548b7a" stroke-width="2" marker-end="url(#arrow)"/>
+          <text x="378" y="155" text-anchor="middle" fill="#315f51" font-family="Georgia,serif" font-size="20">β<tspan baseline-shift="sub" font-size="12">t</tspan></text>
+          <rect x="408" y="135" width="65" height="70" rx="16" fill="#143e38"/><text x="440" y="178" text-anchor="middle" fill="#f2f2df" font-family="Georgia,serif" font-size="21">f<tspan baseline-shift="sub" font-size="12">t</tspan><tspan baseline-shift="baseline">(x)</tspan></text>
+          <path d="M378 131V35H248V60" fill="none" stroke="#548b7a" stroke-width="1.5" stroke-dasharray="5 5" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+        </svg>
+        <div class="visual-keys"><span>输入</span><span>可学习的特征</span><span>预测</span></div>
+        <figcaption><span class="tiny-dot"></span>训练同时更新两者<small>特征参数与输出系数共同学习的概念示意。</small></figcaption>
+      </figure>
+    </section>
+
+    <section id="idea" class="idea section wrap">
+      <div class="section-heading"><p class="eyebrow">01 / 核心思想</p><div><h2>当表示本身可以改变，<br>学习会发生什么？</h2><p class="section-lead">特征映射决定了数据中的哪些信息更容易被利用。自适应特征模型让表示与预测器的输出系数在训练中共同演化。</p></div></div>
+      <div class="equation-band"><div class="main-equation" aria-label="f t of x equals inner product of feature map Phi eta t of x and beta t"><var>f</var><sub>t</sub>(<var>x</var>) = ⟨<span>Φ<sub>η<sub>t</sub></sub>(<var>x</var>)</span>, <span>β<sub>t</sub></span>⟩</div><p>特征参数 η 与输出系数 β 都由训练学习。</p></div>
+      <div class="concepts"><article class="concept"><span class="concept-number">01</span><h3>表示</h3><p>Φη(x) 将输入映射到特征空间。在对角模型中，学习尺度意味着调整固定基函数的权重。</p></article>
+<article class="concept"><span class="concept-number">02</span><h3>对齐</h3><p>重要信号可能落在初始核赋予较小权重的方向上。特征与目标之间的对齐关系会影响学习。</p></article>
+<article class="concept"><span class="concept-number">03</span><h3>泛化</h3><p>训练拟合程度并不能单独决定特征质量。初始化、噪声与停止时间仍是统计分析的重要组成部分。</p></article></div>
+      <p class="source-line">研究框架与背景 · <a href="https://arxiv.org/html/2412.18756v2">阅读综述 ↗</a></p>
+    </section>
+
+    <section id="playground" class="lab-section">
+      <div class="wrap section">
+        <div class="section-heading"><p class="eyebrow">02 / 交互示例</p><div><h2>观察一个小模型如何适应。</h2><p class="section-lead">拖动训练时间滑块，对比固定特征尺度与可学习尺度。切换目标的初始对齐情况、调整噪声，观察学习过程的变化。</p></div></div>
+        <div class="lab" data-lab data-lang="zh">
+          <div class="lab-heading"><span class="eyebrow">六维序列模型 · 教学示例</span><button class="reset-button" type="button" id="reset" hidden>↺ 重置</button></div>
+          <noscript><p class="no-script">启用 JavaScript 后可操作交互示例。研究介绍与论文链接无需 JavaScript 也可阅读。</p></noscript>
+          <div class="lab-controls" id="lab-controls" hidden>
+            <fieldset class="scenario"><legend>目标的初始对齐情况</legend><div class="segmented"><label><input type="radio" name="scenario" value="misaligned" checked><span>初始错位</span></label><label><input type="radio" name="scenario" value="aligned"><span>初始对齐</span></label></div></fieldset>
+            <div class="range-control"><label for="training-time">训练时间 <output for="training-time" id="time-value">5.0</output></label><input id="training-time" type="range" min="0" max="20" step="0.1" value="5"></div>
+            <div class="range-control"><label for="noise">噪声幅度 <output for="noise" id="noise-value">0.10</output></label><input id="noise" type="range" min="0" max="0.5" step="0.05" value="0.1"></div>
+          </div>
+          <div id="lab-results" hidden>
+            <div class="chart-topline"><h3>真实信号与估计系数</h3><div class="legend"><span class="legend-truth">真实信号</span><span class="legend-fixed">固定特征</span><span class="legend-adaptive">自适应特征</span></div></div>
+            <div id="fit-chart" class="chart" role="img" aria-label="六个坐标上真实信号、固定特征估计和自适应特征估计的柱状图。"></div>
+            <div class="lab-bottom"><div class="weight-panel"><h3>特征权重</h3><div class="legend"><span class="legend-initial">初始权重</span><span class="legend-adaptive">学习后的权重</span></div><div id="weight-chart" role="img" aria-label="六个坐标上初始特征权重与学习后特征权重的柱状图。"></div></div><div class="metrics"><p>系数均方误差</p><div><span>固定特征</span><strong id="fixed-mse">—</strong></div><div class="adaptive-metric"><span>自适应特征</span><strong id="adaptive-mse">—</strong></div></div></div>
+            <p class="sr-only" id="lab-live" aria-live="polite" aria-atomic="true">调整控件后，图表会同步更新。</p>
+            <details class="data-details"><summary>查看图表数据</summary><div class="table-scroll"><table><caption>各坐标的数值</caption><thead><tr><th scope="col">j</th><th scope="col">真实信号</th><th scope="col">固定特征</th><th scope="col">自适应特征</th><th scope="col">学习后的权重</th></tr></thead><tbody id="chart-data"></tbody></table></div></details>
+          </div>
+          <p class="lab-note">这是依据序列模型论文构造的确定性有限维教学示例，并非论文实验的复现，也不是对一般神经网络的性能保证。训练后期也可能拟合噪声。</p>
+          <details class="method-details"><summary>模型与数值计算说明</summary><p>在六个坐标上观测 z = θ* + ε，使用固定的合成噪声。初始权重为 λ = (1, 0.55, 0.25, 0.10, 0.04, 0.015)。</p><div class="method-formulas"><div><span>固定尺度</span><code>θ̂j(t) = (1 − exp(−λj t)) zj</code></div><div><span>可学习尺度</span><code>dθj/dt = √(λj² + 4θj²) (zj − θj)</code><code>λj(t) = aj(t)² = (λj + √(λj² + 4θj²)) / 2</code></div></div><p>自适应模型使用 θj = ajβj，初始 aj(0) = √λj、βj(0) = 0。标量方程由守恒关系 a² − β² = λ 得到。曲线采用四阶 Runge–Kutta 方法计算；均方误差相对于已知的合成真实信号计算，而不是相对于含噪观测。</p><a href="https://arxiv.org/html/2409.00894v2">序列模型论文第 3.1 节 ↗</a></details>
+        </div>
+      </div>
+    </section>
+
+    <section id="research" class="section wrap research">
+      <div class="section-heading"><p class="eyebrow">03 / 研究脉络</p><div><h2>从可分析的原型，<br>走向更广的研究纲领。</h2><p class="section-lead">以下四项工作展示林乾与合作者的研究脉络。每篇论文分别注明发表状态，预印本与正式发表论文加以区分。</p></div></div>
+      <div class="papers"><article class="paper" id="paper-sequence">
+  <div class="paper-year">2024</div>
+  <div class="paper-body">
+    <div class="paper-topline"><span>可分析的原型</span><span class="status ">已发表</span></div>
+    <h3><a href="https://proceedings.neurips.cc/paper_files/paper/2024/hash/5df5b1f121c915d8bdd00db6aac20827-Abstract-Conference.html">Improving Adaptivity via Over-Parameterization in Sequence Models</a></h3>
+    <p class="authors">Yicheng Li · Qian Lin</p>
+    <p>在序列模型中，通过学习坐标尺度适应信号结构；在适当初始化与早停条件下，相比固定尺度方法改善收敛速率。</p>
+    <div class="paper-bottom"><span>NeurIPS 2024 · 37:52438–52480</span><div><a href="https://proceedings.neurips.cc/paper_files/paper/2024/hash/5df5b1f121c915d8bdd00db6aac20827-Abstract-Conference.html">阅读论文 ↗</a> <a href="https://arxiv.org/abs/2409.00894">arXiv ↗</a></div></div>
+  </div>
+</article>
+
+<article class="paper" id="paper-rkhs">
+  <div class="paper-year">2025</div>
+  <div class="paper-body">
+    <div class="paper-topline"><span>从序列到函数</span><span class="status preprint">预印本</span></div>
+    <h3><a href="https://arxiv.org/abs/2501.08679">Diagonal Over-parameterization in Reproducing Kernel Hilbert Spaces as an Adaptive Feature Model: Generalization and Adaptivity</a></h3>
+    <p class="authors">Yicheng Li · Qian Lin</p>
+    <p>对角自适应核同时学习特征值权重与输出系数，在 RKHS 回归中分析特征适应、泛化能力和参数化深度之间的关系。</p>
+    <div class="paper-bottom"><span>arXiv:2501.08679</span><div><a href="https://arxiv.org/abs/2501.08679">阅读论文 ↗</a> </div></div>
+  </div>
+</article>
+
+<article class="paper" id="paper-fem">
+  <div class="paper-year">2025 / 26</div>
+  <div class="paper-body">
+    <div class="paper-topline"><span>衡量特征质量</span><span class="status preprint">预印本 · 2026 年修订</span></div>
+    <h3><a href="https://arxiv.org/abs/2511.09425">Supporting Evidence for the Adaptive Feature Program across Diverse Models</a></h3>
+    <p class="authors">Yicheng Li · Qian Lin</p>
+    <p>Feature Error Measure（FEM）结合表示能力与统计误差。在论文假设下，对角及方向自适应模型为训练改善特征质量提供了理论支持。</p>
+    <div class="paper-bottom"><span>arXiv:2511.09425 · v3, 7 April 2026</span><div><a href="https://arxiv.org/abs/2511.09425">阅读论文 ↗</a> </div></div>
+  </div>
+</article>
+
+<article class="paper" id="paper-alignment">
+  <div class="paper-year">2026</div>
+  <div class="paper-body">
+    <div class="paper-topline"><span>对齐关系与统计复杂度</span><span class="status ">已发表</span></div>
+    <h3><a href="https://proceedings.mlr.press/v306/huang26w.html">Alignment-Sensitive Minimax Rates for Spectral Algorithms with Learned Kernels</a></h3>
+    <p class="authors">Dongming Huang · Zhifan Li · Yicheng Li · Qian Lin</p>
+    <p>有效跨度维数（ESD）结合目标信号、谱排序与噪声衡量复杂度，将对齐关系联系到极小极大风险，并分析谱学习何时能降低这一复杂度。</p>
+    <div class="paper-bottom"><span>ICML 2026 · PMLR 306:46851–46928</span><div><a href="https://proceedings.mlr.press/v306/huang26w.html">阅读论文 ↗</a> <a href="https://arxiv.org/abs/2509.20294">arXiv ↗</a></div></div>
+  </div>
+</article>
+</div>
+      <aside class="research-note"><h3>已经获得的结果与仍待探索的问题</h3><p>现有结果建立在具体模型与相应假设之上。如何推广到一般神经网络结构，以及如何证明经验自适应特征动力学与序列模型之间更普遍的等价关系，仍是研究问题。</p><a href="https://arxiv.org/html/2511.09425v3">讨论与未来方向 ↗</a></aside>
+    </section>
+
+    <section id="about" class="about-section">
+      <div class="wrap section about-grid"><div><p class="eyebrow">04 / 关于研究者</p><h2>林乾 Qian Lin</h2><p class="role">副教授<br>清华大学统计与数据科学系</p><p>林乾的研究涉及统计学习理论、核方法、深度学习的数理基础及高维统计。本网站聚焦其自适应特征研究；相关工作由林乾、李易诚及其他合作者共同完成，完整署名列于各篇论文。</p><div class="profile-links"><a href="https://www.stat.tsinghua.edu.cn/info/1023/2413.htm">清华教师主页 ↗</a><a href="https://scholar.google.com/citations?user=kHPrqdgAAAAJ&amp;hl=en">谷歌学术 ↗</a></div><p class="contact"><span>联系邮箱</span>qianlin [at] tsinghua [dot] edu [dot] cn</p></div><aside class="reading-guide"><span class="guide-symbol" aria-hidden="true">↗</span><h3>建议的阅读顺序</h3><p>先通过综述了解整体动机，再阅读 NeurIPS 论文中的可分析模型，随后了解 FEM 论文所发展的研究纲领。</p><a class="survey-link" href="https://arxiv.org/abs/2412.18756v2">Towards a Statistical Understanding of Neural Networks: Beyond the Neural Tangent Kernel Theories ↗</a><p class="authors">Yicheng Li, Haobo Zhang, Jianfa Lai, Qian Lin, Jun S. Liu · arXiv:2412.18756v2</p></aside></div>
+    </section>
+  </main>
+  <footer class="wrap"><span>Adaptive Feature <span class="footer-divider">/</span> 自适应特征研究的独立专题介绍</span><span>来源核对 <time datetime="2026-11-13">2026-11-13</time></span><a href="#top">返回顶部 ↑</a></footer>
+</body>
+</html>

@@ -1,0 +1,275 @@
+{
+  "checked_on": "2026-11-13",
+  "papers": [
+    {
+      "id": "sequence",
+      "year": "2024",
+      "title": "Improving Adaptivity via Over-Parameterization in Sequence Models",
+      "authors": "Yicheng Li · Qian Lin",
+      "venue": "NeurIPS 2024 · 37:52438–52480",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/5df5b1f121c915d8bdd00db6aac20827-Abstract-Conference.html",
+      "arxiv": "https://arxiv.org/abs/2409.00894",
+      "status": {
+        "en": "Published",
+        "zh": "已发表"
+      },
+      "tag": {
+        "en": "A tractable prototype",
+        "zh": "可分析的原型"
+      },
+      "summary": {
+        "en": "In a sequence model, learning coordinate scales can adapt to the signal and improve rates over fixed scales, with suitable initialization and early stopping.",
+        "zh": "在序列模型中，通过学习坐标尺度适应信号结构；在适当初始化与早停条件下，相比固定尺度方法改善收敛速率。"
+      }
+    },
+    {
+      "id": "rkhs",
+      "year": "2025",
+      "title": "Diagonal Over-parameterization in Reproducing Kernel Hilbert Spaces as an Adaptive Feature Model: Generalization and Adaptivity",
+      "authors": "Yicheng Li · Qian Lin",
+      "venue": "arXiv:2501.08679",
+      "url": "https://arxiv.org/abs/2501.08679",
+      "status": {
+        "en": "Preprint",
+        "zh": "预印本"
+      },
+      "tag": {
+        "en": "From sequences to functions",
+        "zh": "从序列到函数"
+      },
+      "summary": {
+        "en": "A diagonal adaptive kernel learns eigenvalue weights and output coefficients together. The analysis connects feature adaptation, generalization and depth in RKHS regression.",
+        "zh": "对角自适应核同时学习特征值权重与输出系数，在 RKHS 回归中分析特征适应、泛化能力和参数化深度之间的关系。"
+      }
+    },
+    {
+      "id": "fem",
+      "year": "2025 / 26",
+      "title": "Supporting Evidence for the Adaptive Feature Program across Diverse Models",
+      "authors": "Yicheng Li · Qian Lin",
+      "venue": "arXiv:2511.09425 · v3, 7 April 2026",
+      "url": "https://arxiv.org/abs/2511.09425",
+      "status": {
+        "en": "Preprint · revised 2026",
+        "zh": "预印本 · 2026 年修订"
+      },
+      "tag": {
+        "en": "Measuring feature quality",
+        "zh": "衡量特征质量"
+      },
+      "summary": {
+        "en": "The Feature Error Measure (FEM) combines representation and statistical considerations. Specific diagonal and directional models provide evidence that training can improve feature quality under the paper’s assumptions.",
+        "zh": "Feature Error Measure（FEM）结合表示能力与统计误差。在论文假设下，对角及方向自适应模型为训练改善特征质量提供了理论支持。"
+      }
+    },
+    {
+      "id": "alignment",
+      "year": "2026",
+      "title": "Alignment-Sensitive Minimax Rates for Spectral Algorithms with Learned Kernels",
+      "authors": "Dongming Huang · Zhifan Li · Yicheng Li · Qian Lin",
+      "venue": "ICML 2026 · PMLR 306:46851–46928",
+      "url": "https://proceedings.mlr.press/v306/huang26w.html",
+      "arxiv": "https://arxiv.org/abs/2509.20294",
+      "status": {
+        "en": "Published",
+        "zh": "已发表"
+      },
+      "tag": {
+        "en": "Alignment and statistical complexity",
+        "zh": "对齐关系与统计复杂度"
+      },
+      "summary": {
+        "en": "Effective Span Dimension (ESD) measures complexity through the target, spectral order and noise. The work relates alignment to minimax risk and studies when spectral learning reduces this complexity.",
+        "zh": "有效跨度维数（ESD）结合目标信号、谱排序与噪声衡量复杂度，将对齐关系联系到极小极大风险，并分析谱学习何时能降低这一复杂度。"
+      }
+    }
+  ],
+  "en": {
+    "title": "Adaptive Feature | Qian Lin & Collaborators",
+    "description": "An independent introduction to Qian Lin and collaborators’ Adaptive Feature research: the core idea, an interactive sequence-model illustration, and selected papers.",
+    "skip": "Skip to content",
+    "nav": [
+      "The idea",
+      "Interactive model",
+      "Research",
+      "Qian Lin"
+    ],
+    "eyebrow": "A RESEARCH PROGRAM IN STATISTICAL LEARNING",
+    "hero_title": "Let the features<br><em>learn, too.</em>",
+    "hero_intro": "A statistical perspective on feature learning, generalization and the geometry that evolves during training.",
+    "byline": "Qian Lin & collaborators · Tsinghua University",
+    "cta": "Explore the idea",
+    "cta_secondary": "Read the research",
+    "figure_label": "THE ADAPTIVE FEATURE VIEW",
+    "figure_input": "Input",
+    "figure_feature": "Learnable features",
+    "figure_output": "Prediction",
+    "figure_feedback": "Training updates both",
+    "figure_caption": "A conceptual view of coupled feature and coefficient learning.",
+    "idea_kicker": "01 / THE IDEA",
+    "idea_title": "What changes when<br>the representation can change?",
+    "idea_intro": "A feature map determines which aspects of the data are easy to use. Adaptive Feature models let this representation evolve alongside the predictor’s output coefficients.",
+    "equation_caption": "Both the feature parameters η and the output coefficients β are learned.",
+    "concepts": [
+      [
+        "Representation",
+        "Φη(x) maps an input into a feature space. In a diagonal model, learning the scales changes the weights of fixed basis functions."
+      ],
+      [
+        "Alignment",
+        "Useful signal can sit in directions that the initial kernel treats as weak. How features align with the target matters for learning."
+      ],
+      [
+        "Generalization",
+        "Training fit alone does not settle feature quality. Initialization, noise and stopping time remain part of the statistical analysis."
+      ]
+    ],
+    "idea_source": "Framework and context",
+    "idea_source_title": "Read the survey",
+    "lab_kicker": "02 / INTERACTIVE MODEL",
+    "lab_title": "Watch a small model adapt.",
+    "lab_intro": "Move the training-time slider to compare fixed feature scales with trainable scales. Switch the target’s alignment and adjust the noise to explore the dynamics.",
+    "toy_label": "SIX-COORDINATE TEACHING EXAMPLE",
+    "scenario": "Target alignment",
+    "misaligned": "Initially misaligned",
+    "aligned": "Initially aligned",
+    "time": "Training time",
+    "noise": "Noise amplitude",
+    "reset": "Reset",
+    "fit_title": "Signal and fitted coefficients",
+    "weights_title": "Feature weights",
+    "fixed": "Fixed features",
+    "adaptive": "Adaptive features",
+    "truth": "True signal",
+    "initial": "Initial weight",
+    "learned": "Learned weight",
+    "mse": "Coefficient MSE",
+    "lab_note": "This deterministic, finite-dimensional illustration is inspired by the sequence-model paper. It is not a reproduction of its experiments or a guarantee about neural networks. Late fitting can also learn noise.",
+    "details": "Model and numerical details",
+    "methods_intro": "We observe z = θ* + ε in six coordinates, using fixed synthetic noise. The initial weights are λ = (1, 0.55, 0.25, 0.10, 0.04, 0.015).",
+    "fixed_formula": "Fixed scales",
+    "adaptive_formula": "Trainable scales",
+    "methods_end": "The adaptive model uses θj = ajβj, aj(0) = √λj and βj(0) = 0. The scalar equation follows from a² − β² = λ. Curves use fourth-order Runge–Kutta integration; MSE is evaluated against the known synthetic truth, not against the noisy observations.",
+    "methods_source": "Sequence-model formulation, §3.1",
+    "noscript": "Enable JavaScript to use the interactive model. The research introduction and paper links remain available below.",
+    "live": "The chart updates when you change a control.",
+    "research_kicker": "03 / RESEARCH TRAJECTORY",
+    "research_title": "From a prototype<br>to a broader program.",
+    "research_intro": "Four connected works by Qian Lin and collaborators. Publication status is shown for each entry; a preprint is not counted as a published paper.",
+    "read": "Read paper",
+    "arxiv": "arXiv",
+    "limits_title": "What the program establishes—and what remains open",
+    "limits_body": "The results concern specified model classes and assumptions. Extending them to general neural architectures, and proving broad equivalence between empirical adaptive-feature dynamics and sequence models, remain research questions.",
+    "limits_link": "Discussion and future directions",
+    "about_kicker": "04 / THE RESEARCHER",
+    "about_title": "Qian Lin",
+    "about_role": "Associate Professor<br>Department of Statistics and Data Science<br>Tsinghua University",
+    "about_body": "Qian Lin studies statistical learning theory, kernel methods, the mathematical foundations of deep learning and high-dimensional statistics. This site focuses on his collaborative work on adaptive features, with Yicheng Li and other coauthors credited in the papers above.",
+    "faculty": "University profile",
+    "scholar": "Google Scholar",
+    "contact": "Contact",
+    "guide_title": "A suggested reading route",
+    "guide_body": "Start with the survey for the broader motivation, the NeurIPS paper for a tractable model, and the FEM paper for the developing program.",
+    "survey": "Towards a Statistical Understanding of Neural Networks: Beyond the Neural Tangent Kernel Theories",
+    "survey_meta": "Yicheng Li, Haobo Zhang, Jianfa Lai, Qian Lin, Jun S. Liu · arXiv:2412.18756v2",
+    "footer": "An independent research introduction",
+    "checked": "Sources checked",
+    "top": "Back to top",
+    "chart_aria": "A bar chart comparing the true signal and the fixed and adaptive estimates for six coordinates.",
+    "weight_aria": "A bar chart comparing initial and learned feature weights for six coordinates."
+  },
+  "zh": {
+    "title": "Adaptive Feature 自适应特征 | 林乾与合作者",
+    "description": "独立介绍林乾与合作者的 Adaptive Feature 研究：核心思想、可交互的序列模型示例、理论脉络与代表论文。",
+    "skip": "跳转到正文",
+    "nav": [
+      "核心思想",
+      "交互示例",
+      "研究脉络",
+      "关于林乾"
+    ],
+    "eyebrow": "统计学习中的一个研究纲领",
+    "hero_title": "让特征，<br><em>也参与学习。</em>",
+    "hero_intro": "从统计视角理解特征学习、泛化能力，以及训练中不断演化的表示结构。",
+    "byline": "林乾与合作者 · 清华大学",
+    "cta": "了解核心思想",
+    "cta_secondary": "阅读研究论文",
+    "figure_label": "自适应特征的视角",
+    "figure_input": "输入",
+    "figure_feature": "可学习的特征",
+    "figure_output": "预测",
+    "figure_feedback": "训练同时更新两者",
+    "figure_caption": "特征参数与输出系数共同学习的概念示意。",
+    "idea_kicker": "01 / 核心思想",
+    "idea_title": "当表示本身可以改变，<br>学习会发生什么？",
+    "idea_intro": "特征映射决定了数据中的哪些信息更容易被利用。自适应特征模型让表示与预测器的输出系数在训练中共同演化。",
+    "equation_caption": "特征参数 η 与输出系数 β 都由训练学习。",
+    "concepts": [
+      [
+        "表示",
+        "Φη(x) 将输入映射到特征空间。在对角模型中，学习尺度意味着调整固定基函数的权重。"
+      ],
+      [
+        "对齐",
+        "重要信号可能落在初始核赋予较小权重的方向上。特征与目标之间的对齐关系会影响学习。"
+      ],
+      [
+        "泛化",
+        "训练拟合程度并不能单独决定特征质量。初始化、噪声与停止时间仍是统计分析的重要组成部分。"
+      ]
+    ],
+    "idea_source": "研究框架与背景",
+    "idea_source_title": "阅读综述",
+    "lab_kicker": "02 / 交互示例",
+    "lab_title": "观察一个小模型如何适应。",
+    "lab_intro": "拖动训练时间滑块，对比固定特征尺度与可学习尺度。切换目标的初始对齐情况、调整噪声，观察学习过程的变化。",
+    "toy_label": "六维序列模型 · 教学示例",
+    "scenario": "目标的初始对齐情况",
+    "misaligned": "初始错位",
+    "aligned": "初始对齐",
+    "time": "训练时间",
+    "noise": "噪声幅度",
+    "reset": "重置",
+    "fit_title": "真实信号与估计系数",
+    "weights_title": "特征权重",
+    "fixed": "固定特征",
+    "adaptive": "自适应特征",
+    "truth": "真实信号",
+    "initial": "初始权重",
+    "learned": "学习后的权重",
+    "mse": "系数均方误差",
+    "lab_note": "这是依据序列模型论文构造的确定性有限维教学示例，并非论文实验的复现，也不是对一般神经网络的性能保证。训练后期也可能拟合噪声。",
+    "details": "模型与数值计算说明",
+    "methods_intro": "在六个坐标上观测 z = θ* + ε，使用固定的合成噪声。初始权重为 λ = (1, 0.55, 0.25, 0.10, 0.04, 0.015)。",
+    "fixed_formula": "固定尺度",
+    "adaptive_formula": "可学习尺度",
+    "methods_end": "自适应模型使用 θj = ajβj，初始 aj(0) = √λj、βj(0) = 0。标量方程由守恒关系 a² − β² = λ 得到。曲线采用四阶 Runge–Kutta 方法计算；均方误差相对于已知的合成真实信号计算，而不是相对于含噪观测。",
+    "methods_source": "序列模型论文第 3.1 节",
+    "noscript": "启用 JavaScript 后可操作交互示例。研究介绍与论文链接无需 JavaScript 也可阅读。",
+    "live": "调整控件后，图表会同步更新。",
+    "research_kicker": "03 / 研究脉络",
+    "research_title": "从可分析的原型，<br>走向更广的研究纲领。",
+    "research_intro": "以下四项工作展示林乾与合作者的研究脉络。每篇论文分别注明发表状态，预印本与正式发表论文加以区分。",
+    "read": "阅读论文",
+    "arxiv": "arXiv",
+    "limits_title": "已经获得的结果与仍待探索的问题",
+    "limits_body": "现有结果建立在具体模型与相应假设之上。如何推广到一般神经网络结构，以及如何证明经验自适应特征动力学与序列模型之间更普遍的等价关系，仍是研究问题。",
+    "limits_link": "讨论与未来方向",
+    "about_kicker": "04 / 关于研究者",
+    "about_title": "林乾 Qian Lin",
+    "about_role": "副教授<br>清华大学统计与数据科学系",
+    "about_body": "林乾的研究涉及统计学习理论、核方法、深度学习的数理基础及高维统计。本网站聚焦其自适应特征研究；相关工作由林乾、李易诚及其他合作者共同完成，完整署名列于各篇论文。",
+    "faculty": "清华教师主页",
+    "scholar": "谷歌学术",
+    "contact": "联系邮箱",
+    "guide_title": "建议的阅读顺序",
+    "guide_body": "先通过综述了解整体动机，再阅读 NeurIPS 论文中的可分析模型，随后了解 FEM 论文所发展的研究纲领。",
+    "survey": "Towards a Statistical Understanding of Neural Networks: Beyond the Neural Tangent Kernel Theories",
+    "survey_meta": "Yicheng Li, Haobo Zhang, Jianfa Lai, Qian Lin, Jun S. Liu · arXiv:2412.18756v2",
+    "footer": "自适应特征研究的独立专题介绍",
+    "checked": "来源核对",
+    "top": "返回顶部",
+    "chart_aria": "六个坐标上真实信号、固定特征估计和自适应特征估计的柱状图。",
+    "weight_aria": "六个坐标上初始特征权重与学习后特征权重的柱状图。"
+  }
+}
