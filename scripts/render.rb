@@ -11,10 +11,28 @@ escape = ->(value) { CGI.escapeHTML(value.to_s) }
   c = data.fetch(lang)
   zh = lang == 'zh'
   file = zh ? 'index.zh.html' : 'index.html'
-  nav = %w[idea playground research about].zip(c['nav']).map { |id, text| "<a href=\"##{id}\">#{escape.call(text)}</a>" }.join
-  concepts = c['concepts'].each_with_index.map do |(title, body), index|
+  nav = %w[idea dynamics cycle research].zip(c['nav']).map { |id, text| "<a href=\"##{id}\">#{escape.call(text)}</a>" }.join
+  concepts = c['family_terms'].each_with_index.map do |(title, body), index|
     "<article class=\"concept\"><span class=\"concept-number\">0#{index + 1}</span><h3>#{escape.call(title)}</h3><p>#{escape.call(body)}</p></article>"
   end.join("\n")
+  dynamics_tabs = c['dynamics'].each_with_index.map do |view, index|
+    "<button type=\"button\" role=\"tab\" id=\"tab-#{view['id']}\" aria-controls=\"view-#{view['id']}\" aria-selected=\"#{index.zero?}\" tabindex=\"#{index.zero? ? '0' : '-1'}\"><span>0#{index + 1}</span>#{escape.call(view['label'])}</button>"
+  end.join("\n")
+  dynamics_panels = c['dynamics'].map do |view|
+    nodes = view['symbols'].zip(view['labels']).map do |symbol, label|
+      "<div class=\"sketch-node\"><span class=\"sketch-symbol\">#{escape.call(symbol)}</span><span>#{escape.call(label)}</span></div>"
+    end.join('<span class="sketch-arrow" aria-hidden="true">→</span>')
+    <<~HTML
+      <article class="dynamics-panel" id="view-#{view['id']}" aria-labelledby="heading-#{view['id']}">
+        <div class="dynamics-copy"><h3 id="heading-#{view['id']}">#{escape.call(view['title'])}</h3><p>#{escape.call(view['body'])}</p><dl><dt>#{c['dynamics_question']}</dt><dd>#{escape.call(view['question'])}</dd><dt>#{c['dynamics_focus']}</dt><dd>#{escape.call(view['focus'])}</dd></dl></div>
+        <figure class="dynamics-sketch" data-view="#{view['id']}"><p class="eyebrow">#{c['dynamics_diagram']}</p><div class="sketch-flow">#{nodes}</div><figcaption>#{escape.call(view['caption'])}</figcaption></figure>
+      </article>
+    HTML
+  end.join("\n")
+  cycle_steps = c['cycle_steps'].each_with_index.map do |(title, body), index|
+    "<li><span class=\"cycle-number\">0#{index + 1}</span><div><h3>#{escape.call(title)}</h3><p>#{escape.call(body)}</p></div></li>"
+  end.join("\n")
+  goal_chain = c['goal_chain'].map { |label| "<span>#{escape.call(label)}</span>" }.join('<span class="goal-arrow" aria-hidden="true">→</span>')
   papers = data['papers'].map do |paper|
     arxiv = paper['arxiv'] ? "<a href=\"#{paper['arxiv']}\">arXiv ↗</a>" : ''
     <<~HTML
@@ -49,6 +67,7 @@ escape = ->(value) { CGI.escapeHTML(value.to_s) }
       <link rel="alternate" hreflang="zh-CN" href="index.zh.html">
       <script src="assets/model.js" defer></script>
       <script src="assets/site.js" defer></script>
+      <script src="assets/program.js" defer></script>
     </head>
     <body id="top">
       <a class="skip-link" href="#main">#{c['skip']}</a>
@@ -60,45 +79,52 @@ escape = ->(value) { CGI.escapeHTML(value.to_s) }
         </div>
       </header>
       <main id="main">
-        <section class="hero wrap" aria-labelledby="hero-title">
+        <section class="hero program-hero wrap" aria-labelledby="hero-title">
           <div class="hero-copy">
             <p class="eyebrow"><span class="tiny-dot"></span>#{c['eyebrow']}</p>
             <h1 id="hero-title">#{c['hero_title']}</h1>
             <p class="hero-intro">#{c['hero_intro']}</p>
             <p class="byline">#{c['byline']}</p>
-            <div class="hero-actions"><a class="button primary" href="#idea">#{c['cta']} <span>↗</span></a><a class="text-link" href="#research">#{c['cta_secondary']} <span>↓</span></a></div>
+            <div class="hero-actions"><a class="button primary" href="#idea">#{c['cta']} <span>↗</span></a><a class="text-link" href="#cycle">#{c['cta_secondary']} <span>↓</span></a></div>
           </div>
-          <figure class="hero-visual">
-            <div class="visual-label"><span>#{c['figure_label']}</span><span>Φ → Φ<sub>t</sub></span></div>
-            <svg viewBox="0 0 520 320" aria-hidden="true" focusable="false">
-              <defs><pattern id="grid" width="26" height="26" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="#143e38" opacity=".10"/></pattern><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#548b7a"/></marker></defs>
-              <rect x="0" y="0" width="520" height="320" fill="url(#grid)"/>
-              <g fill="none" stroke="#abc4b6" stroke-width="1.5"><path d="M54 90C104 90 95 124 144 124M54 142C106 142 98 124 144 124M54 194C110 194 95 124 144 124M54 246C112 246 95 124 144 124"/><path d="M54 90C99 90 110 208 144 208M54 142C103 142 103 208 144 208M54 194C100 194 101 208 144 208M54 246C100 246 102 208 144 208"/></g>
-              <g fill="#d48157" stroke="#f6f4e9" stroke-width="4"><circle cx="54" cy="90" r="9"/><circle cx="54" cy="142" r="9"/><circle cx="54" cy="194" r="9"/><circle cx="54" cy="246" r="9"/></g>
-              <rect x="144" y="64" width="205" height="215" rx="18" fill="#fffef8" stroke="#a9c1ae"/>
-              <text x="169" y="99" fill="#315f51" font-family="Georgia,serif" font-size="21">Φ<tspan baseline-shift="sub" font-size="13">η(t)</tspan></text>
-              <g fill="#1a7565"><rect x="170" y="120" width="140" height="13" rx="6"/><rect x="170" y="146" width="66" height="13" rx="6" opacity=".45"/><rect x="170" y="172" width="110" height="13" rx="6" opacity=".7"/><rect x="170" y="198" width="40" height="13" rx="6" opacity=".3"/><rect x="170" y="224" width="153" height="13" rx="6"/></g>
-              <path d="M349 170H404" fill="none" stroke="#548b7a" stroke-width="2" marker-end="url(#arrow)"/>
-              <text x="378" y="155" text-anchor="middle" fill="#315f51" font-family="Georgia,serif" font-size="20">β<tspan baseline-shift="sub" font-size="12">t</tspan></text>
-              <rect x="408" y="135" width="65" height="70" rx="16" fill="#143e38"/><text x="440" y="178" text-anchor="middle" fill="#f2f2df" font-family="Georgia,serif" font-size="21">f<tspan baseline-shift="sub" font-size="12">t</tspan><tspan baseline-shift="baseline">(x)</tspan></text>
-              <path d="M378 131V35H248V60" fill="none" stroke="#548b7a" stroke-width="1.5" stroke-dasharray="5 5" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
-            </svg>
-            <div class="visual-keys"><span>#{c['figure_input']}</span><span>#{c['figure_feature']}</span><span>#{c['figure_output']}</span></div>
-            <figcaption><span class="tiny-dot"></span>#{c['figure_feedback']}<small>#{c['figure_caption']}</small></figcaption>
+          <figure class="program-map">
+            <div class="visual-label">#{c['figure_label']}</div>
+            <div class="map-loop">
+              <div class="map-node map-family"><span>#{c['map_family']}</span><strong>Φ ∈ 𝓕</strong></div>
+              <span class="map-arrow" aria-hidden="true">↓</span>
+              <div class="map-analysis"><span>#{c['map_analysis']}</span><div>#{c['map_levels'].map { |label| "<span>#{escape.call(label)}</span>" }.join}</div></div>
+              <span class="map-arrow" aria-hidden="true">↓</span>
+              <div class="map-node map-network"><strong>#{c['map_network']}</strong><span>#{c['map_network_note']}</span></div>
+              <div class="map-return" aria-hidden="true"><span>←</span></div>
+            </div>
+            <figcaption><span aria-hidden="true">↶</span>#{c['map_feedback']}</figcaption>
+            <p class="map-goal">#{c['map_goal']}</p>
           </figure>
         </section>
 
         <section id="idea" class="idea section wrap">
           <div class="section-heading"><p class="eyebrow">#{c['idea_kicker']}</p><div><h2>#{c['idea_title']}</h2><p class="section-lead">#{c['idea_intro']}</p></div></div>
-          <div class="equation-band"><div class="main-equation" aria-label="f t of x equals inner product of feature map Phi eta t of x and beta t"><var>f</var><sub>t</sub>(<var>x</var>) = ⟨<span>Φ<sub>η<sub>t</sub></sub>(<var>x</var>)</span>, <span>β<sub>t</sub></span>⟩</div><p>#{c['equation_caption']}</p></div>
+          <div class="family-equations"><div><span class="equation-label">#{c['family_label']}</span><div class="family-math">𝓕 ⊆ {Φ : 𝓧 → ℋ}</div></div><div><span class="equation-label">#{c['regression_label']}</span><div class="family-math"><var>f</var><sub>Φ,β</sub>(<var>x</var>) = ⟨Φ(<var>x</var>), β⟩<sub>ℋ</sub></div></div><p>#{c['equation_caption']}</p></div>
           <div class="concepts">#{concepts}</div>
           <p class="source-line">#{c['idea_source']} · <a href="https://arxiv.org/html/2412.18756v2">#{c['idea_source_title']} ↗</a></p>
+        </section>
+
+        <section id="dynamics" class="dynamics-section">
+          <div class="wrap section">
+            <div class="section-heading"><p class="eyebrow">#{c['dynamics_kicker']}</p><div><h2>#{c['dynamics_title']}</h2><p class="section-lead">#{c['dynamics_intro']}</p></div></div>
+            <div class="dynamics-explorer" data-dynamics><div class="dynamics-tabs" role="tablist" aria-label="#{c['dynamics_nav']}" hidden>#{dynamics_tabs}</div>#{dynamics_panels}</div>
+          </div>
+        </section>
+
+        <section id="cycle" class="section wrap">
+          <div class="section-heading"><p class="eyebrow">#{c['cycle_kicker']}</p><div><h2>#{c['cycle_title']}</h2><p class="section-lead">#{c['cycle_intro']}</p></div></div>
+          <div class="research-loop"><div><ol class="cycle-steps">#{cycle_steps}</ol><p class="cycle-return"><span aria-hidden="true">↶</span>#{c['cycle_return']}</p></div><aside class="program-goal"><p class="eyebrow">#{c['goal_kicker']}</p><h3>#{c['goal_title']}</h3><div class="goal-chain">#{goal_chain}</div><p>#{c['goal_body']}</p><p class="goal-note">#{c['goal_note']}</p></aside></div>
         </section>
 
         <section id="playground" class="lab-section">
           <div class="wrap section">
             <div class="section-heading"><p class="eyebrow">#{c['lab_kicker']}</p><div><h2>#{c['lab_title']}</h2><p class="section-lead">#{c['lab_intro']}</p></div></div>
-            <div class="lab" data-lab data-lang="#{lang}">
+            <details class="prototype-shell"><summary>#{c['prototype_open']} <span aria-hidden="true">↗</span></summary><div class="lab" data-lab data-lang="#{lang}">
               <div class="lab-heading"><span class="eyebrow">#{c['toy_label']}</span><button class="reset-button" type="button" id="reset" hidden>↺ #{c['reset']}</button></div>
               <noscript><p class="no-script">#{c['noscript']}</p></noscript>
               <div class="lab-controls" id="lab-controls" hidden>
@@ -115,7 +141,7 @@ escape = ->(value) { CGI.escapeHTML(value.to_s) }
               </div>
               <p class="lab-note">#{c['lab_note']}</p>
               <details class="method-details"><summary>#{c['details']}</summary><p>#{c['methods_intro']}</p><div class="method-formulas"><div><span>#{c['fixed_formula']}</span><code>θ̂j(t) = (1 − exp(−λj t)) zj</code></div><div><span>#{c['adaptive_formula']}</span><code>dθj/dt = √(λj² + 4θj²) (zj − θj)</code><code>λj(t) = aj(t)² = (λj + √(λj² + 4θj²)) / 2</code></div></div><p>#{c['methods_end']}</p><a href="https://arxiv.org/html/2409.00894v2">#{c['methods_source']} ↗</a></details>
-            </div>
+            </div></details>
           </div>
         </section>
 

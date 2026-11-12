@@ -2,6 +2,12 @@
 
 Last verified: 13 November 2026. Primary paper records and full texts were used for the research descriptions. This website is an introduction to selected work, not a complete bibliography.
 
+## Author-provided framing
+
+On 13 November 2026, the site owner specified the central research program: begin with a family of abstract feature-map regressions; study fixed, local and global dynamics; apply the framework to concrete neural networks; use their feedback to revise assumptions about the feature-map family; and repeat, with the objective of relating neural-network dynamics to generalization.
+
+The main page follows this description. The definitions, three selectable views and feedback diagram explain the supplied framework; they are not attributed as a theorem to one of the papers below. “Local” is presented through nearby variations and responses, and “global” through the evolving trajectory. These are complementary analytical views, not prescribed successive phases of training. The diagonal sequence model is a concrete prototype within the broader program. The final dynamics–generalization connection is stated as the guiding research objective.
+
 ## Paper records
 
 | Work | Status used on site | Primary record |

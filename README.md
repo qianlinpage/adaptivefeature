@@ -1,6 +1,6 @@
 # Adaptive Feature — Qian Lin & collaborators
 
-An independent bilingual research website introducing adaptive feature learning, its statistical motivation, a small interactive sequence model, and four connected papers. This project is separate from the existing personal academic homepage.
+An independent bilingual research website centered on the Adaptive Feature program: abstract feature-map regression families; fixed, local and global dynamics; application to concrete neural networks; and feedback that refines the family’s assumptions. The guiding objective is to connect neural-network dynamics with generalization. The page includes an interactive explanation of the three analytical views, a research-cycle diagram, a collapsible sequence-model prototype, and four connected papers. This project is separate from the existing personal academic homepage.
 
 Repository: [qianlinpage/adaptivefeature](https://github.com/qianlinpage/adaptivefeature).
 
@@ -17,6 +17,7 @@ Open `index.zh.html` for Chinese or `index.html` for English in a browser. Both 
 - `assets/site.css`: responsive visual design.
 - `assets/model.js`: numerical model, with no DOM dependency.
 - `assets/site.js`: chart rendering and controls.
+- `assets/program.js`: accessible fixed/local/global tabs. All three descriptions remain readable without JavaScript.
 - `SOURCES.md`: source provenance, publication checks, and model scope.
 
 After updating the content or template, regenerate both pages:
