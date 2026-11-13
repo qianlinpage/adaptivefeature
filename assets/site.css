@@ -106,11 +106,12 @@ footer{font-size:10px;padding-block:24px}
 @media(max-width:760px){.home-strategy{padding:25px 0}.theory-family{padding:15px 8px}.family-label{font-size:12px;margin-bottom:12px}.analysis-views{gap:8px}.analysis-views a{padding:6px 4px 12px}.analysis-views h3{font-size:21px;margin:4px 0}.analysis-views p{font-size:10px;line-height:1.65}.framework-exchange{gap:25px;max-width:360px;padding-bottom:12px}.transfer-lane p{font-size:11px}.network-view{padding:14px;max-width:460px}.network-view h3{font-size:23px}.network-view p{font-size:11px}.framework-cartoon figcaption{font-size:10px}}
 @media(max-width:380px){.analysis-views{gap:5px}.analysis-views h3{font-size:18px}.framework-exchange{gap:16px;padding-inline:4px}.transfer-lane p{font-size:10px}.family-label{font-size:11px}}
 
-/* One compact cartoon, one formula, one sentence. */
+/* Neural network parameters induce a family of feature maps. */
 .theory-family>.family-label{font:400 23px/1.5 var(--serif);margin:0 0 8px}
 .regression-definition{max-width:720px;margin:0 auto 22px;padding-bottom:18px;border-bottom:1px solid #d7dfcf}
-.regression-cartoon{max-width:530px;margin:0 auto 12px}.regression-cartoon img{display:block;width:100%;height:auto}.regression-cartoon figcaption{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;text-align:center;margin:0;color:var(--green);font-size:12px}
-.regression-equation{display:flex;flex-wrap:wrap;justify-content:center;align-items:baseline;gap:4px 20px;font:24px/1.7 var(--serif);color:var(--ink);text-align:center}
-.regression-equation sub{font-size:.55em}.regression-equation .family-conditions{font-size:15px;color:var(--muted)}
+.regression-cartoon{max-width:580px;margin:0 auto 12px}.regression-cartoon img{display:block;width:100%;height:auto}.regression-cartoon figcaption{display:grid;grid-template-columns:minmax(0,31fr) minmax(0,9fr) minmax(0,60fr);text-align:center;margin:0;color:var(--green);font-size:12px;line-height:1.6}
+.network-caption{grid-column:1}.maps-caption{grid-column:3}.map-family-notation{display:block;font:17px/1.6 var(--serif);white-space:nowrap}.map-family-notation sub{font-size:.65em}
+.regression-equation{font:24px/1.7 var(--serif);color:var(--ink);text-align:center}
+.regression-equation sub{font-size:.55em}
 .definition-short{font-size:12px;text-align:center;line-height:1.8;color:var(--muted);margin:5px 0 0}
-@media(max-width:760px){.theory-family>.family-label{font-size:20px}.regression-definition{margin-bottom:16px;padding-bottom:14px}.regression-cartoon{max-width:440px;margin-bottom:10px}.regression-cartoon figcaption{font-size:10px;gap:4px}.regression-equation{font-size:21px;gap:2px 12px}.regression-equation .family-conditions{font-size:13px}.definition-short{font-size:11px}}
+@media(max-width:760px){.theory-family>.family-label{font-size:20px}.regression-definition{margin-bottom:16px;padding-bottom:14px}.regression-cartoon{max-width:480px;margin-bottom:10px}.regression-cartoon figcaption{font-size:11px}.map-family-notation{font-size:15px}.regression-equation{font-size:21px}.definition-short{font-size:11px}}

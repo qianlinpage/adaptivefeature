@@ -79,8 +79,8 @@ e = ->(value) { CGI.escapeHTML(value.to_s) }
   definition = c.fetch('regression_definition')
   regression_definition = <<~HTML
     <div class="regression-definition">
-      <figure class="regression-cartoon"><img src="assets/figures/feature-regression-cartoon-v1.png" width="2172" height="724" alt="#{e.call(definition['cartoon_alt'])}" decoding="async"><figcaption><span>#{definition['input']} <var>x</var></span><span>#{definition['features']} Φ(<var>x</var>)</span><span>#{definition['prediction']} ŷ</span></figcaption></figure>
-      <div class="regression-equation" role="math" aria-label="#{e.call(definition['formula_aria'])}"><span aria-hidden="true"><var>f</var><sub>Φ,β</sub>(<var>x</var>) = ⟨Φ(<var>x</var>), β⟩<sub>𝓗</sub></span><span class="family-conditions" aria-hidden="true">Φ ∈ 𝓕, &nbsp; β ∈ 𝓗</span></div>
+      <figure class="regression-cartoon"><img src="assets/figures/network-feature-family-v2.png" width="2172" height="724" alt="#{e.call(definition['cartoon_alt'])}" decoding="async"><figcaption><span class="network-caption">#{e.call(definition['network'])}<span class="map-family-notation">θ ∈ Θ</span></span><span class="maps-caption">#{e.call(definition['family'])}<span class="map-family-notation" role="math" aria-label="#{e.call(definition['family_aria'])}"><span aria-hidden="true">𝓕 = {Φ<sub>θ</sub> : θ ∈ Θ}</span></span></span></figcaption></figure>
+      <div class="regression-equation" role="math" aria-label="#{e.call(definition['formula_aria'])}"><span aria-hidden="true"><var>f</var><sub>θ,β</sub>(<var>x</var>) = ⟨Φ<sub>θ</sub>(<var>x</var>), β⟩<sub>𝓗</sub></span></div>
       <p class="definition-short">#{e.call(definition['short'])}</p>
     </div>
   HTML

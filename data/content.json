@@ -471,30 +471,12 @@
       "A researcher brings observations back to refine theoretical assumptions."
     ],
     "regression_definition": {
-      "intro": "Start with a candidate family 𝓕 of feature maps. Choosing a map Φ and output coefficients β specifies a regression function.",
-      "input": "Input",
-      "features": "Features",
-      "prediction": "Prediction",
-      "map": "Feature map",
-      "readout": "Linear readout",
-      "formula_aria": "f sub Phi beta of x equals the inner product of Phi of x and beta in feature space H; Phi belongs to family F and beta belongs to H.",
-      "terms": [
-        [
-          "𝓕",
-          "The candidate feature-map family, with Φ : 𝓧 → 𝓗."
-        ],
-        [
-          "Φ(x)",
-          "The representation of input x in feature space 𝓗."
-        ],
-        [
-          "β",
-          "Output coefficients that combine features into a scalar prediction via an inner product."
-        ]
-      ],
-      "bridge": "The static view fixes Φ; the local view studies nearby changes; the global view follows the joint evolution of Φ and β.",
-      "short": "Choose a feature map Φ from 𝓕, then combine its features with coefficients β to predict.",
-      "cartoon_alt": "Input shapes pass through a feature extractor with interchangeable lenses, become feature beads and are combined by an adjustable readout into one prediction; a conceptual metaphor."
+      "network": "Neural network",
+      "family": "Family of feature maps",
+      "family_aria": "F is the family of maps Phi theta as theta ranges over parameter space Theta.",
+      "formula_aria": "f sub theta beta of x equals the inner product of Phi sub theta of x and beta in feature space H.",
+      "short": "For a neural network, different θ give different maps Φθ; β combines the features into a prediction.",
+      "cartoon_alt": "A neural network with a parameter slider points to three differently warped meshes, illustrating a family of feature maps obtained by varying the network parameters. The meshes are alternative maps, not successive layers or feature coordinates."
     }
   },
   "zh": {
@@ -864,30 +846,12 @@
       "研究者记录观察并反馈，表示修正理论假设。"
     ],
     "regression_definition": {
-      "intro": "从候选特征映射集合 𝓕 出发，选择映射 Φ 和输出系数 β，便确定一个回归函数。",
-      "input": "输入",
-      "features": "特征表示",
-      "prediction": "预测",
-      "map": "特征映射",
-      "readout": "线性读出",
-      "formula_aria": "f 下标 Phi beta，在 x 处的值等于 Phi x 与 beta 在特征空间 H 中的内积；Phi 属于映射族 F，beta 属于 H。",
-      "terms": [
-        [
-          "𝓕",
-          "候选特征映射集合，其中 Φ : 𝓧 → 𝓗。"
-        ],
-        [
-          "Φ(x)",
-          "输入 x 在特征空间 𝓗 中的表示。"
-        ],
-        [
-          "β",
-          "输出系数，通过内积将特征组合为标量预测。"
-        ]
-      ],
-      "bridge": "静态视角固定 Φ；局部视角分析邻域变化；整体视角追踪 Φ 与 β 的共同演化。",
-      "short": "从 𝓕 中选择特征映射 Φ，再用系数 β 将特征组合成预测。",
-      "cartoon_alt": "输入形状经过可更换镜头的特征提取器，变成特征珠子，再由带调节器的读出装置组合成一个预测值；这是概念比喻。"
+      "network": "神经网络",
+      "family": "特征映射族",
+      "family_aria": "F 是由参数 theta 遍历参数空间 Theta 得到的特征映射 Phi theta 的集合。",
+      "formula_aria": "f 下标 theta beta，在 x 处的值等于 Phi 下标 theta 在 x 处的值与 beta 在特征空间 H 中的内积。",
+      "short": "以神经网络为例：不同参数 θ 对应不同映射 Φθ，β 将特征组合成预测。",
+      "cartoon_alt": "带参数滑块的神经网络指向三个形变不同的网格，表示改变网络参数得到的一族特征映射。网格代表不同的完整映射，而非连续的网络层或单个特征分量。"
     }
   }
 }

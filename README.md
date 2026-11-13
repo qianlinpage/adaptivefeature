@@ -66,8 +66,8 @@ The upper blocks use local SVGs to depict fixed feature regression, local state 
 - Arrow characters: `assets/figures/research-arrow-characters-v3.png` (built-in image generation, preserved transparency).
 - Prompt: `assets/figures/research-arrow-characters-v3.prompt.txt`.
 
-Previous cartoon images remain preserved; the active pages use only the v3 assets. Browser visual QA is still pending due to the unavailable browser connection.
+Previous cartoon images remain preserved. Browser visual QA is still pending due to the unavailable browser connection.
 
-The model-family block uses a compact cartoon flow (input → features → prediction), the formula `f_{Φ,β}(x) = ⟨Φ(x), β⟩_H` and one explanatory sentence. The longer symbol glossary has been removed from the homepage. The underlying definition and scope are unchanged. The cartoon is a metaphor, not a particular model architecture or experimental result.
+The model-family block uses a compact cartoon flow from a neural network to a family of feature maps, `𝓕 = {Φ_θ : θ ∈ Θ}`, with three differently warped meshes representing alternative maps. Varying hidden-layer parameters θ yields different full maps, rather than individual components of one map. The regression formula `f_{θ,β}(x) = ⟨Φ_θ(x), β⟩_H` and one sentence distinguish feature parameters θ from readout coefficients β. Neural networks provide an example of the broader abstract framework. The cartoon is a conceptual illustration, not experimental data.
 
-Asset: `assets/figures/feature-regression-cartoon-v1.png` (built-in image generation, transparent background). Prompt: `assets/figures/feature-regression-cartoon-v1.prompt.txt`.
+Asset: `assets/figures/network-feature-family-v2.png` (built-in image generation, transparent background). Prompt: `assets/figures/network-feature-family-v2.prompt.txt`.
