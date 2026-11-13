@@ -88,6 +88,7 @@ footer{font-size:10px;padding-block:24px}
 
 /* The perspective introduces the family; the strategy develops its analysis. */
 .home-perspective{padding:30px 0 34px;border-top:1px solid var(--line)}
+.home-strategy+.home-contact{padding-top:22px}
 /* Model diagrams in the blocks; researcher cartoons on the transfer arrows. */
 .home-strategy{background:transparent;border:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);border-radius:0;padding:30px 0}
 .framework-cartoon{margin:0}.theory-family{padding:20px 18px;border:1px solid #d7dfcf;border-radius:8px;background:#f1f3eb}

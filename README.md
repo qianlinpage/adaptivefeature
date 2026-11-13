@@ -1,6 +1,6 @@
 # Adaptive Feature — Qian Lin & collaborators
 
-An independent bilingual research website centered on the Adaptive Feature program: abstract feature-map regression families; fixed, local and global dynamics; application to concrete neural networks; and feedback that refines the family’s assumptions. The guiding objective is to connect neural-network dynamics with generalization. The homepage separates the research perspective from the strategy that follows from it, with a dedicated illustration for each and three plain-text page entrances. Separate Research, Prototype and Papers pages hold the analytical views, network feedback, interactive sequence model and complete selected paper records. Each page has Chinese and English versions. This project is separate from the existing personal academic homepage.
+An independent bilingual research website centered on the Adaptive Feature program: abstract feature-map regression families; fixed, local and global dynamics; application to concrete neural networks; and feedback that refines the family’s assumptions. The guiding objective is to connect neural-network dynamics with generalization. The homepage separates the research perspective from the strategy that follows from it, with a dedicated illustration for each. Separate Research, Prototype and Papers pages hold the analytical views, network feedback, interactive sequence model and complete selected paper records. Each page has Chinese and English versions. This project is separate from the existing personal academic homepage.
 
 Repository: [qianlinpage/adaptivefeature](https://github.com/qianlinpage/adaptivefeature).
 
@@ -51,7 +51,7 @@ Visual assets include original SVG/CSS and locally stored AI-generated conceptua
 
 ## Page structure
 
-- `index.html` / `index.zh.html`: concise research goal, a Perspective section (`#perspective`) explaining neural networks as feature-map regression, a Strategy section (`#framework`) showing the complementary analytical views and feedback cycle, and three page entrances. Shared navigation labels the homepage Overview / 总览.
+- `index.html` / `index.zh.html`: concise research goal, a Perspective section (`#perspective`) explaining neural networks as feature-map regression, a Strategy section (`#framework`) showing the complementary analytical views and feedback cycle, and a compact contact row. Shared navigation labels the homepage Overview / 总览. The repeated Explore the program / 进一步了解 section is retained in HTML comments; Research, Prototype and Papers remain accessible from the top navigation.
 - `research.html` / `research.zh.html`: fixed, local and global analysis; feedback from networks; established tools and open questions. Links such as `research.zh.html#view-local` select the requested analytical view.
 - `prototype.html` / `prototype.zh.html`: diagonal sequence-model teaching illustration, numerical controls, chart data, assumptions and limitations.
 - `papers.html` / `papers.zh.html`: all selected papers with unchanged author order, status, publication details and source links.
@@ -60,7 +60,7 @@ The multi-page revision is deployed through GitHub Pages. Desktop/mobile visual 
 
 ## Visual style
 
-The site uses a warm ivory background, deep green headings, serif display typography, two numbered homepage sections, one pale strategy panel and three full-row links. Desktop and mobile rules are included for all eight pages; browser visual QA remains pending.
+The site uses a warm ivory background, deep green headings, serif display typography, two numbered homepage sections, one pale strategy panel and a compact contact row. Desktop and mobile rules are included for all eight pages; browser visual QA remains pending.
 
 ## Research framework diagram
 
