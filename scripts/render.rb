@@ -76,6 +76,9 @@ e = ->(value) { CGI.escapeHTML(value.to_s) }
     points = i.zero? ? '38,127 48,142 58,127' : '38,23 48,8 58,23'
     "<div class=\"transfer-lane #{i.zero? ? 'application' : 'feedback'}\"><div class=\"transfer-visual\"><svg class=\"transfer-path\" viewBox=\"0 0 180 150\" aria-hidden=\"true\"><path d=\"M48 10V140\"/><polyline points=\"#{points}\"/></svg><div class=\"transfer-character\" style=\"--character:#{i}\"><img src=\"assets/figures/research-arrow-characters-v3.png\" width=\"1774\" height=\"887\" alt=\"#{e.call(c['framework_arrow_alts'][i])}\" decoding=\"async\"></div></div><p>#{e.call(label)}</p></div>"
   end.join
+  architectures = c.fetch('framework_architectures').map do |network|
+    "<li><img src=\"assets/figures/#{e.call(network['asset'])}\" width=\"240\" height=\"160\" alt=\"#{e.call(network['alt'])}\" loading=\"lazy\" decoding=\"async\"><span>#{e.call(network['label'])}</span></li>"
+  end.join
   definition = c.fetch('regression_definition')
   regression_definition = <<~HTML
     <div class="regression-definition">
@@ -88,7 +91,7 @@ e = ->(value) { CGI.escapeHTML(value.to_s) }
     <figure class="framework-cartoon">
       <div class="theory-family"><h3 class="family-label">#{c['framework_family']}</h3><ul class="analysis-views">#{views}</ul></div>
       <div class="framework-exchange">#{transfers}</div>
-      <a class="network-view" href="research#{suffix}#feedback"><div class="symbolic-network"><img src="assets/figures/neural-network-v3.svg" width="520" height="180" alt="#{e.call(c['framework_network_alt'])}"></div><h3>#{c['framework_network']}</h3><p>#{c['framework_network_note']}</p></a>
+      <a class="network-view" href="research#{suffix}#feedback"><h3>#{c['framework_network']}</h3><ul class="network-architectures" aria-label="#{e.call(c['framework_network_alt'])}">#{architectures}</ul><p>#{c['framework_network_note']}</p></a>
       <figcaption>#{c['cartoon_caption']}</figcaption>
     </figure>
   HTML

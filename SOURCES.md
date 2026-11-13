@@ -31,6 +31,15 @@ Preprints remain labeled as preprints when no verified publisher record was foun
 - The [FEM paper](https://arxiv.org/html/2511.09425v3) develops a feature error measure and supporting results for specified models. It does not establish a universal guarantee for all neural architectures or all empirical training dynamics.
 - The [ESD paper](https://proceedings.mlr.press/v306/huang26w.html) connects target alignment and spectral order to statistical complexity and minimax risk.
 
+## Architecture illustrations
+
+The site owner requested representative network architectures to communicate the research program's broad intended scope. The Strategy section shows fully connected networks, CNNs, ResNets and Transformers as examples, with no claim that existing theory covers every architecture. The diagrams are original simplified SVG schematics, not reproduced paper figures; normalization, activations and other architectural details are omitted.
+
+- Fully connected networks: dense connections between adjacent layers, extending the site's existing layered-network schematic.
+- CNNs: local receptive fields and stacks of feature maps; see [LeCun et al., Gradient Based Learning Applied to Document Recognition](https://leon.bottou.org/papers/lecun-98h).
+- ResNets: a learned residual branch and an identity shortcut meeting at addition; see [He et al., Deep Residual Learning for Image Recognition](https://www.microsoft.com/en-us/research/publication/deep-residual-learning-for-image-recognition/).
+- Transformers: attention followed by a feed-forward block, with a residual shortcut shown; see [Vaswani et al., Attention Is All You Need](https://arxiv.org/abs/1706.03762).
+
 ## Numerical illustration
 
 Six coordinates use initial feature weights `(1, .55, .25, .10, .04, .015)`. The target is `(1.1, .8, .4, 0, 0, 0)` when initially aligned or `(0, 0, .4, .8, 0, 1.1)` when initially misaligned. Observations add the selected noise amplitude times `(-.7, .4, -.8, .9, -.6, .5)`. No random draws or paper experiment results are used.

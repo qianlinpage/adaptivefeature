@@ -60,9 +60,10 @@ The site uses a warm ivory background, deep green headings, serif display typogr
 
 ## Research framework diagram
 
-The Strategy section starts from the feature-map regression family introduced in Perspective. Its upper blocks use local SVGs to depict fixed feature regression, local state perturbations and a global feature-evolution trajectory. A layered neural-network SVG forms the lower block. Two researcher cartoons sit alongside the down/up application and feedback arrows, connecting the model family and concrete networks. Blocks link to the respective research sections. The arrangement and labels are bilingual, and the diagrams represent concepts rather than experimental results.
+The Strategy section starts from the feature-map regression family introduced in Perspective. Its upper blocks use local SVGs to depict fixed feature regression, local state perturbations and a global feature-evolution trajectory. The lower block shows four representative architectures: fully connected networks, CNNs, ResNets and Transformers. The illustrations emphasize dense connections, feature-map stacks, residual shortcuts and attention with a feed-forward block. They illustrate the program's broad intended scope; they are not an exhaustive taxonomy or a claim of a universal theorem. Two researcher cartoons sit alongside the down/up application and feedback arrows, connecting the model family and concrete networks. Blocks link to the respective research sections. The arrangement and labels are bilingual, and the diagrams represent concepts rather than experimental results.
 
-- Diagram assets: `assets/figures/view-static-v3.svg`, `view-local-v3.svg`, `view-global-v3.svg`, `neural-network-v3.svg`.
+- Analytical-view assets: `assets/figures/view-static-v3.svg`, `view-local-v3.svg`, `view-global-v3.svg`.
+- Architecture assets: `assets/figures/network-mlp-v4.svg`, `network-cnn-v4.svg`, `network-resnet-v4.svg`, `network-transformer-v4.svg`. These are original local SVG schematics, arranged in four columns on desktop and two columns on mobile. The previous `neural-network-v3.svg` is preserved.
 - Arrow characters: `assets/figures/research-arrow-characters-v3.png` (built-in image generation, preserved transparency).
 - Prompt: `assets/figures/research-arrow-characters-v3.prompt.txt`.
 

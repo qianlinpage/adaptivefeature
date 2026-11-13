@@ -102,11 +102,13 @@ footer{font-size:10px;padding-block:24px}
 .transfer-visual{width:180px;max-width:100%;aspect-ratio:180/150;position:relative;margin:auto}.transfer-path{position:absolute;inset:0;width:100%;height:100%;fill:none;stroke:currentColor;stroke-width:2.3;stroke-linecap:round;stroke-linejoin:round}
 .transfer-character{position:absolute;width:58%;aspect-ratio:1;top:18%;right:0;overflow:hidden}.transfer-character img{position:absolute;top:0;left:calc(var(--character) * -100%);width:200%;height:auto;max-width:none}
 .transfer-lane p{font-size:12px;line-height:1.7;margin:0}
-.network-view{display:block;max-width:610px;margin:auto;padding:18px 26px;text-align:center;color:inherit;border:1px solid #d4dfcc;border-radius:8px;background:#edf2e7}
-.symbolic-network img{display:block;width:100%;height:auto;max-height:180px}.network-view h3{font:400 26px/1.4 var(--serif);margin:8px 0}.network-view p{font-size:12px;color:var(--muted);margin:0}
+.network-view{display:block;max-width:880px;margin:auto;padding:22px 24px;text-align:center;color:inherit;border:1px solid #d4dfcc;border-radius:8px;background:#edf2e7}
+.network-view h3{font:400 26px/1.4 var(--serif);margin:0 0 12px}.network-view p{font-size:12px;color:var(--muted);margin:14px 0 0}
+.network-architectures{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;list-style:none;margin:0;padding:0}.network-architectures li{min-width:0}.network-architectures img{display:block;width:100%;height:auto;max-width:240px;margin:0 auto}.network-architectures span{display:block;font-size:13px;line-height:1.5;color:var(--ink);margin-top:2px}
 .framework-cartoon figcaption{margin-top:25px;font-size:10px;color:var(--muted)}.home-strategy .scope-note{margin-top:10px}
 @media(max-width:760px){.home-strategy{padding:25px 0}.theory-family{padding:15px 8px}.family-label{font-size:12px;margin-bottom:12px}.analysis-views{gap:8px}.analysis-views a{padding:6px 4px 12px}.analysis-views h3{font-size:21px;margin:4px 0}.analysis-views p{font-size:10px;line-height:1.65}.framework-exchange{gap:25px;max-width:360px;padding-bottom:12px}.transfer-lane p{font-size:11px}.network-view{padding:14px;max-width:460px}.network-view h3{font-size:23px}.network-view p{font-size:11px}.framework-cartoon figcaption{font-size:10px}}
 @media(max-width:380px){.analysis-views{gap:5px}.analysis-views h3{font-size:18px}.framework-exchange{gap:16px;padding-inline:4px}.transfer-lane p{font-size:10px}.family-label{font-size:11px}}
+@media(max-width:760px){.network-view{max-width:620px;padding:18px 14px}.network-architectures{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 14px}.network-architectures img{max-width:190px}.network-architectures span{font-size:12px}.network-view p{margin-top:16px}}
 
 /* Neural network parameters induce a family of feature maps. */
 .theory-family>.family-label{font:400 20px/1.5 var(--serif);margin:0 0 18px}

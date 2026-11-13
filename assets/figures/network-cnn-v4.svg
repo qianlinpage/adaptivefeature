@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 160" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">Convolutional neural network</title>
+  <desc id="desc">A small receptive field on an input grid produces stacked feature maps at successive scales.</desc>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <rect x="12" y="45" width="50" height="72" rx="4" fill="#f8f7f3" stroke="#8da484" stroke-width="1.5"/>
+    <path d="M22 46v70M32 46v70M42 46v70M52 46v70M13 57h48M13 69h48M13 81h48M13 93h48M13 105h48" stroke="#d2dbca"/>
+    <rect x="22" y="57" width="20" height="24" rx="2" fill="#d6a17a" fill-opacity=".65" stroke="#a57c55" stroke-width="1.5"/>
+    <path d="M68 82h15m-5-5 5 5-5 5" stroke="#54785e" stroke-width="1.8"/>
+    <rect x="89" y="31" width="40" height="70" rx="3" fill="#e7eddd" stroke="#8da484" stroke-width="1.5"/>
+    <rect x="96" y="38" width="40" height="70" rx="3" fill="#d5e0ca" stroke="#8da484" stroke-width="1.5"/>
+    <rect x="103" y="45" width="40" height="70" rx="3" fill="#b8cda9" stroke="#54785e" stroke-width="1.5"/>
+    <path d="M113 46v68M123 46v68M133 46v68M104 59h38M104 73h38M104 87h38M104 101h38" stroke="#8eaa80"/>
+    <rect x="113" y="73" width="10" height="14" fill="#d6a17a" stroke="#a57c55"/>
+    <path d="M42 69 113 80" stroke="#a57c55" stroke-width="1.3" stroke-dasharray="3 4"/>
+    <path d="M151 82h17m-5-5 5 5-5 5" stroke="#54785e" stroke-width="1.8"/>
+    <rect x="175" y="51" width="30" height="44" rx="3" fill="#e7eddd" stroke="#8da484" stroke-width="1.5"/>
+    <rect x="182" y="58" width="30" height="44" rx="3" fill="#c4d6b7" stroke="#8da484" stroke-width="1.5"/>
+    <rect x="189" y="65" width="30" height="44" rx="3" fill="#8eae85" stroke="#54785e" stroke-width="1.5"/>
+    <path d="M199 66v42M209 66v42M190 76h28M190 87h28M190 98h28" stroke="#6b946c"/>
+  </g>
+</svg>

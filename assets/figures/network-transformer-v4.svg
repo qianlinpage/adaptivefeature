@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 160" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">Transformer</title>
+  <desc id="desc">Sequence tokens interact through attention, followed by a feed-forward block; a shortcut illustrates residual mixing.</desc>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <path d="M42 132v-10h156v10M94 132v-10M146 132v-10M120 122v-19m-4 5 4-5 4 5" stroke="#54785e" stroke-width="1.6"/>
+    <rect x="26" y="75" width="188" height="28" rx="6" fill="#b8cda9" stroke="#54785e" stroke-width="1.6"/>
+    <text x="120" y="94" text-anchor="middle" fill="#375c43" font-family="Arial,sans-serif" font-size="13">Attention</text>
+    <path d="M120 75V64M120 52V44m-4 5 4-5 4 5" stroke="#54785e" stroke-width="1.8"/>
+    <path d="M120 114h110V58H128m5-4-5 4 5 4" stroke="#a57c55" stroke-width="2"/>
+    <circle cx="120" cy="114" r="2.5" fill="#a57c55"/>
+    <circle cx="120" cy="58" r="7" fill="#f8f7f3" stroke="#a57c55" stroke-width="1.5"/>
+    <path d="M116 58h8M120 54v8" stroke="#a57c55" stroke-width="1.3"/>
+    <rect x="61" y="20" width="118" height="24" rx="5" fill="#d5e0ca" stroke="#54785e" stroke-width="1.5"/>
+    <text x="120" y="37" text-anchor="middle" fill="#375c43" font-family="Arial,sans-serif" font-size="13">FFN</text>
+    <rect x="32" y="132" width="20" height="14" rx="3" fill="#c4d6b7" stroke="#54785e" stroke-width="1.2"/>
+    <rect x="84" y="132" width="20" height="14" rx="3" fill="#91ad87" stroke="#54785e" stroke-width="1.2"/>
+    <rect x="136" y="132" width="20" height="14" rx="3" fill="#d6a17a" stroke="#54785e" stroke-width="1.2"/>
+    <rect x="188" y="132" width="20" height="14" rx="3" fill="#a8bf99" stroke="#54785e" stroke-width="1.2"/>
+  </g>
+</svg>

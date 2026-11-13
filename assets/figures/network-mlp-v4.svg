@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 160" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">Fully connected network</title>
+  <desc id="desc">Successive layers of neurons have dense connections between adjacent layers.</desc>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <g stroke="#bdcdb6" stroke-width="1.25">
+      <path d="M26 45L88 26"/>
+      <path d="M26 45L88 62"/>
+      <path d="M26 45L88 98"/>
+      <path d="M26 45L88 134"/>
+      <path d="M26 80L88 26"/>
+      <path d="M26 80L88 62"/>
+      <path d="M26 80L88 98"/>
+      <path d="M26 80L88 134"/>
+      <path d="M26 115L88 26"/>
+      <path d="M26 115L88 62"/>
+      <path d="M26 115L88 98"/>
+      <path d="M26 115L88 134"/>
+      <path d="M88 26L150 26"/>
+      <path d="M88 26L150 62"/>
+      <path d="M88 26L150 98"/>
+      <path d="M88 26L150 134"/>
+      <path d="M88 62L150 26"/>
+      <path d="M88 62L150 62"/>
+      <path d="M88 62L150 98"/>
+      <path d="M88 62L150 134"/>
+      <path d="M88 98L150 26"/>
+      <path d="M88 98L150 62"/>
+      <path d="M88 98L150 98"/>
+      <path d="M88 98L150 134"/>
+      <path d="M88 134L150 26"/>
+      <path d="M88 134L150 62"/>
+      <path d="M88 134L150 98"/>
+      <path d="M88 134L150 134"/>
+      <path d="M150 26L214 58"/>
+      <path d="M150 26L214 102"/>
+      <path d="M150 62L214 58"/>
+      <path d="M150 62L214 102"/>
+      <path d="M150 98L214 58"/>
+      <path d="M150 98L214 102"/>
+      <path d="M150 134L214 58"/>
+      <path d="M150 134L214 102"/>
+    </g>
+    <path d="M26 80 88 62 150 98 214 58" stroke="#a57c55" stroke-width="2.5"/>
+    <circle cx="26" cy="45" r="7.5" fill="#e7eddd" stroke="#54785e" stroke-width="1.5"/>
+    <circle cx="26" cy="80" r="7.5" fill="#e7eddd" stroke="#54785e" stroke-width="1.5"/>
+    <circle cx="26" cy="115" r="7.5" fill="#e7eddd" stroke="#54785e" stroke-width="1.5"/>
+    <circle cx="88" cy="26" r="7.5" fill="#91ad87" stroke="#54785e" stroke-width="1.5"/>
+    <circle cx="88" cy="62" r="7.5" fill="#91ad87" stroke="#54785e" stroke-width="1.5"/>
+    <circle cx="88" cy="98" r="7.5" fill="#91ad87" stroke="#54785e" stroke-width="1.5"/>
+    <circle cx="88" cy="134" r="7.5" fill="#91ad87" stroke="#54785e" stroke-width="1.5"/>
+    <circle cx="150" cy="26" r="7.5" fill="#709577" stroke="#54785e" stroke-width="1.5"/>
+    <circle cx="150" cy="62" r="7.5" fill="#709577" stroke="#54785e" stroke-width="1.5"/>
+    <circle cx="150" cy="98" r="7.5" fill="#709577" stroke="#54785e" stroke-width="1.5"/>
+    <circle cx="150" cy="134" r="7.5" fill="#709577" stroke="#54785e" stroke-width="1.5"/>
+    <circle cx="214" cy="58" r="7.5" fill="#d6a17a" stroke="#54785e" stroke-width="1.5"/>
+    <circle cx="214" cy="102" r="7.5" fill="#d6a17a" stroke="#54785e" stroke-width="1.5"/>
+  </g>
+</svg>
