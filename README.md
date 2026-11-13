@@ -68,4 +68,6 @@ The upper blocks use local SVGs to depict fixed feature regression, local state 
 
 Previous cartoon images remain preserved; the active pages use only the v3 assets. Browser visual QA is still pending due to the unavailable browser connection.
 
-The model-family block explicitly defines `f_{Φ,β}(x) = ⟨Φ(x), β⟩_H`, with `Φ ∈ F` and `β ∈ H`. A native HTML/SVG flow depicts input, feature representation and scalar readout; bilingual definitions distinguish the candidate map family, feature vector and coefficients. This is a definition, not a theoretical performance claim.
+The model-family block uses a compact cartoon flow (input → features → prediction), the formula `f_{Φ,β}(x) = ⟨Φ(x), β⟩_H` and one explanatory sentence. The longer symbol glossary has been removed from the homepage. The underlying definition and scope are unchanged. The cartoon is a metaphor, not a particular model architecture or experimental result.
+
+Asset: `assets/figures/feature-regression-cartoon-v1.png` (built-in image generation, transparent background). Prompt: `assets/figures/feature-regression-cartoon-v1.prompt.txt`.

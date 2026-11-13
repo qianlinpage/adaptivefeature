@@ -492,7 +492,9 @@
           "Output coefficients that combine features into a scalar prediction via an inner product."
         ]
       ],
-      "bridge": "The static view fixes Φ; the local view studies nearby changes; the global view follows the joint evolution of Φ and β."
+      "bridge": "The static view fixes Φ; the local view studies nearby changes; the global view follows the joint evolution of Φ and β.",
+      "short": "Choose a feature map Φ from 𝓕, then combine its features with coefficients β to predict.",
+      "cartoon_alt": "Input shapes pass through a feature extractor with interchangeable lenses, become feature beads and are combined by an adjustable readout into one prediction; a conceptual metaphor."
     }
   },
   "zh": {
@@ -883,7 +885,9 @@
           "输出系数，通过内积将特征组合为标量预测。"
         ]
       ],
-      "bridge": "静态视角固定 Φ；局部视角分析邻域变化；整体视角追踪 Φ 与 β 的共同演化。"
+      "bridge": "静态视角固定 Φ；局部视角分析邻域变化；整体视角追踪 Φ 与 β 的共同演化。",
+      "short": "从 𝓕 中选择特征映射 Φ，再用系数 β 将特征组合成预测。",
+      "cartoon_alt": "输入形状经过可更换镜头的特征提取器，变成特征珠子，再由带调节器的读出装置组合成一个预测值；这是概念比喻。"
     }
   }
 }
