@@ -105,7 +105,11 @@ end
   end.join
   overview = <<~HTML
     <div class="wrap home-overview">
-      <section class="home-intro"><p class="intro-kicker"><span aria-hidden="true"></span>#{c['display_kicker']}</p><h1>#{e.call(c['display_title'][0])}<br><em>#{e.call(c['display_title'][1])}</em></h1><p class="intro">#{c['simple_intro']}</p><div class="intro-bottom"><p class="byline">#{c['byline']}</p><a href="research#{suffix}" class="intro-link">#{c['explore_label']} <span aria-hidden="true">↗</span></a></div></section>
+      <section class="home-intro"><p class="intro-kicker"><span aria-hidden="true"></span>#{c['display_kicker']}</p><h1>#{e.call(c['display_title'][0])}<br><em>#{e.call(c['display_title'][1])}</em></h1><p class="intro">#{c['simple_intro']}</p>
+        <!--
+        <div class="intro-bottom"><p class="byline">#{c['byline']}</p><a href="research#{suffix}" class="intro-link">#{c['explore_label']} <span aria-hidden="true">↗</span></a></div>
+        -->
+      </section>
       <section id="perspective" class="home-perspective" aria-labelledby="perspective-title"><div class="overview-heading"><div><h2 id="perspective-title"><span class="section-number" aria-hidden="true">01</span>#{e.call(c['perspective_title'])}</h2><p>#{e.call(c['perspective_intro'])}</p></div></div>#{regression_definition}</section>
       <section id="framework" class="home-strategy" aria-labelledby="strategy-title"><div class="overview-heading"><div><h2 id="strategy-title"><span class="section-number" aria-hidden="true">02</span>#{c['simple_strategy']}</h2><p>#{c['strategy_caption']}</p></div><a class="text-link" href="#{figure}">#{c['figure_open']} <span aria-hidden="true">↗</span></a></div>#{framework}<p class="scope-note">#{c['simple_scope']}</p></section>
       <section id="research" class="home-entrances"><h2>#{c['simple_routes_title']}</h2><ul class="entrance-list">#{entrances}</ul></section>

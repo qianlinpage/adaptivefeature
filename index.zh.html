@@ -26,7 +26,11 @@
       <main id="main">
 
 <div class="wrap home-overview">
-  <section class="home-intro"><p class="intro-kicker"><span aria-hidden="true"></span>自适应特征 · 研究纲领</p><h1>从特征学习，<br><em>理解泛化。</em></h1><p class="intro">从特征如何形成与演化出发，研究神经网络的训练动力学与泛化。</p><div class="intro-bottom"><p class="byline">林乾与合作者 · 清华大学</p><a href="research.zh.html" class="intro-link">探索研究 <span aria-hidden="true">↗</span></a></div></section>
+  <section class="home-intro"><p class="intro-kicker"><span aria-hidden="true"></span>自适应特征 · 研究纲领</p><h1>从特征学习，<br><em>理解泛化。</em></h1><p class="intro">从特征如何形成与演化出发，研究神经网络的训练动力学与泛化。</p>
+    <!--
+    <div class="intro-bottom"><p class="byline">林乾与合作者 · 清华大学</p><a href="research.zh.html" class="intro-link">探索研究 <span aria-hidden="true">↗</span></a></div>
+    -->
+  </section>
   <section id="perspective" class="home-perspective" aria-labelledby="perspective-title"><div class="overview-heading"><div><h2 id="perspective-title"><span class="section-number" aria-hidden="true">01</span>研究观点</h2><p>把神经网络回归写成“特征映射 + 线性读出”，关注表示如何随训练变化。</p></div></div><div class="regression-definition">
   <figure class="regression-cartoon"><img src="assets/figures/network-feature-family-v2.png" width="2172" height="724" alt="带参数滑块的神经网络指向三个形变不同的网格，表示改变网络参数得到的一族特征映射。网格代表不同的完整映射，而非连续的网络层或单个特征分量。" decoding="async"><figcaption><span class="network-caption">神经网络<span class="map-family-notation">θ ∈ Θ</span></span><span class="maps-caption">特征映射族<span class="map-family-notation" role="math" aria-label="F 是由参数 theta 遍历参数空间 Theta 得到的特征映射 Phi theta 的集合。"><span aria-hidden="true">𝓕 = {Φ<sub>θ</sub> : θ ∈ Θ}</span></span></span></figcaption></figure>
   <div class="regression-equation" role="math" aria-label="f 下标 theta beta，在 x 处的值等于 Phi 下标 theta 在 x 处的值与 beta 在特征空间 H 中的内积。"><span aria-hidden="true"><var>f</var><sub>θ,β</sub>(<var>x</var>) = ⟨Φ<sub>θ</sub>(<var>x</var>), β⟩<sub>𝓗</sub></span></div>
