@@ -106,7 +106,9 @@ end
   end.join
   overview = <<~HTML
     <div class="wrap home-overview">
-      <section class="home-intro"><p class="intro-kicker"><span aria-hidden="true"></span>#{c['display_kicker']}</p><h1>#{e.call(c['display_title'][0])}<br><em>#{e.call(c['display_title'][1])}</em></h1><p class="intro">#{c['simple_intro']}</p>
+      <section class="home-intro">
+        <!-- <p class="intro-kicker"><span aria-hidden="true"></span>#{c['display_kicker']}</p> -->
+        <h1>#{e.call(c['display_title'][0])}<br><em>#{e.call(c['display_title'][1])}</em></h1><p class="intro">#{c['simple_intro']}</p>
         <!--
         <div class="intro-bottom"><p class="byline">#{c['byline']}</p><a href="research#{suffix}" class="intro-link">#{c['explore_label']} <span aria-hidden="true">↗</span></a></div>
         -->
