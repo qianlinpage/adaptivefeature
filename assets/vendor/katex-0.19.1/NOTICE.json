@@ -1,0 +1,8 @@
+{
+  "name": "KaTeX",
+  "version": "0.19.1",
+  "source": "https://registry.npmjs.org/katex/-/katex-0.19.1.tgz",
+  "integrity": "sha512-jG8uKntjSEcm2EpQOh0XturpPuuC9r3Sq5HLHdsFdWZT27E672SF19QEi+of0/YeOy15lDgRhKvr5614uRrEfA==",
+  "license": "MIT",
+  "modification": "CSS retains only the bundled WOFF2 font sources. The JavaScript bundle is used only during local page generation."
+}

@@ -41,6 +41,10 @@ The three homepage formulas are editorial definitions and an algebraic expansion
 
 The [survey](https://arxiv.org/abs/2412.18756v2) and [adaptive feature program paper](https://arxiv.org/abs/2511.09425) provide the research context; the cards continue to represent complementary analytical views, not successive stages of training.
 
+## Formula rendering
+
+The displayed equations are typeset from LaTeX with [KaTeX 0.19.1](https://katex.org/docs/api), using its [render-to-string workflow](https://katex.org/docs/node) during local page generation. HTML, MathML, CSS and WOFF2 fonts are committed to the site; the browser does not run KaTeX JavaScript. The npm release tarball's SHA-512 integrity was verified before extracting the bundled assets. Original MIT licensing and provenance are stored in `assets/vendor/katex-0.19.1/`. This changes notation and presentation only, not the equations or numerical dynamics.
+
 ## Architecture illustrations
 
 The site owner requested representative network architectures to communicate the research program's broad intended scope. The Strategy section shows fully connected networks, CNNs, ResNets and Transformers as examples, with no claim that existing theory covers every architecture. The diagrams are original simplified SVG schematics, not reproduced paper figures; normalization, activations and other architectural details are omitted.

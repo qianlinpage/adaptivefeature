@@ -99,7 +99,7 @@ footer{font-size:10px;padding-block:24px}
 .symbolic-illustration img{display:block;width:100%;height:auto}.analysis-views h3{font:400 25px/1.4 var(--serif);margin:7px 0;color:var(--ink)}
 .analysis-views p{font-size:12px;color:var(--muted);margin:0}
 .analysis-views .symbolic-illustration{max-width:240px;margin:0 auto}
-.view-formula{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:68px;margin:8px 0 10px;font:18px/1.65 var(--serif);color:var(--green)}.view-formula>span{display:block;white-space:nowrap}.view-formula sub{font-size:.6em}
+.view-formula{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:68px;margin:8px 0 10px;font:18px/1.65 var(--serif);color:var(--green)}
 .view-notation{font-size:11px;line-height:1.8;text-align:center;color:var(--muted);margin:16px 0 0}
 .framework-exchange{display:grid;grid-template-columns:1fr 1fr;gap:70px;max-width:530px;margin:0 auto;padding:0 12px 18px}
 .transfer-lane{text-align:center;min-width:0;color:var(--green)}.transfer-lane.feedback{color:#a67955}
@@ -119,8 +119,13 @@ footer{font-size:10px;padding-block:24px}
 .theory-family>.family-label{font:400 20px/1.5 var(--serif);margin:0 0 18px}
 .regression-definition{max-width:720px;margin:0 auto}
 .regression-cartoon{max-width:580px;margin:0 auto 12px}.regression-cartoon img{display:block;width:100%;height:auto}.regression-cartoon figcaption{display:grid;grid-template-columns:minmax(0,31fr) minmax(0,9fr) minmax(0,60fr);text-align:center;margin:0;color:var(--green);font-size:12px;line-height:1.6}
-.network-caption{grid-column:1}.maps-caption{grid-column:3}.map-family-notation{display:block;font:17px/1.6 var(--serif);white-space:nowrap}.map-family-notation sub{font-size:.65em}
+.network-caption{grid-column:1}.maps-caption{grid-column:3}.map-family-notation{display:block;font:17px/1.6 var(--serif);white-space:nowrap}
 .regression-equation{font:24px/1.7 var(--serif);color:var(--ink);text-align:center}
-.regression-equation sub{font-size:.55em}
+
 .definition-short{font-size:12px;text-align:center;line-height:1.8;color:var(--muted);margin:5px 0 0}
 @media(max-width:760px){.home-perspective{padding:25px 0 28px}.overview-heading p{font-size:13px}.section-number{margin-right:11px;font-size:13px}.theory-family>.family-label{font-size:18px;margin-bottom:14px}.regression-cartoon{max-width:480px;margin-bottom:10px}.regression-cartoon figcaption{font-size:11px}.map-family-notation{font-size:15px}.regression-equation{font-size:21px}.definition-short{font-size:11px}}
+
+/* LaTeX is pre-rendered; math fonts and styles are served locally. */
+.katex{font-size:1em}.katex-display{max-width:100%;margin:0;padding:4px 0;overflow-x:auto;overflow-y:hidden}.katex-display>.katex{width:max-content;min-width:100%;text-align:inherit}.analysis-formula .katex-display,.math-equation .katex-display{text-align:left}
+.view-formula{min-width:0;text-align:center}.view-formula>.katex-display{width:100%}.regression-equation{font-size:24px;min-width:0}.map-family-notation{padding-top:2px}.analysis-formula{overflow-wrap:normal;text-align:left}.math-equation{max-width:100%;text-align:left}
+@media(max-width:760px){.regression-equation{font-size:21px}.view-formula{font-size:17px}.method-formulas .math-equation{font-size:15px}.analysis-formula{font-size:17px}}

@@ -150,7 +150,7 @@
     "methods_intro": "We observe z = θ* + ε in six coordinates, using fixed synthetic noise. The initial weights are λ = (1, 0.55, 0.25, 0.10, 0.04, 0.015).",
     "fixed_formula": "Fixed scales",
     "adaptive_formula": "Trainable scales",
-    "methods_end": "The adaptive model uses θj = ajβj, aj(0) = √λj and βj(0) = 0. The scalar equation follows from a² − β² = λ. Curves use fourth-order Runge–Kutta integration; MSE is evaluated against the known synthetic truth, not against the noisy observations.",
+    "methods_end": "The adaptive model uses {{math:model_relation}}, with {{math:initial_a}} and {{math:initial_beta}}. The scalar equation follows from {{math:conservation}}. Curves use fourth-order Runge–Kutta integration; MSE is evaluated against the known synthetic truth, not against the noisy observations.",
     "methods_source": "Sequence-model formulation, §3.1",
     "noscript": "Enable JavaScript to use the interactive model. The research introduction and paper links remain available below.",
     "live": "The chart updates when you change a control.",
@@ -219,10 +219,10 @@
         "body": "Hold a feature map fixed and analyze how the target, spectrum, noise and estimator jointly determine prediction risk. Fine-grained risk, ESD and FEM provide tools for evaluating representations.",
         "question": "How should we evaluate a representation, separating target alignment, spectral complexity and the estimator’s role?",
         "focus": "Target regularity · kernel spectrum · regularization and stopping · noise",
-        "formula": "Φ fixed → βₜ → fₜ",
         "caption": "Regression and risk under fixed features provide a reference for studying dynamic representations.",
         "source": "Risk equivalence and sequence models",
-        "url": "https://arxiv.org/abs/2609.08817"
+        "url": "https://arxiv.org/abs/2609.08817",
+        "formula_key": "research_fixed"
       },
       {
         "id": "local",
@@ -231,10 +231,10 @@
         "body": "Study changes and responses near a current state, including the joint variation of spectral directions, spectral weights and prediction coefficients under nonlinear parameter coupling.",
         "question": "How do local changes affect feature quality and risk, and when are local approximations valid?",
         "focus": "Spectral perturbations · parameter coupling · local approximation · sample dependence",
-        "formula": "(Φ, β) ↔ (Φ + δΦ, β + δβ)",
         "caption": "Nearby variations help isolate local mechanisms of feature learning.",
         "source": "The dynamics of feature quality",
-        "url": "https://arxiv.org/abs/2511.09425"
+        "url": "https://arxiv.org/abs/2511.09425",
+        "formula_key": "research_local"
       },
       {
         "id": "global",
@@ -243,10 +243,10 @@
         "body": "Follow the joint trajectory of features and coefficients. Study when initialization, parameterization and training mechanisms favor feature formation, and whether those features persist through later training.",
         "question": "How can local mechanisms inform an account of the whole training process and its generalization?",
         "focus": "Initialization · training mechanisms · parameterization depth · early stopping",
-        "formula": "(Φ₀, β₀) → ··· → (Φₜ, βₜ)",
         "caption": "Place local mechanisms within the full trajectory to study their longer-term statistical effects.",
         "source": "Adaptive feature models",
-        "url": "https://arxiv.org/abs/2501.08679"
+        "url": "https://arxiv.org/abs/2501.08679",
+        "formula_key": "research_global"
       }
     ],
     "cycle_kicker": "03 / THEORY IN DIALOGUE WITH NETWORKS",
@@ -558,7 +558,7 @@
     "methods_intro": "在六个坐标上观测 z = θ* + ε，使用固定的合成噪声。初始权重为 λ = (1, 0.55, 0.25, 0.10, 0.04, 0.015)。",
     "fixed_formula": "固定尺度",
     "adaptive_formula": "可学习尺度",
-    "methods_end": "自适应模型使用 θj = ajβj，初始 aj(0) = √λj、βj(0) = 0。标量方程由守恒关系 a² − β² = λ 得到。曲线采用四阶 Runge–Kutta 方法计算；均方误差相对于已知的合成真实信号计算，而不是相对于含噪观测。",
+    "methods_end": "自适应模型使用 {{math:model_relation}}，初始 {{math:initial_a}}、{{math:initial_beta}}。标量方程由守恒关系 {{math:conservation}} 得到。曲线采用四阶 Runge–Kutta 方法计算；均方误差相对于已知的合成真实信号计算，而不是相对于含噪观测。",
     "methods_source": "序列模型论文第 3.1 节",
     "noscript": "启用 JavaScript 后可操作交互示例。研究介绍与论文链接无需 JavaScript 也可阅读。",
     "live": "调整控件后，图表会同步更新。",
@@ -627,10 +627,10 @@
         "body": "从固定特征映射出发，分析目标信号、谱结构、噪声与估计方法如何共同决定预测风险。精细风险、ESD 与 FEM 为比较表示质量提供工具。",
         "question": "怎样评价一个表示？目标匹配、谱复杂度与估计方法分别起什么作用？",
         "focus": "目标正则性 · 核谱 · 正则化与早停 · 噪声",
-        "formula": "Φ fixed → βₜ → fₜ",
         "caption": "在给定特征下研究回归与风险，为分析动态表示建立参照。",
         "source": "风险等价与序列模型",
-        "url": "https://arxiv.org/abs/2609.08817"
+        "url": "https://arxiv.org/abs/2609.08817",
+        "formula_key": "research_fixed"
       },
       {
         "id": "local",
@@ -639,10 +639,10 @@
         "body": "在当前状态附近研究特征的变化与响应，关注谱方向、谱权重和预测系数的共同变化，以及一般非线性参数耦合下的学习机制。",
         "question": "局部变化怎样影响表示质量与预测风险？近似在什么条件下有效？",
         "focus": "谱结构扰动 · 参数耦合 · 局部近似 · 样本依赖",
-        "formula": "(Φ, β) ↔ (Φ + δΦ, β + δβ)",
         "caption": "从邻域中的变化出发，辨析特征学习的局部机制。",
         "source": "特征质量的动态分析",
-        "url": "https://arxiv.org/abs/2511.09425"
+        "url": "https://arxiv.org/abs/2511.09425",
+        "formula_key": "research_local"
       },
       {
         "id": "global",
@@ -651,10 +651,10 @@
         "body": "沿训练轨迹追踪特征与系数的共同演化，研究初始化、参数化和训练机制何时有利于特征形成，以及这些特征能否在后续训练中保持。",
         "question": "怎样从局部机制走向整体训练分析，并与泛化能力建立联系？",
         "focus": "初始化 · 训练机制 · 参数化深度 · 早停",
-        "formula": "(Φ₀, β₀) → ··· → (Φₜ, βₜ)",
         "caption": "把局部机制放回整个学习过程，考察其长期统计作用。",
         "source": "自适应特征模型",
-        "url": "https://arxiv.org/abs/2501.08679"
+        "url": "https://arxiv.org/abs/2501.08679",
+        "formula_key": "research_global"
       }
     ],
     "cycle_kicker": "03 / 理论与神经网络的往返",
@@ -920,16 +920,70 @@
     "personal_homepage_label": "个人学术主页",
     "personal_homepage_url": "https://qianlinpage.github.io/TestWeb/index.zh.html"
   },
-  "view_formulas": {
-    "fixed": [
-      "<var>f</var><sub>β</sub>(<var>x</var>) = ⟨Φ(<var>x</var>), β⟩<sub>𝓗</sub>"
-    ],
-    "local": [
-      "δ<var>f</var>(<var>x</var>) ≈ ⟨δΦ(<var>x</var>), β⟩<sub>𝓗</sub>",
-      "+ ⟨Φ(<var>x</var>), δβ⟩<sub>𝓗</sub>"
-    ],
-    "global": [
-      "<var>f</var><sub>t</sub>(<var>x</var>) = ⟨Φ<sub>t</sub>(<var>x</var>), β<sub>t</sub>⟩<sub>𝓗</sub>"
-    ]
+  "math_expressions": {
+    "parameters": {
+      "tex": "\\theta\\in\\Theta",
+      "display": false
+    },
+    "feature_family": {
+      "tex": "\\mathcal{F}=\\{\\Phi_\\theta:\\theta\\in\\Theta\\}",
+      "display": false
+    },
+    "regression": {
+      "tex": "f_{\\theta,\\beta}(x)=\\langle\\Phi_\\theta(x),\\beta\\rangle_{\\mathcal{H}}",
+      "display": true
+    },
+    "view_fixed": {
+      "tex": "f_\\beta(x)=\\langle\\Phi(x),\\beta\\rangle_{\\mathcal{H}}",
+      "display": true
+    },
+    "view_local": {
+      "tex": "\\begin{aligned}\\delta f(x)&\\approx\\langle\\delta\\Phi(x),\\beta\\rangle_{\\mathcal{H}}\\\\&\\quad+\\langle\\Phi(x),\\delta\\beta\\rangle_{\\mathcal{H}}\\end{aligned}",
+      "display": true
+    },
+    "view_global": {
+      "tex": "f_t(x)=\\langle\\Phi_t(x),\\beta_t\\rangle_{\\mathcal{H}}",
+      "display": true
+    },
+    "research_fixed": {
+      "tex": "\\Phi\\equiv\\Phi_0,\\qquad\\beta_t\\longrightarrow f_t",
+      "display": true
+    },
+    "research_local": {
+      "tex": "(\\Phi,\\beta)\\longleftrightarrow(\\Phi+\\delta\\Phi,\\beta+\\delta\\beta)",
+      "display": true
+    },
+    "research_global": {
+      "tex": "(\\Phi_0,\\beta_0)\\longrightarrow\\cdots\\longrightarrow(\\Phi_t,\\beta_t)",
+      "display": true
+    },
+    "prototype_fixed": {
+      "tex": "\\widehat{\\theta}_j(t)=\\bigl(1-\\exp(-\\lambda_j t)\\bigr)z_j",
+      "display": true
+    },
+    "prototype_adaptive": {
+      "tex": "\\frac{\\mathrm{d}\\theta_j}{\\mathrm{d}t}=\\sqrt{\\lambda_j^2+4\\theta_j^2}\\,(z_j-\\theta_j)",
+      "display": true
+    },
+    "prototype_weights": {
+      "tex": "\\lambda_j(t)=a_j(t)^2=\\frac{\\lambda_j+\\sqrt{\\lambda_j^2+4\\theta_j^2}}{2}",
+      "display": true
+    },
+    "model_relation": {
+      "tex": "\\theta_j=a_j\\beta_j",
+      "display": false
+    },
+    "initial_a": {
+      "tex": "a_j(0)=\\sqrt{\\lambda_j}",
+      "display": false
+    },
+    "initial_beta": {
+      "tex": "\\beta_j(0)=0",
+      "display": false
+    },
+    "conservation": {
+      "tex": "a_j^2-\\beta_j^2=\\lambda_j",
+      "display": false
+    }
   }
 }

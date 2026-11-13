@@ -28,6 +28,11 @@ personal_homepages = %w[
   failures << "#{file}: prototype on wrong page" unless html.include?('data-lab') == file.start_with?('prototype')
   failures << "#{file}: dynamics on wrong page" unless html.include?('data-dynamics') == file.start_with?('research')
   page = file.split('.').first
+  if html.include?('class="katex"')
+    failures << "#{file}: missing local math stylesheet" unless html.include?('assets/vendor/katex-0.19.1/katex.min.css?v=')
+    failures << "#{file}: missing accessible math" unless html.include?('<math xmlns="http://www.w3.org/1998/Math/MathML"')
+  end
+  failures << "#{file}: unrendered math placeholder" if html.include?('{{math:')
   failures << "#{file}: missing language counterpart" unless html.include?("href=\"#{page}.html\"") && html.include?("href=\"#{page}.zh.html\"")
   html.scan(/\b(?:href|src)="([^"]+)"/).flatten.each do |raw|
     url = CGI.unescapeHTML(raw)
@@ -45,5 +50,13 @@ personal_homepages = %w[
     end
   end
 end
+Dir.glob(File.join(root, 'assets', '**', '*.css')).each do |stylesheet|
+  File.read(stylesheet).scan(/url\(([^)]+)\)/).flatten.each do |raw|
+    url = raw.strip.sub(/\A["']/, '').sub(/["']\z/, '')
+    next if url.start_with?('data:', 'https:', 'http:', '#')
+    resource = File.expand_path(URI.parse(url).path, File.dirname(stylesheet))
+    failures << "#{stylesheet.delete_prefix(root + '/')}: missing resource #{url}" unless File.file?(resource)
+  end
+end
 abort failures.join("\n") unless failures.empty?
-puts 'Passed: bilingual content, unique IDs, local links, anchors, paper count and project separation.'
+puts 'Passed: bilingual content, local links and CSS resources, accessible math, anchors, paper count and project separation.'

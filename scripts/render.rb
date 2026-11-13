@@ -3,12 +3,21 @@
 require 'json'
 require 'cgi'
 require 'digest'
+require 'open3'
 require_relative 'components'
 
 root = File.expand_path('..', __dir__)
 data = JSON.parse(File.read(File.join(root, 'data/content.json')))
 e = ->(value) { CGI.escapeHTML(value.to_s) }
-stylesheet_urls = %w[assets/lab.css assets/site.css].to_h do |path|
+node_bin = ENV['KATEX_NODE_BIN'] || ENV.fetch('PATH', '').split(File::PATH_SEPARATOR).map { |dir| File.join(dir, 'node') }.find { |path| File.file?(path) && File.executable?(path) }
+runtime_node = File.expand_path('~/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node')
+node_bin ||= runtime_node if File.executable?(runtime_node)
+abort 'Node.js is required to render formulas. Add node to PATH or set KATEX_NODE_BIN.' unless node_bin
+math_json, math_errors, math_status = Open3.capture3(node_bin, File.join(__dir__, 'render_math.cjs'), stdin_data: JSON.generate(data.fetch('math_expressions')))
+abort math_errors unless math_status.success?
+math = JSON.parse(math_json)
+katex_css = 'assets/vendor/katex-0.19.1/katex.min.css'
+stylesheet_urls = [katex_css, 'assets/lab.css', 'assets/site.css'].to_h do |path|
   version = Digest::SHA256.file(File.join(root, path)).hexdigest[0, 12]
   [path, "#{path}?v=#{version}"]
 end
@@ -25,7 +34,7 @@ end
     <<~HTML
       <article class="dynamics-panel" id="view-#{view['id']}" aria-labelledby="heading-#{view['id']}">
         <div class="dynamics-copy"><h3 id="heading-#{view['id']}">#{e.call(view['title'])}</h3><p>#{e.call(view['body'])}</p><dl><dt>#{c['dynamics_question']}</dt><dd>#{e.call(view['question'])}</dd><dt>#{c['dynamics_focus']}</dt><dd>#{e.call(view['focus'])}</dd></dl><a class="inline-source" href="#{view['url']}">#{e.call(view['source'])} ↗</a></div>
-        <p class="analysis-formula">#{e.call(view['formula'])}</p>
+        <div class="analysis-formula">#{math.fetch(view.fetch('formula_key'))}</div>
       </article>
     HTML
   end.join
@@ -71,10 +80,10 @@ end
         <section id="research" class="section wrap research"><div class="papers">#{papers}</div></section>
   HTML
   sections[:prototype] = <<~HTML
-          <div id="playground" class="prototype-section">#{render_lab(c,zh)}</div>
+          <div id="playground" class="prototype-section">#{render_lab(c,zh,math)}</div>
   HTML
   views = c['framework_views'].map do |view|
-    formula = data.fetch('view_formulas').fetch(view['id']).map { |line| "<span aria-hidden=\"true\">#{line}</span>" }.join
+    formula = math.fetch("view_#{view['id']}")
     "<li><a href=\"research#{suffix}#view-#{view['id']}\"><div class=\"symbolic-illustration\"><img src=\"assets/figures/#{e.call(view['asset'])}\" width=\"240\" height=\"160\" alt=\"#{e.call(view['alt'])}\"></div><h3>#{e.call(view['label'])}</h3><div class=\"view-formula\" role=\"math\" aria-label=\"#{e.call(view['formula_aria'])}\">#{formula}</div><p>#{e.call(view['summary'])}</p></a></li>"
   end.join
   transfers = [1, 0].map do |i|
@@ -88,8 +97,8 @@ end
   definition = c.fetch('regression_definition')
   regression_definition = <<~HTML
     <div class="regression-definition">
-      <figure class="regression-cartoon"><img src="assets/figures/network-feature-family-v2.png" width="2172" height="724" alt="#{e.call(definition['cartoon_alt'])}" decoding="async"><figcaption><span class="network-caption">#{e.call(definition['network'])}<span class="map-family-notation">θ ∈ Θ</span></span><span class="maps-caption">#{e.call(definition['family'])}<span class="map-family-notation" role="math" aria-label="#{e.call(definition['family_aria'])}"><span aria-hidden="true">𝓕 = {Φ<sub>θ</sub> : θ ∈ Θ}</span></span></span></figcaption></figure>
-      <div class="regression-equation" role="math" aria-label="#{e.call(definition['formula_aria'])}"><span aria-hidden="true"><var>f</var><sub>θ,β</sub>(<var>x</var>) = ⟨Φ<sub>θ</sub>(<var>x</var>), β⟩<sub>𝓗</sub></span></div>
+      <figure class="regression-cartoon"><img src="assets/figures/network-feature-family-v2.png" width="2172" height="724" alt="#{e.call(definition['cartoon_alt'])}" decoding="async"><figcaption><span class="network-caption">#{e.call(definition['network'])}<span class="map-family-notation">#{math.fetch('parameters')}</span></span><span class="maps-caption">#{e.call(definition['family'])}<span class="map-family-notation" role="math" aria-label="#{e.call(definition['family_aria'])}">#{math.fetch('feature_family')}</span></span></figcaption></figure>
+      <div class="regression-equation" role="math" aria-label="#{e.call(definition['formula_aria'])}">#{math.fetch('regression')}</div>
       <p class="definition-short">#{e.call(definition['short'])}</p>
     </div>
   HTML
@@ -143,6 +152,7 @@ end
     else
       ''
     end
+    math_stylesheet = content.include?('class="katex') ? "<link rel=\"stylesheet\" href=\"#{stylesheet_urls.fetch(katex_css)}\">" : ''
     html = <<~HTML
     <!DOCTYPE html>
     <html lang="#{zh ? 'zh-CN' : 'en'}">
@@ -156,6 +166,7 @@ end
       <meta property="og:description" content="#{e.call(description)}">
       <meta property="og:type" content="website">
       <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+      #{math_stylesheet}
       <link rel="stylesheet" href="#{stylesheet_urls.fetch('assets/lab.css')}">
       <link rel="stylesheet" href="#{stylesheet_urls.fetch('assets/site.css')}">
       <link rel="alternate" hreflang="en" href="#{page}.html">

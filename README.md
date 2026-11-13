@@ -14,6 +14,7 @@ Open `index.zh.html` for Chinese or `index.html` for English in a browser. All e
 
 - `data/content.json`: shared paper records and bilingual copy.
 - `scripts/render.rb`: HTML template and layout.
+- `scripts/render_math.cjs`: pre-render the LaTeX expressions with the bundled KaTeX release.
 - `assets/site.css`: responsive visual design.
 - `assets/model.js`: numerical model, with no DOM dependency.
 - `assets/site.js`: chart rendering and controls.
@@ -29,9 +30,9 @@ node tests/model.test.cjs
 node tests/program.test.cjs
 ```
 
-Ruby is needed only to regenerate or check the files. Node.js is needed only for numerical tests. Visitors and GitHub Pages need neither.
+Ruby and Node.js are needed to regenerate pages; Ruby alone can run the static checker. KaTeX is bundled, so generation requires no package installation or network access. The renderer finds Node.js on PATH or in the Codex runtime; set `KATEX_NODE_BIN` to use a different executable. Visitors and GitHub Pages need neither Ruby nor Node.js.
 
-The renderer appends a content-derived version to both stylesheet URLs. Re-render after CSS edits so that updated pages request the matching styles instead of reusing an earlier cached layout. The local link checker resolves query-bearing URLs against their file paths. Architecture diagrams use four columns above 760px and two columns at narrower widths.
+The renderer appends a content-derived version to all stylesheet URLs. Re-render after CSS edits so that updated pages request the matching styles instead of reusing an earlier cached layout. The local link checker resolves query-bearing URLs against their file paths and checks CSS font resources. Architecture diagrams use four columns above 760px and two columns at narrower widths.
 
 ## GitHub Pages deployment
 
@@ -47,7 +48,13 @@ The homepage contact row links to the author's personal academic website on GitH
 
 The six-coordinate example compares fixed-scale gradient flow with a diagonal factor model, using the same synthetic observations and explicit initialization. It uses deterministic noise, fourth-order Runge–Kutta integration, and MSE against the known target. It is a teaching illustration, not a reproduction of the research experiments. `tests/model.test.cjs` validates the scalar reduction against independently integrated factor equations.
 
-Visual assets include original SVG/CSS and locally stored AI-generated conceptual illustrations. The site uses no cookies, tracking, remote fonts, or third-party runtime libraries. Contact information is displayed in obfuscated form.
+Visual assets include original SVG/CSS and locally stored AI-generated conceptual illustrations. The site uses no cookies, tracking, remote fonts, or third-party JavaScript at runtime. Contact information is displayed in obfuscated form.
+
+## Formula typesetting
+
+LaTeX source is stored in `data/content.json` under `math_expressions`. The homepage, Research and Prototype pages use KaTeX 0.19.1 during page generation to emit HTML and accessible MathML. Inline method equations use named `{{math:...}}` references. Visitors receive already-rendered formulas, so math remains available with JavaScript disabled. Formulas use local CSS and WOFF2 fonts from `assets/vendor/katex-0.19.1/`; the JavaScript bundle is used only by the generator. The package's MIT license, source URL, integrity hash and CSS modification are recorded alongside the assets. The formulas retain their original meanings and the numerical model is unchanged.
+
+Long display equations can scroll inside their own containers on narrow screens, without widening the page. Visual browser QA remains pending because the browser connection is unavailable.
 
 ## Page structure
 
@@ -67,7 +74,7 @@ The site uses a warm ivory background, deep green headings, serif display typogr
 The Strategy section starts from the feature-map regression family introduced in Perspective. Its upper blocks use local SVGs to depict fixed feature regression, local state perturbations and a global feature-evolution trajectory. The lower block shows four representative architectures: fully connected networks, CNNs, ResNets and Transformers. The illustrations emphasize dense connections, feature-map stacks, residual shortcuts and attention with a feed-forward block. They illustrate the program's broad intended scope; they are not an exhaustive taxonomy or a claim of a universal theorem. Two researcher cartoons sit alongside the down/up application and feedback arrows, connecting the model family and concrete networks. Blocks link to the respective research sections. The arrangement and labels are bilingual, and the diagrams represent concepts rather than experimental results.
 
 - Analytical-view assets: `assets/figures/view-static-v3.svg`, `view-local-v3.svg`, `view-global-v3.svg`.
-- Each analytical-view card pairs its diagram with a compact native HTML formula: fixed-feature regression, a first-order local perturbation and the joint feature/readout trajectory. Shared math markup lives in `data/content.json` under `view_formulas`; labels, summaries and accessible math descriptions are bilingual. Narrow screens use compact rows with the formula spanning the card width. No external math-rendering library is required.
+- Each analytical-view card pairs its diagram with a compact LaTeX formula: fixed-feature regression, a first-order local perturbation and the joint feature/readout trajectory. Shared LaTeX source lives in `data/content.json` under `math_expressions`; labels, summaries and accessible math descriptions are bilingual. Narrow screens use compact rows with the formula spanning the card width. Math is pre-rendered with bundled KaTeX and uses no external runtime service.
 - Architecture assets: `assets/figures/network-mlp-v4.svg`, `network-cnn-v4.svg`, `network-resnet-v4.svg`, `network-transformer-v4.svg`. These are original local SVG schematics, arranged in four columns on desktop and two columns on mobile. The previous `neural-network-v3.svg` is preserved.
 - Arrow characters: `assets/figures/research-arrow-characters-v3.png` (built-in image generation, preserved transparency).
 - Prompt: `assets/figures/research-arrow-characters-v3.prompt.txt`.
