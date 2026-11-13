@@ -41,6 +41,8 @@ The renderer appends a content-derived version to both stylesheet URLs. Re-rende
 
 Page and asset links are relative, so the same static files can also be hosted in another repository or opened locally.
 
+The homepage contact row links to the author's personal academic website on GitHub Pages: [English](https://qianlinpage.github.io/TestWeb/index.html) and [中文](https://qianlinpage.github.io/TestWeb/index.zh.html). Labels and destinations are stored in the bilingual content. The checker permits these two external homepage links while retaining the separation of local pages and assets from the personal website.
+
 ## Interactive illustration
 
 The six-coordinate example compares fixed-scale gradient flow with a diagonal factor model, using the same synthetic observations and explicit initialization. It uses deterministic noise, fourth-order Runge–Kutta integration, and MSE against the known target. It is a teaching illustration, not a reproduction of the research experiments. `tests/model.test.cjs` validates the scalar reduction against independently integrated factor equations.

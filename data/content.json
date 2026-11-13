@@ -166,7 +166,6 @@
     "about_title": "Qian Lin",
     "about_role": "Associate Professor<br>Department of Statistics and Data Science<br>Tsinghua University",
     "about_body": "Qian Lin is an Associate Professor in the Department of Statistics and Data Science at Tsinghua University. With Yicheng Li and other collaborators, he studies statistical learning theory, feature learning and the mathematical foundations of deep learning. Full authorship appears in the paper entries.",
-    "faculty": "University profile",
     "scholar": "Google Scholar",
     "contact": "Contact",
     "guide_title": "Begin with the survey",
@@ -509,7 +508,9 @@
         "alt": "Transformer: sequence tokens interact through attention and a feed-forward block, with a residual shortcut shown."
       }
     ],
-    "view_notation": "Φ: feature map · β: readout coefficients · δ: small perturbation · t: training time"
+    "view_notation": "Φ: feature map · β: readout coefficients · δ: small perturbation · t: training time",
+    "personal_homepage_label": "Academic homepage",
+    "personal_homepage_url": "https://qianlinpage.github.io/TestWeb/index.html"
   },
   "zh": {
     "title": "Adaptive Feature | 林乾与合作者的研究纲领",
@@ -573,7 +574,6 @@
     "about_title": "林乾 Qian Lin",
     "about_role": "副教授<br>清华大学统计与数据科学系",
     "about_body": "林乾，清华大学统计与数据科学系副教授。与李易诚及其他合作者共同研究统计学习理论、特征学习与深度学习的数理基础。各项工作的完整署名列于论文条目。",
-    "faculty": "清华教师主页",
     "scholar": "谷歌学术",
     "contact": "联系邮箱",
     "guide_title": "从综述开始",
@@ -916,7 +916,9 @@
         "alt": "Transformer：序列元素通过注意力交互，再经过前馈模块；示意中保留残差连接。"
       }
     ],
-    "view_notation": "Φ：特征映射 · β：输出系数 · δ：小扰动 · t：训练时间"
+    "view_notation": "Φ：特征映射 · β：输出系数 · δ：小扰动 · t：训练时间",
+    "personal_homepage_label": "个人学术主页",
+    "personal_homepage_url": "https://qianlinpage.github.io/TestWeb/index.zh.html"
   },
   "view_formulas": {
     "fixed": [

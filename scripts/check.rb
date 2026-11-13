@@ -10,13 +10,19 @@ failures = []
 failures << 'Language keys differ' unless data['en'].keys.sort == data['zh'].keys.sort
 paper_ids = data['papers'].map { |p| p['id'] }
 failures << 'Duplicate paper IDs' unless paper_ids.uniq == paper_ids
+personal_homepages = %w[
+  https://qianlinpage.github.io/TestWeb/index.html
+  https://qianlinpage.github.io/TestWeb/index.zh.html
+]
 
 %w[index research prototype papers].product(['.html', '.zh.html']).map(&:join).each do |file|
   html = File.read(File.join(root, file))
   ids = html.scan(/\bid="([^"]+)"/).flatten
   failures << "#{file}: duplicate IDs" unless ids.uniq == ids
   failures << "#{file}: unprotected email" if html.match?(/mailto:|qianlin@/i)
-  failures << "#{file}: linked to old project" if html.include?('TestWeb') || html.include?('academic-homepage')
+  # The author requested these external homepage links; local assets stay separate.
+  isolated_html = personal_homepages.reduce(html) { |markup, url| markup.gsub("href=\"#{url}\"", '') }
+  failures << "#{file}: linked to old project" if isolated_html.include?('TestWeb') || isolated_html.include?('academic-homepage')
   expected_papers = file.start_with?('papers') ? data['papers'].length : 0
   failures << "#{file}: wrong paper count" unless html.scan('class="paper"').length == expected_papers
   failures << "#{file}: prototype on wrong page" unless html.include?('data-lab') == file.start_with?('prototype')
