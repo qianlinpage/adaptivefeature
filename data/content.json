@@ -436,33 +436,40 @@
       "A researcher compares a model on paper with a neural network on a screen.",
       "A researcher revises a notebook; a return arrow represents feedback refining assumptions."
     ],
-    "cartoon_caption": "Conceptual illustration: static, local and global are parallel views; curves are not experimental results.",
+    "cartoon_caption": "Conceptual illustration: blocks depict analytical views and models; arrows and characters depict application and feedback, not experimental results.",
     "framework_family": "A family of abstract feature-map regressions",
     "framework_views": [
       {
         "id": "fixed",
         "label": "Static",
-        "summary": "Representation quality and risk",
-        "alt": "A researcher examines a fixed model, representing static analysis."
+        "summary": "Fixed features, learned readout",
+        "alt": "A locked feature matrix and learnable output weights represent fixed-feature regression.",
+        "asset": "view-static-v3.svg"
       },
       {
         "id": "local",
         "label": "Local",
-        "summary": "Feature changes and coupling",
-        "alt": "A researcher magnifies nearby feature changes, representing local analysis."
+        "summary": "Local perturbations and coupling",
+        "alt": "A state-space curve, a local neighborhood and a small change arrow represent perturbation analysis.",
+        "asset": "view-local-v3.svg"
       },
       {
         "id": "global",
         "label": "Global",
-        "summary": "Feature formation and persistence",
-        "alt": "A researcher follows an evolving feature path, representing global analysis."
+        "summary": "Training paths and feature evolution",
+        "alt": "Feature structures change along a path, representing global training dynamics.",
+        "asset": "view-global-v3.svg"
       }
     ],
     "framework_down": "Apply and compare",
     "framework_up": "Network feedback refines assumptions",
     "framework_network": "Neural networks",
     "framework_network_note": "Test the theory in concrete networks and bring feedback to the feature-map family.",
-    "framework_network_alt": "Two researchers compare their models with a neural network on a monitor."
+    "framework_network_alt": "Layered nodes and connections depict a neural network linking inputs, hidden representations and outputs.",
+    "framework_arrow_alts": [
+      "A researcher brings a model to concrete networks for application and comparison.",
+      "A researcher brings observations back to refine theoretical assumptions."
+    ]
   },
   "zh": {
     "title": "Adaptive Feature | 林乾与合作者的研究纲领",
@@ -796,32 +803,39 @@
       "研究者比较纸上模型与屏幕上的神经网络。",
       "研究者修改笔记，回转箭头象征根据反馈修正假设。"
     ],
-    "cartoon_caption": "概念示意：静态、局部与整体是并列视角，图中曲线不表示实验结果。",
+    "cartoon_caption": "概念示意：区块表示研究对象与分析视角，箭头及人物表示理论应用和反馈；并非实验结果。",
     "framework_family": "抽象特征映射回归族",
     "framework_views": [
       {
         "id": "fixed",
         "label": "静态",
-        "summary": "表示质量与风险",
-        "alt": "研究者观察固定模型，象征静态分析。"
+        "summary": "固定表示，学习输出系数",
+        "alt": "锁定的特征矩阵与可学习的输出权重，表示固定表示下的回归。",
+        "asset": "view-static-v3.svg"
       },
       {
         "id": "local",
         "label": "局部",
-        "summary": "表示变化与耦合",
-        "alt": "研究者放大相邻特征的差异，象征局部分析。"
+        "summary": "邻域扰动与参数耦合",
+        "alt": "状态空间曲线、局部邻域和微小变化箭头，表示局部扰动分析。",
+        "asset": "view-local-v3.svg"
       },
       {
         "id": "global",
         "label": "整体",
-        "summary": "特征形成与保持",
-        "alt": "研究者追踪特征演化的路径，象征整体分析。"
+        "summary": "训练轨迹与特征演化",
+        "alt": "沿轨迹变化的特征结构，表示训练中的整体演化。",
+        "asset": "view-global-v3.svg"
       }
     ],
     "framework_down": "理论应用与对照",
     "framework_up": "网络反馈，修正假设",
     "framework_network": "神经网络",
     "framework_network_note": "在具体网络中检验理论，再将反馈带回特征映射族。",
-    "framework_network_alt": "两位研究者对照模型与屏幕上的神经网络。"
+    "framework_network_alt": "多层节点及其连接构成神经网络，强调输入、隐藏表示与输出之间的联系。",
+    "framework_arrow_alts": [
+      "研究者将模型带向具体网络，表示理论应用与对照。",
+      "研究者记录观察并反馈，表示修正理论假设。"
+    ]
   }
 }

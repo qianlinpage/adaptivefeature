@@ -68,15 +68,18 @@ e = ->(value) { CGI.escapeHTML(value.to_s) }
   sections[:prototype] = <<~HTML
           <div id="playground" class="prototype-section">#{render_lab(c,zh)}</div>
   HTML
-  views = c['framework_views'].each_with_index.map do |view, i|
-    "<li><a href=\"research#{suffix}#view-#{view['id']}\"><div class=\"view-illustration\" style=\"--view:#{i}\"><img src=\"assets/figures/research-framework-cartoon-v2.png\" width=\"1536\" height=\"1024\" alt=\"#{e.call(view['alt'])}\" decoding=\"async\"></div><h3>#{e.call(view['label'])}</h3><p>#{e.call(view['summary'])}</p></a></li>"
+  views = c['framework_views'].map do |view|
+    "<li><a href=\"research#{suffix}#view-#{view['id']}\"><div class=\"symbolic-illustration\"><img src=\"assets/figures/#{e.call(view['asset'])}\" width=\"240\" height=\"160\" alt=\"#{e.call(view['alt'])}\"></div><h3>#{e.call(view['label'])}</h3><p>#{e.call(view['summary'])}</p></a></li>"
+  end.join
+  transfers = [c['framework_down'], c['framework_up']].each_with_index.map do |label, i|
+    points = i.zero? ? '38,127 48,142 58,127' : '38,23 48,8 58,23'
+    "<div class=\"transfer-lane #{i.zero? ? 'application' : 'feedback'}\"><div class=\"transfer-visual\"><svg class=\"transfer-path\" viewBox=\"0 0 180 150\" aria-hidden=\"true\"><path d=\"M48 10V140\"/><polyline points=\"#{points}\"/></svg><div class=\"transfer-character\" style=\"--character:#{i}\"><img src=\"assets/figures/research-arrow-characters-v3.png\" width=\"1774\" height=\"887\" alt=\"#{e.call(c['framework_arrow_alts'][i])}\" decoding=\"async\"></div></div><p>#{e.call(label)}</p></div>"
   end.join
   framework = <<~HTML
     <figure class="framework-cartoon">
-      <p class="family-label">#{c['framework_family']}</p>
-      <ul class="analysis-views">#{views}</ul>
-      <div class="framework-exchange"><span><b aria-hidden="true">↓</b> #{c['framework_down']}</span><span><b aria-hidden="true">↑</b> #{c['framework_up']}</span></div>
-      <a class="network-view" href="research#{suffix}#feedback"><div class="network-illustration"><img src="assets/figures/research-framework-cartoon-v2.png" width="1536" height="1024" alt="#{e.call(c['framework_network_alt'])}" decoding="async"></div><h3>#{c['framework_network']}</h3><p>#{c['framework_network_note']}</p></a>
+      <div class="theory-family"><p class="family-label">#{c['framework_family']}</p><ul class="analysis-views">#{views}</ul></div>
+      <div class="framework-exchange">#{transfers}</div>
+      <a class="network-view" href="research#{suffix}#feedback"><div class="symbolic-network"><img src="assets/figures/neural-network-v3.svg" width="520" height="180" alt="#{e.call(c['framework_network_alt'])}"></div><h3>#{c['framework_network']}</h3><p>#{c['framework_network_note']}</p></a>
       <figcaption>#{c['cartoon_caption']}</figcaption>
     </figure>
   HTML

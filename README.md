@@ -58,8 +58,12 @@ The multi-page revision is deployed through GitHub Pages. Desktop/mobile visual 
 
 The site uses a warm ivory background, deep green headings, serif display typography, one pale strategy panel and three full-row links. Desktop and mobile rules are included for all eight pages; browser visual QA remains pending.
 
-## Cartoon research framework
+## Research framework diagram
 
-The homepages use `assets/figures/research-framework-cartoon-v2.png`, generated with the built-in image generation tool. The first row shows three parallel views (Static, Local, Global); the second shows concrete neural networks. HTML labels and downward/upward arrows express theoretical application and feedback revising the feature-map family. Each upper view links to its research tab; the neural-network illustration links to the feedback section. Both languages retain this two-row arrangement on desktop and mobile. Artwork is conceptual, not experimental evidence. The original v1 asset is preserved locally but is not required for deployment.
+The upper blocks use local SVGs to depict fixed feature regression, local state perturbations and a global feature-evolution trajectory. A layered neural-network SVG forms the lower block. Two researcher cartoons sit alongside the down/up application and feedback arrows, connecting the model family and concrete networks. Blocks link to the respective research sections. The arrangement and labels are bilingual, and the diagrams represent concepts rather than experimental results.
 
-Generation prompt: `assets/figures/research-framework-cartoon-v2.prompt.txt`.
+- Diagram assets: `assets/figures/view-static-v3.svg`, `view-local-v3.svg`, `view-global-v3.svg`, `neural-network-v3.svg`.
+- Arrow characters: `assets/figures/research-arrow-characters-v3.png` (built-in image generation, preserved transparency).
+- Prompt: `assets/figures/research-arrow-characters-v3.prompt.txt`.
+
+Previous cartoon images remain preserved; the active pages use only the v3 assets. Browser visual QA is still pending due to the unavailable browser connection.
