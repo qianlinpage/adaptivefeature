@@ -31,6 +31,16 @@ Preprints remain labeled as preprints when no verified publisher record was foun
 - The [FEM paper](https://arxiv.org/html/2511.09425v3) develops a feature error measure and supporting results for specified models. It does not establish a universal guarantee for all neural architectures or all empirical training dynamics.
 - The [ESD paper](https://proceedings.mlr.press/v306/huang26w.html) connects target alignment and spectral order to statistical complexity and minimax risk.
 
+## Analytical-view formulas
+
+The three homepage formulas are editorial definitions and an algebraic expansion of the displayed feature-map regression, not new results attributed to a paper:
+
+- Static: `f_β(x) = ⟨Φ(x), β⟩_H`, with Φ held fixed.
+- Local: `δf(x) ≈ ⟨δΦ(x), β⟩_H + ⟨Φ(x), δβ⟩_H`. The exact finite increment also contains `⟨δΦ(x), δβ⟩_H`; the card explicitly retains only first-order terms in the joint perturbation. This describes changes near a current state and does not assume a fixed tangent kernel throughout training.
+- Global: `f_t(x) = ⟨Φ_t(x), β_t⟩_H`, with both the representation and readout followed along a training trajectory. This notation does not prescribe a particular optimizer or assert convergence or generalization guarantees.
+
+The [survey](https://arxiv.org/abs/2412.18756v2) and [adaptive feature program paper](https://arxiv.org/abs/2511.09425) provide the research context; the cards continue to represent complementary analytical views, not successive stages of training.
+
 ## Architecture illustrations
 
 The site owner requested representative network architectures to communicate the research program's broad intended scope. The Strategy section shows fully connected networks, CNNs, ResNets and Transformers as examples, with no claim that existing theory covers every architecture. The diagrams are original simplified SVG schematics, not reproduced paper figures; normalization, activations and other architectural details are omitted.

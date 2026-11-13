@@ -442,23 +442,26 @@
       {
         "id": "fixed",
         "label": "Static",
-        "summary": "Fixed features, learned readout",
+        "summary": "Fix Φ; study estimation and prediction risk.",
         "alt": "A locked feature matrix and learnable output weights represent fixed-feature regression.",
-        "asset": "view-static-v3.svg"
+        "asset": "view-static-v3.svg",
+        "formula_aria": "With Phi fixed, f sub beta of x is the inner product of Phi of x and beta in feature space H."
       },
       {
         "id": "local",
         "label": "Local",
-        "summary": "Local perturbations and coupling",
+        "summary": "Perturb Φ and β; retain first-order terms.",
         "alt": "A state-space curve, a local neighborhood and a small change arrow represent perturbation analysis.",
-        "asset": "view-local-v3.svg"
+        "asset": "view-local-v3.svg",
+        "formula_aria": "First-order local approximation: delta f of x is approximately the inner product of delta Phi of x and beta, plus the inner product of Phi of x and delta beta, in feature space H."
       },
       {
         "id": "global",
         "label": "Global",
-        "summary": "Training paths and feature evolution",
+        "summary": "Follow the joint evolution of Φₜ and βₜ.",
         "alt": "Feature structures change along a path, representing global training dynamics.",
-        "asset": "view-global-v3.svg"
+        "asset": "view-global-v3.svg",
+        "formula_aria": "Along training, f sub t of x is the inner product of Phi sub t of x and beta sub t in feature space H. Both the feature map and coefficients evolve."
       }
     ],
     "framework_down": "Apply and compare",
@@ -505,7 +508,8 @@
         "asset": "network-transformer-v4.svg",
         "alt": "Transformer: sequence tokens interact through attention and a feed-forward block, with a residual shortcut shown."
       }
-    ]
+    ],
+    "view_notation": "Φ: feature map · β: readout coefficients · δ: small perturbation · t: training time"
   },
   "zh": {
     "title": "Adaptive Feature | 林乾与合作者的研究纲领",
@@ -845,23 +849,26 @@
       {
         "id": "fixed",
         "label": "静态",
-        "summary": "固定表示，学习输出系数",
+        "summary": "固定 Φ，研究系数学习与预测风险",
         "alt": "锁定的特征矩阵与可学习的输出权重，表示固定表示下的回归。",
-        "asset": "view-static-v3.svg"
+        "asset": "view-static-v3.svg",
+        "formula_aria": "固定特征映射 Phi。f 下标 beta 在 x 处等于 Phi x 与 beta 在特征空间 H 中的内积。"
       },
       {
         "id": "local",
         "label": "局部",
-        "summary": "邻域扰动与参数耦合",
+        "summary": "同时扰动 Φ 与 β，保留一阶项",
         "alt": "状态空间曲线、局部邻域和微小变化箭头，表示局部扰动分析。",
-        "asset": "view-local-v3.svg"
+        "asset": "view-local-v3.svg",
+        "formula_aria": "局部一阶近似：delta f 在 x 处约等于 delta Phi x 与 beta 的内积，加上 Phi x 与 delta beta 的内积，均在特征空间 H 中。"
       },
       {
         "id": "global",
         "label": "整体",
-        "summary": "训练轨迹与特征演化",
+        "summary": "追踪 Φₜ 与 βₜ 的共同演化",
         "alt": "沿轨迹变化的特征结构，表示训练中的整体演化。",
-        "asset": "view-global-v3.svg"
+        "asset": "view-global-v3.svg",
+        "formula_aria": "沿训练轨迹，f 下标 t 在 x 处等于 Phi 下标 t 在 x 处与 beta 下标 t 在特征空间 H 中的内积。特征映射和系数均随训练演化。"
       }
     ],
     "framework_down": "理论应用与对照",
@@ -908,6 +915,19 @@
         "asset": "network-transformer-v4.svg",
         "alt": "Transformer：序列元素通过注意力交互，再经过前馈模块；示意中保留残差连接。"
       }
+    ],
+    "view_notation": "Φ：特征映射 · β：输出系数 · δ：小扰动 · t：训练时间"
+  },
+  "view_formulas": {
+    "fixed": [
+      "<var>f</var><sub>β</sub>(<var>x</var>) = ⟨Φ(<var>x</var>), β⟩<sub>𝓗</sub>"
+    ],
+    "local": [
+      "δ<var>f</var>(<var>x</var>) ≈ ⟨δΦ(<var>x</var>), β⟩<sub>𝓗</sub>",
+      "+ ⟨Φ(<var>x</var>), δβ⟩<sub>𝓗</sub>"
+    ],
+    "global": [
+      "<var>f</var><sub>t</sub>(<var>x</var>) = ⟨Φ<sub>t</sub>(<var>x</var>), β<sub>t</sub>⟩<sub>𝓗</sub>"
     ]
   }
 }

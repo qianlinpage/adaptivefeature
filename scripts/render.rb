@@ -74,7 +74,8 @@ end
           <div id="playground" class="prototype-section">#{render_lab(c,zh)}</div>
   HTML
   views = c['framework_views'].map do |view|
-    "<li><a href=\"research#{suffix}#view-#{view['id']}\"><div class=\"symbolic-illustration\"><img src=\"assets/figures/#{e.call(view['asset'])}\" width=\"240\" height=\"160\" alt=\"#{e.call(view['alt'])}\"></div><h3>#{e.call(view['label'])}</h3><p>#{e.call(view['summary'])}</p></a></li>"
+    formula = data.fetch('view_formulas').fetch(view['id']).map { |line| "<span aria-hidden=\"true\">#{line}</span>" }.join
+    "<li><a href=\"research#{suffix}#view-#{view['id']}\"><div class=\"symbolic-illustration\"><img src=\"assets/figures/#{e.call(view['asset'])}\" width=\"240\" height=\"160\" alt=\"#{e.call(view['alt'])}\"></div><h3>#{e.call(view['label'])}</h3><div class=\"view-formula\" role=\"math\" aria-label=\"#{e.call(view['formula_aria'])}\">#{formula}</div><p>#{e.call(view['summary'])}</p></a></li>"
   end.join
   transfers = [1, 0].map do |i|
     label = [c['framework_down'], c['framework_up']][i]
@@ -94,7 +95,7 @@ end
   HTML
   framework = <<~HTML
     <figure class="framework-cartoon">
-      <div class="theory-family"><h3 class="family-label">#{c['framework_family']}</h3><ul class="analysis-views">#{views}</ul></div>
+      <div class="theory-family"><h3 class="family-label">#{c['framework_family']}</h3><ul class="analysis-views">#{views}</ul><p class="view-notation">#{e.call(c['view_notation'])}</p></div>
       <div class="framework-exchange">#{transfers}</div>
       <a class="network-view" href="research#{suffix}#feedback"><h3>#{c['framework_network']}</h3><ul class="network-architectures" aria-label="#{e.call(c['framework_network_alt'])}">#{architectures}</ul><p>#{c['framework_network_note']}</p></a>
       <figcaption>#{c['cartoon_caption']}</figcaption>
