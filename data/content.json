@@ -391,7 +391,7 @@
     ],
     "page_intros": [
       "A feature-map perspective on neural-network regression, and a research strategy connecting fixed, local and global analysis with concrete networks to study dynamics and generalization.",
-      "Develop the three complementary analytical views, then use neural-network feedback to test and revise assumptions. Established foundations and open questions are distinguished below.",
+      "Develop the three complementary analytical views, then use neural-network feedback to test and revise assumptions.",
       "The diagonal sequence model holds a basis fixed and learns its coordinate scales. Expand the illustration to compare fixed and adaptive feature dynamics.",
       "From tractable models to representation measures and fine-grained risk, these works supply different tools and entry points for the program."
     ],
@@ -799,7 +799,7 @@
     ],
     "page_intros": [
       "研究观点：从特征映射回归理解神经网络。研究策略：结合静态、局部和整体分析，与具体网络反复对照，探索训练动力学与泛化能力的联系。",
-      "从三个互补视角展开分析，再用具体网络的反馈检验和修正假设。下面区分已有研究基础与尚待解决的问题。",
+      "从三个互补视角展开分析，再用具体网络的反馈检验和修正假设。",
       "对角序列模型固定基函数、学习坐标尺度。展开示例，比较固定特征与自适应特征的动力学。",
       "从可解析模型到特征评价，再到精细风险分析。这些工作为研究纲领提供不同的工具与切入点。"
     ],

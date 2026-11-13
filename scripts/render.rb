@@ -134,7 +134,7 @@ end
   HTML
   bodies = {
     'index' => overview,
-    'research' => sections[:dynamics] + sections[:feedback] + sections[:agenda],
+    'research' => sections[:dynamics] + sections[:feedback],
     'prototype' => prototype,
     'papers' => sections[:papers]
   }
