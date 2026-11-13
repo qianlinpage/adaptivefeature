@@ -26,7 +26,8 @@ failures << 'Duplicate paper IDs' unless paper_ids.uniq == paper_ids
   html.scan(/\b(?:href|src)="([^"]+)"/).flatten.each do |raw|
     url = CGI.unescapeHTML(raw)
     next if url.match?(/\Ahttps:\/\//)
-    path, fragment = url.split('#', 2)
+    uri = URI.parse(url)
+    path, fragment = uri.path, uri.fragment
     target = path.empty? ? file : path
     target_path = File.join(root, target)
     unless File.file?(target_path)

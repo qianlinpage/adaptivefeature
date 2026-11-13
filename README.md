@@ -31,6 +31,8 @@ node tests/program.test.cjs
 
 Ruby is needed only to regenerate or check the files. Node.js is needed only for numerical tests. Visitors and GitHub Pages need neither.
 
+The renderer appends a content-derived version to both stylesheet URLs. Re-render after CSS edits so that updated pages request the matching styles instead of reusing an earlier cached layout. The local link checker resolves query-bearing URLs against their file paths. Architecture diagrams use four columns above 760px and two columns at narrower widths.
+
 ## GitHub Pages deployment
 
 1. Upload this directory’s contents to `main` in `qianlinpage/adaptivefeature`. Keep all eight HTML files, `assets/`, and `.nojekyll` at the repository root.

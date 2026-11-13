@@ -2,11 +2,16 @@
 # frozen_string_literal: true
 require 'json'
 require 'cgi'
+require 'digest'
 require_relative 'components'
 
 root = File.expand_path('..', __dir__)
 data = JSON.parse(File.read(File.join(root, 'data/content.json')))
 e = ->(value) { CGI.escapeHTML(value.to_s) }
+stylesheet_urls = %w[assets/lab.css assets/site.css].to_h do |path|
+  version = Digest::SHA256.file(File.join(root, path)).hexdigest[0, 12]
+  [path, "#{path}?v=#{version}"]
+end
 
 %w[en zh].each do |lang|
   c = data.fetch(lang)
@@ -142,8 +147,8 @@ e = ->(value) { CGI.escapeHTML(value.to_s) }
       <meta property="og:description" content="#{e.call(description)}">
       <meta property="og:type" content="website">
       <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-      <link rel="stylesheet" href="assets/lab.css">
-      <link rel="stylesheet" href="assets/site.css">
+      <link rel="stylesheet" href="#{stylesheet_urls.fetch('assets/lab.css')}">
+      <link rel="stylesheet" href="#{stylesheet_urls.fetch('assets/site.css')}">
       <link rel="alternate" hreflang="en" href="#{page}.html">
       <link rel="alternate" hreflang="zh-CN" href="#{page}.zh.html">
       #{scripts}
