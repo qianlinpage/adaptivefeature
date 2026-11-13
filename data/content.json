@@ -385,13 +385,13 @@
     "agenda_note": "Existing results hold for their stated models and assumptions; the second column sets out further research directions.",
     "figure_alt": "The Adaptive Feature research cycle: abstract feature-map regressions, fixed, local and global analysis, application to neural networks, and feedback that refines the family assumptions, towards a connection between dynamics and generalization.",
     "site_pages": [
-      "Strategy",
+      "Overview",
       "Research",
       "Prototype",
       "Papers"
     ],
     "page_intros": [
-      "An iterative research program linking abstract feature-map families, fixed, local and global analysis, neural-network feedback, and generalization.",
+      "A feature-map perspective on neural-network regression, and a research strategy connecting fixed, local and global analysis with concrete networks to study dynamics and generalization.",
       "Develop the three complementary analytical views, then use neural-network feedback to test and revise assumptions. Established foundations and open questions are distinguished below.",
       "The diagonal sequence model holds a basis fixed and learns its coordinate scales. Expand the illustration to compare fixed and adaptive feature dynamics.",
       "From tractable models to representation measures and fine-grained risk, these works supply different tools and entry points for the program."
@@ -403,12 +403,12 @@
     "featured_title": "Selected research foundations",
     "featured_intro": "Results for specific models and evidence across models provide starting points for the next research cycle.",
     "all_papers": "View all papers",
-    "strategy_back": "Back to the strategy",
+    "strategy_back": "Back to the overview",
     "prototype_context": "This page treats the diagonal sequence model as one concrete prototype within the program. See Research for the fixed, local and global analytical context.",
     "scope_note": "This is the program’s guiding objective; individual results apply to the models and assumptions stated in each work.",
     "simple_title": "Understanding feature learning and generalization",
-    "simple_intro": "Study learning dynamics through abstract feature-map regression, then use concrete neural networks to test and refine the assumptions.",
-    "simple_strategy": "The strategy",
+    "simple_intro": "Study how features form and evolve to understand neural-network training dynamics and generalization.",
+    "simple_strategy": "Research strategy",
     "simple_steps": [
       "Define a feature-map family",
       "Study fixed, local and global dynamics",
@@ -427,7 +427,7 @@
       "Understanding generalization."
     ],
     "display_kicker": "ADAPTIVE FEATURE · RESEARCH PROGRAM",
-    "strategy_caption": "Three complementary analytical views, connected to concrete neural networks.",
+    "strategy_caption": "From this perspective, take fixed, local and global views, then use concrete networks to test and refine the assumptions.",
     "explore_label": "Explore the research",
     "return_caption": "Feedback informs the next cycle",
     "cartoon_alts": [
@@ -477,7 +477,9 @@
       "formula_aria": "f sub theta beta of x equals the inner product of Phi sub theta of x and beta in feature space H.",
       "short": "For a neural network, different θ give different maps Φθ; β combines the features into a prediction.",
       "cartoon_alt": "A neural network with a parameter slider points to three differently warped meshes, illustrating a family of feature maps obtained by varying the network parameters. The meshes are alternative maps, not successive layers or feature coordinates."
-    }
+    },
+    "perspective_title": "Research perspective",
+    "perspective_intro": "View neural-network regression as a feature map plus a linear readout, and study how the representation evolves during training."
   },
   "zh": {
     "title": "Adaptive Feature | 林乾与合作者的研究纲领",
@@ -760,13 +762,13 @@
     "agenda_note": "已有理论结论适用于相应模型与条件；右侧列出进一步研究的方向。",
     "figure_alt": "自适应特征研究循环：抽象特征映射回归，固定、局部和整体分析，应用到具体神经网络，并由网络反馈修正假设，逐步连接动力学与泛化能力。",
     "site_pages": [
-      "整体策略",
+      "总览",
       "研究专题",
       "交互原型",
       "论文"
     ],
     "page_intros": [
-      "从抽象特征映射族出发，通过固定、局部和整体分析，与神经网络实验反复对话，探索特征形成、训练动力学与泛化能力的联系。",
+      "研究观点：从特征映射回归理解神经网络。研究策略：结合静态、局部和整体分析，与具体网络反复对照，探索训练动力学与泛化能力的联系。",
       "从三个互补视角展开分析，再用具体网络的反馈检验和修正假设。下面区分已有研究基础与尚待解决的问题。",
       "对角序列模型固定基函数、学习坐标尺度。展开示例，比较固定特征与自适应特征的动力学。",
       "从可解析模型到特征评价，再到精细风险分析。这些工作为研究纲领提供不同的工具与切入点。"
@@ -778,12 +780,12 @@
     "featured_title": "代表性研究进展",
     "featured_intro": "具体模型中的结果与跨模型的证据，为下一轮研究提供起点。",
     "all_papers": "查看全部论文",
-    "strategy_back": "回到整体策略",
+    "strategy_back": "回到总览",
     "prototype_context": "本页将对角序列模型作为研究纲领中的一个具体原型。固定、局部与整体分析的完整背景见研究专题。",
     "scope_note": "这是研究纲领所追求的目标；各项具体结果的适用范围由相应论文中的模型与假设决定。",
     "simple_title": "理解特征学习与泛化",
-    "simple_intro": "从抽象的特征映射回归出发，研究学习动力学；再与具体神经网络对照，不断修正理论假设。",
-    "simple_strategy": "整体策略",
+    "simple_intro": "从特征如何形成与演化出发，研究神经网络的训练动力学与泛化。",
+    "simple_strategy": "研究策略",
     "simple_steps": [
       "提出特征映射族",
       "分析固定、局部与整体动力学",
@@ -802,7 +804,7 @@
       "理解泛化。"
     ],
     "display_kicker": "自适应特征 · 研究纲领",
-    "strategy_caption": "三个互补的分析视角，共同连接具体神经网络。",
+    "strategy_caption": "在这一观点下，从静态、局部、整体三个互补视角展开分析，再与具体网络对照、修正假设。",
     "explore_label": "探索研究",
     "return_caption": "反馈推动下一轮研究",
     "cartoon_alts": [
@@ -852,6 +854,8 @@
       "formula_aria": "f 下标 theta beta，在 x 处的值等于 Phi 下标 theta 在 x 处的值与 beta 在特征空间 H 中的内积。",
       "short": "以神经网络为例：不同参数 θ 对应不同映射 Φθ，β 将特征组合成预测。",
       "cartoon_alt": "带参数滑块的神经网络指向三个形变不同的网格，表示改变网络参数得到的一族特征映射。网格代表不同的完整映射，而非连续的网络层或单个特征分量。"
-    }
+    },
+    "perspective_title": "研究观点",
+    "perspective_intro": "把神经网络回归写成“特征映射 + 线性读出”，关注表示如何随训练变化。"
   }
 }

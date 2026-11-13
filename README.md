@@ -1,6 +1,6 @@
 # Adaptive Feature — Qian Lin & collaborators
 
-An independent bilingual research website centered on the Adaptive Feature program: abstract feature-map regression families; fixed, local and global dynamics; application to concrete neural networks; and feedback that refines the family’s assumptions. The guiding objective is to connect neural-network dynamics with generalization. The homepage presents a concise research goal, two-level research framework and three plain-text page entrances. Separate Research, Prototype and Papers pages hold the analytical views, network feedback, interactive sequence model and complete selected paper records. Each page has Chinese and English versions. This project is separate from the existing personal academic homepage.
+An independent bilingual research website centered on the Adaptive Feature program: abstract feature-map regression families; fixed, local and global dynamics; application to concrete neural networks; and feedback that refines the family’s assumptions. The guiding objective is to connect neural-network dynamics with generalization. The homepage separates the research perspective from the strategy that follows from it, with a dedicated illustration for each and three plain-text page entrances. Separate Research, Prototype and Papers pages hold the analytical views, network feedback, interactive sequence model and complete selected paper records. Each page has Chinese and English versions. This project is separate from the existing personal academic homepage.
 
 Repository: [qianlinpage/adaptivefeature](https://github.com/qianlinpage/adaptivefeature).
 
@@ -47,7 +47,7 @@ Visual assets include original SVG/CSS and locally stored AI-generated conceptua
 
 ## Page structure
 
-- `index.html` / `index.zh.html`: concise research goal, two-level research framework, a link to the full framework diagram, and three page entrances.
+- `index.html` / `index.zh.html`: concise research goal, a Perspective section (`#perspective`) explaining neural networks as feature-map regression, a Strategy section (`#framework`) showing the complementary analytical views and feedback cycle, and three page entrances. Shared navigation labels the homepage Overview / 总览.
 - `research.html` / `research.zh.html`: fixed, local and global analysis; feedback from networks; established tools and open questions. Links such as `research.zh.html#view-local` select the requested analytical view.
 - `prototype.html` / `prototype.zh.html`: diagonal sequence-model teaching illustration, numerical controls, chart data, assumptions and limitations.
 - `papers.html` / `papers.zh.html`: all selected papers with unchanged author order, status, publication details and source links.
@@ -56,11 +56,11 @@ The multi-page revision is deployed through GitHub Pages. Desktop/mobile visual 
 
 ## Visual style
 
-The site uses a warm ivory background, deep green headings, serif display typography, one pale strategy panel and three full-row links. Desktop and mobile rules are included for all eight pages; browser visual QA remains pending.
+The site uses a warm ivory background, deep green headings, serif display typography, two numbered homepage sections, one pale strategy panel and three full-row links. Desktop and mobile rules are included for all eight pages; browser visual QA remains pending.
 
 ## Research framework diagram
 
-The upper blocks use local SVGs to depict fixed feature regression, local state perturbations and a global feature-evolution trajectory. A layered neural-network SVG forms the lower block. Two researcher cartoons sit alongside the down/up application and feedback arrows, connecting the model family and concrete networks. Blocks link to the respective research sections. The arrangement and labels are bilingual, and the diagrams represent concepts rather than experimental results.
+The Strategy section starts from the feature-map regression family introduced in Perspective. Its upper blocks use local SVGs to depict fixed feature regression, local state perturbations and a global feature-evolution trajectory. A layered neural-network SVG forms the lower block. Two researcher cartoons sit alongside the down/up application and feedback arrows, connecting the model family and concrete networks. Blocks link to the respective research sections. The arrangement and labels are bilingual, and the diagrams represent concepts rather than experimental results.
 
 - Diagram assets: `assets/figures/view-static-v3.svg`, `view-local-v3.svg`, `view-global-v3.svg`, `neural-network-v3.svg`.
 - Arrow characters: `assets/figures/research-arrow-characters-v3.png` (built-in image generation, preserved transparency).
@@ -68,6 +68,6 @@ The upper blocks use local SVGs to depict fixed feature regression, local state 
 
 Previous cartoon images remain preserved. Browser visual QA is still pending due to the unavailable browser connection.
 
-The model-family block uses a compact cartoon flow from a neural network to a family of feature maps, `𝓕 = {Φ_θ : θ ∈ Θ}`, with three differently warped meshes representing alternative maps. Varying hidden-layer parameters θ yields different full maps, rather than individual components of one map. The regression formula `f_{θ,β}(x) = ⟨Φ_θ(x), β⟩_H` and one sentence distinguish feature parameters θ from readout coefficients β. Neural networks provide an example of the broader abstract framework. The cartoon is a conceptual illustration, not experimental data.
+The separate Perspective section uses a compact cartoon flow from a neural network to a family of feature maps, `𝓕 = {Φ_θ : θ ∈ Θ}`, with three differently warped meshes representing alternative maps. Varying hidden-layer parameters θ yields different full maps, rather than individual components of one map. The regression formula `f_{θ,β}(x) = ⟨Φ_θ(x), β⟩_H` and one sentence distinguish feature parameters θ from readout coefficients β. Neural networks provide an example of the broader abstract framework. The cartoon is a conceptual illustration, not experimental data.
 
 Asset: `assets/figures/network-feature-family-v2.png` (built-in image generation, transparent background). Prompt: `assets/figures/network-feature-family-v2.prompt.txt`.
