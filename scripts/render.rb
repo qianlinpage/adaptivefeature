@@ -71,7 +71,8 @@ e = ->(value) { CGI.escapeHTML(value.to_s) }
   views = c['framework_views'].map do |view|
     "<li><a href=\"research#{suffix}#view-#{view['id']}\"><div class=\"symbolic-illustration\"><img src=\"assets/figures/#{e.call(view['asset'])}\" width=\"240\" height=\"160\" alt=\"#{e.call(view['alt'])}\"></div><h3>#{e.call(view['label'])}</h3><p>#{e.call(view['summary'])}</p></a></li>"
   end.join
-  transfers = [c['framework_down'], c['framework_up']].each_with_index.map do |label, i|
+  transfers = [1, 0].map do |i|
+    label = [c['framework_down'], c['framework_up']][i]
     points = i.zero? ? '38,127 48,142 58,127' : '38,23 48,8 58,23'
     "<div class=\"transfer-lane #{i.zero? ? 'application' : 'feedback'}\"><div class=\"transfer-visual\"><svg class=\"transfer-path\" viewBox=\"0 0 180 150\" aria-hidden=\"true\"><path d=\"M48 10V140\"/><polyline points=\"#{points}\"/></svg><div class=\"transfer-character\" style=\"--character:#{i}\"><img src=\"assets/figures/research-arrow-characters-v3.png\" width=\"1774\" height=\"887\" alt=\"#{e.call(c['framework_arrow_alts'][i])}\" decoding=\"async\"></div></div><p>#{e.call(label)}</p></div>"
   end.join
