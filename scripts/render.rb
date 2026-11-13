@@ -127,7 +127,6 @@ end
       <!--
       <section id="research" class="home-entrances"><h2>#{c['simple_routes_title']}</h2><ul class="entrance-list">#{entrances}</ul></section>
       -->
-      <p class="home-contact"><a href="#{e.call(c.fetch('personal_homepage_url'))}">#{e.call(c.fetch('personal_homepage_label'))}</a><span>qianlin [at] tsinghua [dot] edu [dot] cn</span></p>
     </div>
   HTML
   prototype = <<~HTML
