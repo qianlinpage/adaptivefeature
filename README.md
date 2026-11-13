@@ -67,3 +67,5 @@ The upper blocks use local SVGs to depict fixed feature regression, local state 
 - Prompt: `assets/figures/research-arrow-characters-v3.prompt.txt`.
 
 Previous cartoon images remain preserved; the active pages use only the v3 assets. Browser visual QA is still pending due to the unavailable browser connection.
+
+The model-family block explicitly defines `f_{Φ,β}(x) = ⟨Φ(x), β⟩_H`, with `Φ ∈ F` and `β ∈ H`. A native HTML/SVG flow depicts input, feature representation and scalar readout; bilingual definitions distinguish the candidate map family, feature vector and coefficients. This is a definition, not a theoretical performance claim.

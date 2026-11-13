@@ -76,9 +76,26 @@ e = ->(value) { CGI.escapeHTML(value.to_s) }
     points = i.zero? ? '38,127 48,142 58,127' : '38,23 48,8 58,23'
     "<div class=\"transfer-lane #{i.zero? ? 'application' : 'feedback'}\"><div class=\"transfer-visual\"><svg class=\"transfer-path\" viewBox=\"0 0 180 150\" aria-hidden=\"true\"><path d=\"M48 10V140\"/><polyline points=\"#{points}\"/></svg><div class=\"transfer-character\" style=\"--character:#{i}\"><img src=\"assets/figures/research-arrow-characters-v3.png\" width=\"1774\" height=\"887\" alt=\"#{e.call(c['framework_arrow_alts'][i])}\" decoding=\"async\"></div></div><p>#{e.call(label)}</p></div>"
   end.join
+  definition = c.fetch('regression_definition')
+  definition_terms = definition['terms'].map { |symbol, meaning| "<div><dt>#{e.call(symbol)}</dt><dd>#{e.call(meaning)}</dd></div>" }.join
+  regression_definition = <<~HTML
+    <div class="regression-definition">
+      <p class="definition-intro">#{e.call(definition['intro'])}</p>
+      <div class="regression-flow" role="group" aria-label="#{e.call(c['framework_family'])}">
+        <div class="regression-node"><span class="model-symbol"><var>x</var></span><span>#{definition['input']}</span></div>
+        <div class="regression-arrow"><span>Φ</span><svg viewBox="0 0 90 16" aria-hidden="true"><path d="M2 8H85M78 2L85 8L78 14"/></svg><small>#{definition['map']}</small></div>
+        <div class="regression-node feature-node"><span class="feature-dots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></span><span class="model-symbol">Φ(<var>x</var>)</span><span>#{definition['features']}</span></div>
+        <div class="regression-arrow"><span>β</span><svg viewBox="0 0 90 16" aria-hidden="true"><path d="M2 8H85M78 2L85 8L78 14"/></svg><small>#{definition['readout']}</small></div>
+        <div class="regression-node"><span class="model-symbol">ŷ</span><span>#{definition['prediction']}</span></div>
+      </div>
+      <div class="regression-equation" role="math" aria-label="#{e.call(definition['formula_aria'])}"><span aria-hidden="true"><var>f</var><sub>Φ,β</sub>(<var>x</var>) = ⟨Φ(<var>x</var>), β⟩<sub>𝓗</sub></span><span class="family-conditions" aria-hidden="true">Φ ∈ 𝓕, &nbsp; β ∈ 𝓗</span></div>
+      <dl class="definition-terms">#{definition_terms}</dl>
+      <p class="definition-bridge">#{e.call(definition['bridge'])}</p>
+    </div>
+  HTML
   framework = <<~HTML
     <figure class="framework-cartoon">
-      <div class="theory-family"><p class="family-label">#{c['framework_family']}</p><ul class="analysis-views">#{views}</ul></div>
+      <div class="theory-family"><h3 class="family-label">#{c['framework_family']}</h3>#{regression_definition}<ul class="analysis-views">#{views}</ul></div>
       <div class="framework-exchange">#{transfers}</div>
       <a class="network-view" href="research#{suffix}#feedback"><div class="symbolic-network"><img src="assets/figures/neural-network-v3.svg" width="520" height="180" alt="#{e.call(c['framework_network_alt'])}"></div><h3>#{c['framework_network']}</h3><p>#{c['framework_network_note']}</p></a>
       <figcaption>#{c['cartoon_caption']}</figcaption>

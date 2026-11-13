@@ -469,7 +469,31 @@
     "framework_arrow_alts": [
       "A researcher brings a model to concrete networks for application and comparison.",
       "A researcher brings observations back to refine theoretical assumptions."
-    ]
+    ],
+    "regression_definition": {
+      "intro": "Start with a candidate family 𝓕 of feature maps. Choosing a map Φ and output coefficients β specifies a regression function.",
+      "input": "Input",
+      "features": "Features",
+      "prediction": "Prediction",
+      "map": "Feature map",
+      "readout": "Linear readout",
+      "formula_aria": "f sub Phi beta of x equals the inner product of Phi of x and beta in feature space H; Phi belongs to family F and beta belongs to H.",
+      "terms": [
+        [
+          "𝓕",
+          "The candidate feature-map family, with Φ : 𝓧 → 𝓗."
+        ],
+        [
+          "Φ(x)",
+          "The representation of input x in feature space 𝓗."
+        ],
+        [
+          "β",
+          "Output coefficients that combine features into a scalar prediction via an inner product."
+        ]
+      ],
+      "bridge": "The static view fixes Φ; the local view studies nearby changes; the global view follows the joint evolution of Φ and β."
+    }
   },
   "zh": {
     "title": "Adaptive Feature | 林乾与合作者的研究纲领",
@@ -836,6 +860,30 @@
     "framework_arrow_alts": [
       "研究者将模型带向具体网络，表示理论应用与对照。",
       "研究者记录观察并反馈，表示修正理论假设。"
-    ]
+    ],
+    "regression_definition": {
+      "intro": "从候选特征映射集合 𝓕 出发，选择映射 Φ 和输出系数 β，便确定一个回归函数。",
+      "input": "输入",
+      "features": "特征表示",
+      "prediction": "预测",
+      "map": "特征映射",
+      "readout": "线性读出",
+      "formula_aria": "f 下标 Phi beta，在 x 处的值等于 Phi x 与 beta 在特征空间 H 中的内积；Phi 属于映射族 F，beta 属于 H。",
+      "terms": [
+        [
+          "𝓕",
+          "候选特征映射集合，其中 Φ : 𝓧 → 𝓗。"
+        ],
+        [
+          "Φ(x)",
+          "输入 x 在特征空间 𝓗 中的表示。"
+        ],
+        [
+          "β",
+          "输出系数，通过内积将特征组合为标量预测。"
+        ]
+      ],
+      "bridge": "静态视角固定 Φ；局部视角分析邻域变化；整体视角追踪 Φ 与 β 的共同演化。"
+    }
   }
 }
