@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1020" viewBox="0 0 1440 1020" role="img" aria-labelledby="title desc" xml:lang="zh">
+<title id="title">Adaptive Feature: 抽象理论与神经网络的迭代对话</title>
+<desc id="desc">从一族抽象特征映射回归出发，以精细风险、ESD、FEM和可解析模型为工具，研究固定表示的质量与风险、局部谱结构与预测系数的耦合、整体训练中特征的形成与保持。在具体神经网络中分别观察特征谱与经验目标匹配、冻结特征后独立重拟合的能力及原网络的泛化表现，反馈并修正特征映射族的假设，再次分析。研究目标是逐步建立神经网络动力学与泛化能力的关系。</desc>
+<defs>
+  <marker id="forward" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#277b6b"/></marker>
+  <marker id="return" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#b77a50"/></marker>
+  <marker id="branch" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#8ca88a"/></marker>
+</defs>
+<rect width="1440" height="1020" fill="#f7f6ef"/>
+<g font-family="Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+
+<text x="70" y="67" font-size="38" fill="#153f38" font-weight="600" text-anchor="start" font-family="Georgia, 'Songti SC', serif" >Adaptive Feature</text>
+<text x="1370" y="64" font-size="18" fill="#617666" font-weight="400" text-anchor="end" >林乾与合作者</text>
+<text x="70" y="110" font-size="26" fill="#486354" font-weight="400" text-anchor="start" >抽象理论与神经网络的迭代对话</text>
+<path d="M70 144H1370" stroke="#d5dfce" stroke-width="1.2"/>
+<path d="M1145 738V770Q1145 796 1119 796H60Q30 796 30 766V208Q30 177 60 177H325Q350 177 350 202" fill="none" stroke="#b77a50" stroke-width="2.8" marker-end="url(#return)"/>
+<rect x="70" y="208" width="560" height="530" rx="16" fill="#fffef8" stroke="#c9d8c2" stroke-width="1.5"/>
+<text x="96" y="244" font-size="14" fill="#60815e" font-weight="600" text-anchor="start" letter-spacing="1.6">抽象理论</text>
+<text x="350" y="289" font-size="31" fill="#153f38" font-weight="400" text-anchor="middle" font-family="Georgia, 'Songti SC', serif" >一族特征映射回归</text>
+<text x="350" y="341" font-size="27" fill="#1b6f60" font-weight="400" text-anchor="middle" font-family="Georgia, serif" >Φ ∈ 𝓕</text>
+<text x="350" y="381" font-family="Georgia, serif" font-size="29" fill="#153f38" text-anchor="middle">f<tspan baseline-shift="sub" font-size="17">Φ,β</tspan><tspan baseline-shift="baseline">(x) = ⟨Φ(x), β⟩</tspan></text>
+<text x="350" y="413" font-size="18" fill="#637866" font-weight="400" text-anchor="middle" >特征映射族与结构假设</text>
+<text x="350" y="455" font-size="18" fill="#52734f" font-weight="400" text-anchor="middle" >三个互补的动力学视角</text>
+<path d="M350 466V474M178 474H522M178 474V490M350 474V490M522 474V490" fill="none" stroke="#8ca88a" stroke-width="1.6"/>
+<path d="M178 481V491" stroke="#8ca88a" stroke-width="1.6" marker-end="url(#branch)"/>
+<path d="M350 481V491" stroke="#8ca88a" stroke-width="1.6" marker-end="url(#branch)"/>
+<path d="M522 481V491" stroke="#8ca88a" stroke-width="1.6" marker-end="url(#branch)"/>
+<rect x="96" y="495" width="164" height="112" rx="9" fill="#eaf0e2" stroke="#d1ddc6"/>
+<text x="178" y="531" font-size="24" fill="#1c5e51" font-weight="500" text-anchor="middle" >固定 / 静态</text>
+<text x="178" y="563" font-size="20" fill="#617458" font-weight="400" text-anchor="middle" >表示质量</text>
+<text x="178" y="588" font-size="20" fill="#617458" font-weight="400" text-anchor="middle" >与预测风险</text>
+<rect x="268" y="495" width="164" height="112" rx="9" fill="#eaf0e2" stroke="#d1ddc6"/>
+<text x="350" y="531" font-size="24" fill="#1c5e51" font-weight="500" text-anchor="middle" >局部</text>
+<text x="350" y="563" font-size="20" fill="#617458" font-weight="400" text-anchor="middle" >谱结构</text>
+<text x="350" y="588" font-size="20" fill="#617458" font-weight="400" text-anchor="middle" >与系数耦合</text>
+<rect x="440" y="495" width="164" height="112" rx="9" fill="#eaf0e2" stroke="#d1ddc6"/>
+<text x="522" y="531" font-size="24" fill="#1c5e51" font-weight="500" text-anchor="middle" >整体</text>
+<text x="522" y="563" font-size="20" fill="#617458" font-weight="400" text-anchor="middle" >有利特征</text>
+<text x="522" y="588" font-size="20" fill="#617458" font-weight="400" text-anchor="middle" >形成与保持</text>
+<path d="M96 620H604" stroke="#d7e2d0" stroke-width="1.2"/>
+<text x="350" y="656" font-size="20" fill="#326c5a" font-weight="400" text-anchor="middle" >分析工具：精细风险 · ESD / FEM · 可解析模型</text>
+<text x="350" y="697" font-size="18" fill="#6e7e66" font-weight="400" text-anchor="middle" >关注：谱方向与权重、初始化、训练机制、样本依赖</text>
+<path d="M648 390H899" fill="none" stroke="#277b6b" stroke-width="3" marker-end="url(#forward)"/>
+<text x="775" y="349" font-size="22" fill="#256d5e" font-weight="500" text-anchor="middle" >理论应用</text>
+<text x="775" y="430" font-size="21" fill="#6c7c68" font-weight="400" text-anchor="middle" >建立对应</text>
+<rect x="920" y="208" width="450" height="530" rx="16" fill="#e7eddf" stroke="#c9d8c2" stroke-width="1.5"/>
+<text x="946" y="244" font-size="14" fill="#60815e" font-weight="600" text-anchor="start" letter-spacing="1.6">具体模型</text>
+<text x="1145" y="291" font-size="30" fill="#153f38" font-weight="400" text-anchor="middle" font-family="Georgia, 'Songti SC', serif" >神经网络</text>
+<line x1="995" y1="354" x2="1095" y2="333" stroke="#acc3aa" stroke-width="1.3" opacity=".65"/>
+<line x1="995" y1="354" x2="1095" y2="376" stroke="#acc3aa" stroke-width="1.3" opacity=".65"/>
+<line x1="995" y1="354" x2="1095" y2="419" stroke="#acc3aa" stroke-width="1.3" opacity=".65"/>
+<line x1="995" y1="354" x2="1095" y2="462" stroke="#acc3aa" stroke-width="1.3" opacity=".65"/>
+<line x1="995" y1="397" x2="1095" y2="333" stroke="#acc3aa" stroke-width="1.3" opacity=".65"/>
+<line x1="995" y1="397" x2="1095" y2="376" stroke="#acc3aa" stroke-width="1.3" opacity=".65"/>
+<line x1="995" y1="397" x2="1095" y2="419" stroke="#acc3aa" stroke-width="1.3" opacity=".65"/>
+<line x1="995" y1="397" x2="1095" y2="462" stroke="#acc3aa" stroke-width="1.3" opacity=".65"/>
+<line x1="995" y1="440" x2="1095" y2="333" stroke="#acc3aa" stroke-width="1.3" opacity=".65"/>
+<line x1="995" y1="440" x2="1095" y2="376" stroke="#acc3aa" stroke-width="1.3" opacity=".65"/>
+<line x1="995" y1="440" x2="1095" y2="419" stroke="#acc3aa" stroke-width="1.3" opacity=".65"/>
+<line x1="995" y1="440" x2="1095" y2="462" stroke="#acc3aa" stroke-width="1.3" opacity=".65"/>
+<line x1="1095" y1="333" x2="1195" y2="333" stroke="#acc3aa" stroke-width="1.3" opacity=".65"/>
+<line x1="1095" y1="333" x2="1195" y2="376" stroke="#acc3aa" stroke-width="1.3" opacity=".65"/>
+<line x1="1095" y1="333" x2="1195" y2="419" stroke="#acc3aa" stroke-width="1.3" opacity=".65"/>
+<line x1="1095" y1="333" x2="1195" y2="462" stroke="#acc3aa" stroke-width="1.3" opacity=".65"/>
+<line x1="1095" y1="376" x2="1195" y2="333" stroke="#acc3aa" stroke-width="1.3" opacity=".65"/>
+<line x1="1095" y1="376" x2="1195" y2="376" stroke="#acc3aa" stroke-width="1.3" opacity=".65"/>
+<line x1="1095" y1="376" x2="1195" y2="419" stroke="#acc3aa" stroke-width="1.3" opacity=".65"/>
+<line x1="1095" y1="376" x2="1195" y2="462" stroke="#acc3aa" stroke-width="1.3" opacity=".65"/>
+<line x1="1095" y1="419" x2="1195" y2="333" stroke="#acc3aa" stroke-width="1.3" opacity=".65"/>
+<line x1="1095" y1="419" x2="1195" y2="376" stroke="#acc3aa" stroke-width="1.3" opacity=".65"/>
+<line x1="1095" y1="419" x2="1195" y2="419" stroke="#acc3aa" stroke-width="1.3" opacity=".65"/>
+<line x1="1095" y1="419" x2="1195" y2="462" stroke="#acc3aa" stroke-width="1.3" opacity=".65"/>
+<line x1="1095" y1="462" x2="1195" y2="333" stroke="#acc3aa" stroke-width="1.3" opacity=".65"/>
+<line x1="1095" y1="462" x2="1195" y2="376" stroke="#acc3aa" stroke-width="1.3" opacity=".65"/>
+<line x1="1095" y1="462" x2="1195" y2="419" stroke="#acc3aa" stroke-width="1.3" opacity=".65"/>
+<line x1="1095" y1="462" x2="1195" y2="462" stroke="#acc3aa" stroke-width="1.3" opacity=".65"/>
+<line x1="1195" y1="333" x2="1295" y2="376" stroke="#acc3aa" stroke-width="1.3" opacity=".65"/>
+<line x1="1195" y1="333" x2="1295" y2="419" stroke="#acc3aa" stroke-width="1.3" opacity=".65"/>
+<line x1="1195" y1="376" x2="1295" y2="376" stroke="#acc3aa" stroke-width="1.3" opacity=".65"/>
+<line x1="1195" y1="376" x2="1295" y2="419" stroke="#acc3aa" stroke-width="1.3" opacity=".65"/>
+<line x1="1195" y1="419" x2="1295" y2="376" stroke="#acc3aa" stroke-width="1.3" opacity=".65"/>
+<line x1="1195" y1="419" x2="1295" y2="419" stroke="#acc3aa" stroke-width="1.3" opacity=".65"/>
+<line x1="1195" y1="462" x2="1295" y2="376" stroke="#acc3aa" stroke-width="1.3" opacity=".65"/>
+<line x1="1195" y1="462" x2="1295" y2="419" stroke="#acc3aa" stroke-width="1.3" opacity=".65"/>
+<circle cx="995" cy="354" r="8" fill="#d6a47e" stroke="#f1f4e8" stroke-width="2"/>
+<circle cx="995" cy="397" r="8" fill="#d6a47e" stroke="#f1f4e8" stroke-width="2"/>
+<circle cx="995" cy="440" r="8" fill="#d6a47e" stroke="#f1f4e8" stroke-width="2"/>
+<circle cx="1095" cy="333" r="8" fill="#397f6e" stroke="#f1f4e8" stroke-width="2"/>
+<circle cx="1095" cy="376" r="8" fill="#397f6e" stroke="#f1f4e8" stroke-width="2"/>
+<circle cx="1095" cy="419" r="8" fill="#397f6e" stroke="#f1f4e8" stroke-width="2"/>
+<circle cx="1095" cy="462" r="8" fill="#397f6e" stroke="#f1f4e8" stroke-width="2"/>
+<circle cx="1195" cy="333" r="8" fill="#397f6e" stroke="#f1f4e8" stroke-width="2"/>
+<circle cx="1195" cy="376" r="8" fill="#397f6e" stroke="#f1f4e8" stroke-width="2"/>
+<circle cx="1195" cy="419" r="8" fill="#397f6e" stroke="#f1f4e8" stroke-width="2"/>
+<circle cx="1195" cy="462" r="8" fill="#397f6e" stroke="#f1f4e8" stroke-width="2"/>
+<circle cx="1295" cy="376" r="8" fill="#397f6e" stroke="#f1f4e8" stroke-width="2"/>
+<circle cx="1295" cy="419" r="8" fill="#397f6e" stroke="#f1f4e8" stroke-width="2"/>
+<text x="1145" y="507" font-size="21" fill="#2c6252" font-weight="400" text-anchor="middle" >全连接 · 卷积 · 残差网络</text>
+<path d="M946 530H1344" stroke="#c9d8c0" stroke-width="1.2"/>
+<circle cx="958" cy="568" r="4" fill="#b5835a"/>
+<text x="975" y="575" font-size="22" fill="#375e4d" font-weight="400" text-anchor="start" >特征谱与经验目标匹配</text>
+<circle cx="958" cy="621" r="4" fill="#b5835a"/>
+<text x="975" y="628" font-size="22" fill="#375e4d" font-weight="400" text-anchor="start" >冻结特征＋独立样本重拟合</text>
+<circle cx="958" cy="674" r="4" fill="#b5835a"/>
+<text x="975" y="681" font-size="22" fill="#375e4d" font-weight="400" text-anchor="start" >原网络的泛化表现</text>
+<text x="720" y="836" font-size="26" fill="#9c653e" font-weight="500" text-anchor="middle" >网络反馈 → 修正特征映射族的假设 → 再次分析</text>
+<path d="M720 854V878" fill="none" stroke="#9aaf90" stroke-width="1.6" stroke-dasharray="4 5" marker-end="url(#branch)"/>
+<rect x="70" y="895" width="1300" height="109" rx="13" fill="#173f37"/>
+<text x="95" y="926" font-size="14" fill="#bdcfa8" font-weight="500" text-anchor="start" letter-spacing="1.2">研究目标</text>
+<text x="720" y="945" font-size="38" fill="#f6f3e5" font-weight="400" text-anchor="middle" font-family="Georgia, 'Songti SC', serif" >神经网络动力学  ↔  泛化能力</text>
+<text x="720" y="982" font-size="22" fill="#c6d8ba" font-weight="400" text-anchor="middle" >通过反复的抽象、分析与反馈，逐步建立二者的关系</text>
+</g></svg>

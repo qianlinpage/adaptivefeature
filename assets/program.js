@@ -29,5 +29,16 @@
     });
   });
   explorer.querySelector('[role="tablist"]').hidden = false;
-  select(0, false);
+  function selectFromHash() {
+    const index = panels.findIndex(panel => `#${panel.id}` === window.location.hash);
+    select(index === -1 ? 0 : index, false);
+  }
+  selectFromHash();
+  window.addEventListener('hashchange', selectFromHash);
+  document.querySelectorAll('[data-select-view]').forEach(link => {
+    link.addEventListener('click', () => {
+      const index = tabs.findIndex(tab => tab.id === `tab-${link.dataset.selectView}`);
+      if (index !== -1) select(index, false);
+    });
+  });
 }());

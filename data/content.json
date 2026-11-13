@@ -82,24 +82,44 @@
         "en": "Effective Span Dimension (ESD) measures complexity through the target, spectral order and noise. The work relates alignment to minimax risk and studies when spectral learning reduces this complexity.",
         "zh": "有效跨度维数（ESD）结合目标信号、谱排序与噪声衡量复杂度，将对齐关系联系到极小极大风险，并分析谱学习何时能降低这一复杂度。"
       }
+    },
+    {
+      "id": "risk",
+      "year": "2026",
+      "title": "Risk Equivalence between RKHS Regression and Sequence Models for Lipschitz Spectral Algorithms",
+      "authors": "Yicheng Li · Yuqian Cheng · Zhuo Chen · Qian Lin",
+      "venue": "arXiv:2609.08817",
+      "url": "https://arxiv.org/abs/2609.08817",
+      "status": {
+        "en": "Preprint",
+        "zh": "预印本"
+      },
+      "tag": {
+        "en": "A bridge for risk analysis",
+        "zh": "连接回归与序列模型"
+      },
+      "summary": {
+        "en": "Under the stated spectral, sample and filter conditions, RKHS spectral-regression risk is asymptotically equivalent to the corresponding Gaussian sequence-model risk.",
+        "zh": "在相应谱、样本及滤波条件下，建立 RKHS 谱回归风险与对应高斯序列模型风险的渐近等价关系。"
+      }
     }
   ],
   "en": {
-    "title": "Adaptive Feature | Qian Lin’s Research Program",
-    "description": "From a family of abstract feature-map regressions to fixed, local and global dynamics: an iterative research program connecting neural-network dynamics and generalization.",
+    "title": "Adaptive Feature | Qian Lin & Collaborators",
+    "description": "An iterative research program linking abstract feature-map families, fixed, local and global analysis, neural-network feedback, and generalization.",
     "skip": "Skip to content",
     "nav": [
-      "The framework",
-      "Dynamics",
-      "Research cycle",
-      "Papers"
+      "Framework",
+      "Three views",
+      "Network feedback",
+      "Research"
     ],
     "eyebrow": "THE ADAPTIVE FEATURE PROGRAM",
-    "hero_title": "Feature families.<br><em>Learning dynamics.</em>",
-    "hero_intro": "Start with an abstract family of feature-map regressions. Study its dynamics, bring the theory to neural networks, and use their feedback to refine the assumptions—again and again.",
+    "hero_title": "From feature families<br><em>to how networks learn.</em>",
+    "hero_intro": "Study learning in abstract models. Return to concrete networks for feedback. Refine the assumptions, and work towards a connection between feature formation, training dynamics and generalization.",
     "byline": "Qian Lin & collaborators · Tsinghua University",
     "cta": "Explore the framework",
-    "cta_secondary": "Follow the research cycle",
+    "cta_secondary": "Explore the research",
     "figure_label": "ABSTRACTION ↔ NEURAL NETWORKS",
     "idea_kicker": "01 / A COMMON STARTING POINT",
     "idea_title": "Begin with a family<br>of feature-map regressions.",
@@ -107,9 +127,9 @@
     "equation_caption": "Φ maps inputs into a feature space; β supplies the output coefficients. The choice of family is a modeling hypothesis to be refined through the research cycle.",
     "idea_source": "Related motivation and context",
     "idea_source_title": "Read the survey",
-    "lab_kicker": "04 / ONE CONCRETE PROTOTYPE",
-    "lab_title": "A small example within the program.",
-    "lab_intro": "The diagonal sequence model gives one tractable choice of feature-map family: a fixed basis with trainable coordinate scales. Explore its dynamics as a concrete entry point into the broader program.",
+    "lab_kicker": "A TRACTABLE PROTOTYPE",
+    "lab_title": "Try one small model of the framework.",
+    "lab_intro": "The diagonal sequence model holds a basis fixed and learns its coordinate scales. Expand the illustration to compare fixed and adaptive feature dynamics.",
     "toy_label": "SIX-COORDINATE TEACHING EXAMPLE",
     "scenario": "Target alignment",
     "misaligned": "Initially misaligned",
@@ -134,26 +154,26 @@
     "methods_source": "Sequence-model formulation, §3.1",
     "noscript": "Enable JavaScript to use the interactive model. The research introduction and paper links remain available below.",
     "live": "The chart updates when you change a control.",
-    "research_kicker": "05 / RELATED WORK",
-    "research_title": "Building blocks for<br>the broader program.",
-    "research_intro": "These works develop specific models, measures of feature quality and statistical results. Together they provide points of contact with the questions above.",
+    "research_kicker": "05 / SELECTED WORK",
+    "research_title": "Follow the questions into the papers.",
+    "research_intro": "From tractable models to representation measures and fine-grained risk, these works supply different tools and entry points for the program.",
     "read": "Read paper",
     "arxiv": "arXiv",
     "limits_title": "From specific results to a broader theory",
     "limits_body": "A result for one feature-map family does not settle the full program. Relating abstract dynamics to concrete architectures, testing the assumptions and connecting the resulting trajectories to generalization remain part of the research cycle.",
     "limits_link": "Discussion and future directions",
-    "about_kicker": "06 / THE RESEARCHER",
+    "about_kicker": "THE RESEARCHER",
     "about_title": "Qian Lin",
     "about_role": "Associate Professor<br>Department of Statistics and Data Science<br>Tsinghua University",
-    "about_body": "Qian Lin studies statistical learning theory, kernel methods, the mathematical foundations of deep learning and high-dimensional statistics. This site focuses on his collaborative work on adaptive features, with Yicheng Li and other coauthors credited in the papers above.",
+    "about_body": "Qian Lin is an Associate Professor in the Department of Statistics and Data Science at Tsinghua University. With Yicheng Li and other collaborators, he studies statistical learning theory, feature learning and the mathematical foundations of deep learning. Full authorship appears in the paper entries.",
     "faculty": "University profile",
     "scholar": "Google Scholar",
     "contact": "Contact",
-    "guide_title": "A suggested reading route",
-    "guide_body": "Read the survey for the broader setting, the NeurIPS paper for a tractable family, and the FEM paper for work on evaluating feature quality. Return to the framework above to place each result in the research program.",
+    "guide_title": "Begin with the survey",
+    "guide_body": "Read the broader context, from neural tangent kernel theories to the adaptive feature program.",
     "survey": "Towards a Statistical Understanding of Neural Networks: Beyond the Neural Tangent Kernel Theories",
     "survey_meta": "Yicheng Li, Haobo Zhang, Jianfa Lai, Qian Lin, Jun S. Liu · arXiv:2412.18756v2",
-    "footer": "An independent research introduction",
+    "footer": "A research program in progress",
     "checked": "Sources checked",
     "top": "Back to top",
     "chart_aria": "A bar chart comparing the true signal and the fixed and adaptive estimates for six coordinates.",
@@ -186,69 +206,48 @@
       ]
     ],
     "dynamics_kicker": "02 / THREE COMPLEMENTARY VIEWS",
-    "dynamics_title": "Fixed. Local. Global.",
-    "dynamics_intro": "Use the same abstract regression framework to ask three different questions about learning. Select a view to see what is held fixed, what changes, and what the analysis seeks to explain.",
+    "dynamics_title": "From a given representation<br>to its formation.",
+    "dynamics_intro": "Fixed, local and global analyses address different questions. Together they help us understand the statistical quality of features and how that quality changes during training.",
     "dynamics_nav": "Choose an analytical view",
-    "dynamics_question": "The central question",
-    "dynamics_focus": "What to examine",
-    "dynamics_diagram": "A schematic view",
+    "dynamics_question": "The question to resolve",
+    "dynamics_focus": "Key factors",
+    "dynamics_diagram": "The analytical starting point",
     "dynamics": [
       {
         "id": "fixed",
-        "label": "Fixed",
-        "title": "Hold the feature map fixed.",
-        "body": "Choose a representation Φ₀ and study how regression learns its output coefficients. This gives a reference for understanding what the chosen features already make learnable.",
-        "question": "What can training learn within this representation, and how does its structure shape error?",
-        "focus": "Coefficient dynamics, approximation limits, spectral structure and statistical error.",
-        "symbols": [
-          "Φ₀",
-          "βₜ",
-          "fₜ"
-        ],
-        "labels": [
-          "Fixed map",
-          "Evolving coefficients",
-          "Predictor"
-        ],
-        "caption": "The representation stays fixed while the predictor is trained."
+        "label": "Fixed / static",
+        "title": "Characterize learning with a given representation.",
+        "body": "Hold a feature map fixed and analyze how the target, spectrum, noise and estimator jointly determine prediction risk. Fine-grained risk, ESD and FEM provide tools for evaluating representations.",
+        "question": "How should we evaluate a representation, separating target alignment, spectral complexity and the estimator’s role?",
+        "focus": "Target regularity · kernel spectrum · regularization and stopping · noise",
+        "formula": "Φ fixed → βₜ → fₜ",
+        "caption": "Regression and risk under fixed features provide a reference for studying dynamic representations.",
+        "source": "Risk equivalence and sequence models",
+        "url": "https://arxiv.org/abs/2609.08817"
       },
       {
         "id": "local",
         "label": "Local",
-        "title": "Examine changes around a current state.",
-        "body": "Study nearby variations of the feature map and coefficients. Ask how a small update changes predictions and how the two parts respond to one another.",
-        "question": "Which local changes matter for learning, and over what range is the local description useful?",
-        "focus": "Perturbations, response, coupling and the validity of local approximations.",
-        "symbols": [
-          "Φ + δΦ",
-          "β + δβ",
-          "f + δf"
-        ],
-        "labels": [
-          "Feature variation",
-          "Coefficient variation",
-          "Prediction response"
-        ],
-        "caption": "Nearby variations reveal the local structure of the learning dynamics."
+        "title": "Examine how features and coefficients interact.",
+        "body": "Study changes and responses near a current state, including the joint variation of spectral directions, spectral weights and prediction coefficients under nonlinear parameter coupling.",
+        "question": "How do local changes affect feature quality and risk, and when are local approximations valid?",
+        "focus": "Spectral perturbations · parameter coupling · local approximation · sample dependence",
+        "formula": "(Φ, β) ↔ (Φ + δΦ, β + δβ)",
+        "caption": "Nearby variations help isolate local mechanisms of feature learning.",
+        "source": "The dynamics of feature quality",
+        "url": "https://arxiv.org/abs/2511.09425"
       },
       {
         "id": "global",
         "label": "Global",
-        "title": "Follow the evolving representation.",
-        "body": "Study the coupled trajectory of features and coefficients over training. Seek an account of how the representation changes and how those changes affect learning.",
-        "question": "How does the full trajectory reshape features, and what does that imply for prediction on new data?",
-        "focus": "Feature evolution, interactions across training time, and their statistical consequences.",
-        "symbols": [
-          "(Φ₀, β₀)",
-          "(Φₜ, βₜ)",
-          "fₜ"
-        ],
-        "labels": [
-          "Initial state",
-          "Joint trajectory",
-          "Predictor"
-        ],
-        "caption": "The analysis follows the learning process beyond a single neighborhood."
+        "title": "Understand how beneficial features form and persist.",
+        "body": "Follow the joint trajectory of features and coefficients. Study when initialization, parameterization and training mechanisms favor feature formation, and whether those features persist through later training.",
+        "question": "How can local mechanisms inform an account of the whole training process and its generalization?",
+        "focus": "Initialization · training mechanisms · parameterization depth · early stopping",
+        "formula": "(Φ₀, β₀) → ··· → (Φₜ, βₜ)",
+        "caption": "Place local mechanisms within the full trajectory to study their longer-term statistical effects.",
+        "source": "Adaptive feature models",
+        "url": "https://arxiv.org/abs/2501.08679"
       }
     ],
     "cycle_kicker": "03 / THEORY IN DIALOGUE WITH NETWORKS",
@@ -282,24 +281,205 @@
       "Generalization"
     ],
     "goal_note": "This is the program’s guiding objective; individual results apply to the models and assumptions stated in each work.",
-    "prototype_open": "Explore the interactive sequence model"
+    "prototype_open": "Explore the interactive sequence model",
+    "hero_note_label": "THE CENTRAL QUESTION",
+    "hero_note": "How do features that support<br>generalization form and persist?",
+    "framework_label": "01 / THE FRAMEWORK",
+    "framework_title": "An ongoing dialogue between theory and networks.",
+    "figure_open": "View the complete diagram",
+    "figure_download": "Download the diagram",
+    "board_theory": "ABSTRACT THEORY",
+    "board_family": "A family of feature-map regressions",
+    "board_definition": "Φ maps inputs into a feature space; β supplies the output coefficients. Structural assumptions on the family 𝓕 are refined through the research cycle.",
+    "board_views": "Three complementary analytical views",
+    "board_levels": [
+      [
+        "fixed",
+        "Fixed / static",
+        "Representation quality & risk"
+      ],
+      [
+        "local",
+        "Local",
+        "Spectra–coefficient coupling"
+      ],
+      [
+        "global",
+        "Global",
+        "Feature formation & retention"
+      ]
+    ],
+    "board_tools": "Fine-grained risk · ESD / FEM · Tractable models",
+    "board_apply": "Apply theory",
+    "board_correspondence": "Build correspondence",
+    "board_concrete": "CONCRETE MODELS",
+    "board_network": "Neural networks",
+    "board_network_types": "Fully connected · CNN · ResNet",
+    "board_observations": [
+      "Feature spectra & empirical alignment",
+      "Frozen features, independently refitted",
+      "Generalization of the original network"
+    ],
+    "board_return": "Network feedback",
+    "board_return_detail": "Refine the feature-family assumptions and analyze again",
+    "board_goal_label": "RESEARCH OBJECTIVE",
+    "board_goal": "Neural-network dynamics <span>↔</span> Generalization",
+    "feedback_kicker": "03 / FEEDBACK FROM NETWORKS",
+    "feedback_title": "Let network behavior<br>inform the theory.",
+    "feedback_intro": "A concrete correspondence makes three observations useful: how representations change, what they predict after refitting, and how the original network generalizes. These observations guide model refinement and test theoretical conditions.",
+    "feedback_items": [
+      [
+        "Observe the representation",
+        "Feature spectra & empirical alignment",
+        "Track feature spectra and empirical target-alignment measures during training; compare the observed changes with the theoretical picture."
+      ],
+      [
+        "Evaluate predictive capacity",
+        "Freeze features. Refit independently.",
+        "Freeze a learned representation and fit a predictor on independent samples to evaluate the predictions those features can support."
+      ],
+      [
+        "Compare the full learning process",
+        "Generalization of the original network",
+        "Examine performance on new data alongside representation measures and refitting results to connect feature learning with the original training process."
+      ]
+    ],
+    "feedback_note": "Initial experiments with fully connected, convolutional and residual networks provide observations for this process. The three evaluations address different objects and should be interpreted together.",
+    "feedback_return": "Observe behavior → test theoretical conditions → refine assumptions",
+    "agenda_kicker": "04 / FOUNDATIONS AND OPEN QUESTIONS",
+    "agenda_title": "Use established tools<br>to explore the next questions.",
+    "agenda_intro": "Results in specified models offer starting points for a more general analysis of dynamic representations, nonlinear coupling and the conditions for beneficial feature formation.",
+    "established_label": "Existing foundations",
+    "established_items": [
+      [
+        "Fine-grained risk analysis",
+        "Learning curves, optimality, high-dimensional rates, saturation and risk equivalence for fixed representations.",
+        "risk"
+      ],
+      [
+        "Representation quality",
+        "Effective Span Dimension (ESD), Feature Error Measure (FEM), and the role of target alignment.",
+        "fem"
+      ],
+      [
+        "Tractable adaptive models",
+        "Over-parameterized sequence models, diagonal adaptive kernels and specific directional models.",
+        "sequence"
+      ]
+    ],
+    "questions_label": "Questions to advance",
+    "questions_items": [
+      [
+        "Risk for dynamic representations",
+        "Handle spectral perturbations and the dependence of trained representations on the sample."
+      ],
+      [
+        "General nonlinear coupling",
+        "Understand when local approximations apply and how they may translate into generalization gains."
+      ],
+      [
+        "Formation and retention of useful features",
+        "Analyze the conditions induced by common initializations and concrete training mechanisms."
+      ]
+    ],
+    "agenda_note": "Existing results hold for their stated models and assumptions; the second column sets out further research directions.",
+    "figure_alt": "The Adaptive Feature research cycle: abstract feature-map regressions, fixed, local and global analysis, application to neural networks, and feedback that refines the family assumptions, towards a connection between dynamics and generalization.",
+    "site_pages": [
+      "Strategy",
+      "Research",
+      "Prototype",
+      "Papers"
+    ],
+    "page_intros": [
+      "An iterative research program linking abstract feature-map families, fixed, local and global analysis, neural-network feedback, and generalization.",
+      "Develop the three complementary analytical views, then use neural-network feedback to test and revise assumptions. Established foundations and open questions are distinguished below.",
+      "The diagonal sequence model holds a basis fixed and learns its coordinate scales. Expand the illustration to compare fixed and adaptive feature dynamics.",
+      "From tractable models to representation measures and fine-grained risk, these works supply different tools and entry points for the program."
+    ],
+    "routes_title": "From the strategy to the research.",
+    "routes_intro": "Explore three connected analytical routes, each returning to the shared goal of linking dynamics and generalization.",
+    "routes_link": "Explore this view",
+    "cycle_short_title": "How the program moves forward",
+    "featured_title": "Selected research foundations",
+    "featured_intro": "Results for specific models and evidence across models provide starting points for the next research cycle.",
+    "all_papers": "View all papers",
+    "strategy_back": "Back to the strategy",
+    "prototype_context": "This page treats the diagonal sequence model as one concrete prototype within the program. See Research for the fixed, local and global analytical context.",
+    "scope_note": "This is the program’s guiding objective; individual results apply to the models and assumptions stated in each work.",
+    "simple_title": "Understanding feature learning and generalization",
+    "simple_intro": "Study learning dynamics through abstract feature-map regression, then use concrete neural networks to test and refine the assumptions.",
+    "simple_strategy": "The strategy",
+    "simple_steps": [
+      "Define a feature-map family",
+      "Study fixed, local and global dynamics",
+      "Compare with concrete neural networks",
+      "Refine assumptions from feedback"
+    ],
+    "simple_routes_title": "Explore the program",
+    "simple_routes": [
+      "Three analytical views, network feedback and open questions.",
+      "Explore feature adaptation in a small sequence model.",
+      "Papers, authors and publication details."
+    ],
+    "simple_scope": "The goal is to connect neural-network dynamics with generalization; individual results remain specific to their models and assumptions.",
+    "display_title": [
+      "Learning features.",
+      "Understanding generalization."
+    ],
+    "display_kicker": "ADAPTIVE FEATURE · RESEARCH PROGRAM",
+    "strategy_caption": "Three complementary analytical views, connected to concrete neural networks.",
+    "explore_label": "Explore the research",
+    "return_caption": "Feedback informs the next cycle",
+    "cartoon_alts": [
+      "A researcher assembles model blocks, representing a family of feature maps.",
+      "A researcher examines three paths, representing fixed, local and global analysis.",
+      "A researcher compares a model on paper with a neural network on a screen.",
+      "A researcher revises a notebook; a return arrow represents feedback refining assumptions."
+    ],
+    "cartoon_caption": "Conceptual illustration: static, local and global are parallel views; curves are not experimental results.",
+    "framework_family": "A family of abstract feature-map regressions",
+    "framework_views": [
+      {
+        "id": "fixed",
+        "label": "Static",
+        "summary": "Representation quality and risk",
+        "alt": "A researcher examines a fixed model, representing static analysis."
+      },
+      {
+        "id": "local",
+        "label": "Local",
+        "summary": "Feature changes and coupling",
+        "alt": "A researcher magnifies nearby feature changes, representing local analysis."
+      },
+      {
+        "id": "global",
+        "label": "Global",
+        "summary": "Feature formation and persistence",
+        "alt": "A researcher follows an evolving feature path, representing global analysis."
+      }
+    ],
+    "framework_down": "Apply and compare",
+    "framework_up": "Network feedback refines assumptions",
+    "framework_network": "Neural networks",
+    "framework_network_note": "Test the theory in concrete networks and bring feedback to the feature-map family.",
+    "framework_network_alt": "Two researchers compare their models with a neural network on a monitor."
   },
   "zh": {
-    "title": "Adaptive Feature | 林乾的自适应特征研究纲领",
-    "description": "从一族抽象的特征映射回归出发，研究固定、局部与整体动力学，通过具体神经网络的应用与反馈修正假设，逐步建立动力学与泛化能力的联系。",
+    "title": "Adaptive Feature | 林乾与合作者的研究纲领",
+    "description": "从抽象特征映射族出发，通过固定、局部和整体分析，与神经网络实验反复对话，探索特征形成、训练动力学与泛化能力的联系。",
     "skip": "跳转到正文",
     "nav": [
-      "抽象框架",
-      "三种动力学",
-      "研究循环",
-      "相关论文"
+      "研究框架",
+      "三种视角",
+      "网络反馈",
+      "相关工作"
     ],
     "eyebrow": "ADAPTIVE FEATURE · 自适应特征研究纲领",
-    "hero_title": "从特征映射族，<br><em>走向学习理论。</em>",
-    "hero_intro": "从一族抽象的特征映射回归出发，研究其动力学，再将理论用于具体神经网络。由网络获得反馈，逐步修正特征映射族的假设，如此往复。",
+    "hero_title": "从特征映射族，<br><em>理解神经网络。</em>",
+    "hero_intro": "在抽象模型中研究学习，再从具体网络中获得反馈。反复修正假设，逐步建立特征形成、训练动力学与泛化能力之间的联系。",
     "byline": "林乾与合作者 · 清华大学",
-    "cta": "了解抽象框架",
-    "cta_secondary": "查看研究循环",
+    "cta": "探索研究框架",
+    "cta_secondary": "探索研究专题",
     "figure_label": "抽象模型 ↔ 具体神经网络",
     "idea_kicker": "01 / 共同的出发点",
     "idea_title": "先考虑一族<br>抽象的特征映射回归。",
@@ -307,9 +487,9 @@
     "equation_caption": "Φ 将输入映射到特征空间，β 给出输出系数。对特征映射族的选择与假设，在后续研究循环中不断修正。",
     "idea_source": "相关动机与背景",
     "idea_source_title": "阅读综述",
-    "lab_kicker": "04 / 一个具体原型",
-    "lab_title": "从一个小模型进入这一框架。",
-    "lab_intro": "对角序列模型给出一种可分析的特征映射族：固定基函数，允许坐标尺度随训练变化。下面的示例展示这一具体选择下的动力学。",
+    "lab_kicker": "一个可探索的原型",
+    "lab_title": "把抽象框架放进一个小模型。",
+    "lab_intro": "对角序列模型固定基函数、学习坐标尺度。展开示例，比较固定特征与自适应特征的动力学。",
     "toy_label": "六维序列模型 · 教学示例",
     "scenario": "目标的初始对齐情况",
     "misaligned": "初始错位",
@@ -335,25 +515,25 @@
     "noscript": "启用 JavaScript 后可操作交互示例。研究介绍与论文链接无需 JavaScript 也可阅读。",
     "live": "调整控件后，图表会同步更新。",
     "research_kicker": "05 / 相关工作",
-    "research_title": "以具体结果，<br>推进更广的研究纲领。",
-    "research_intro": "这些工作分别发展具体模型、特征质量的度量与统计结论，为上述研究问题提供不同的切入点。",
+    "research_title": "沿着问题，阅读研究。",
+    "research_intro": "从可解析模型到特征评价，再到精细风险分析。这些工作为研究纲领提供不同的工具与切入点。",
     "read": "阅读论文",
     "arxiv": "arXiv",
     "limits_title": "从具体结果走向更广的理论",
     "limits_body": "一个特征映射族中的结果仍需放回整个研究循环：与具体网络建立对应、检验并修正假设，再将得到的动力学轨迹与泛化能力联系起来。",
     "limits_link": "讨论与未来方向",
-    "about_kicker": "06 / 关于研究者",
+    "about_kicker": "关于研究者",
     "about_title": "林乾 Qian Lin",
     "about_role": "副教授<br>清华大学统计与数据科学系",
-    "about_body": "林乾的研究涉及统计学习理论、核方法、深度学习的数理基础及高维统计。本网站聚焦其自适应特征研究；相关工作由林乾、李易诚及其他合作者共同完成，完整署名列于各篇论文。",
+    "about_body": "林乾，清华大学统计与数据科学系副教授。与李易诚及其他合作者共同研究统计学习理论、特征学习与深度学习的数理基础。各项工作的完整署名列于论文条目。",
     "faculty": "清华教师主页",
     "scholar": "谷歌学术",
     "contact": "联系邮箱",
-    "guide_title": "建议的阅读顺序",
-    "guide_body": "先通过综述了解整体背景，再阅读 NeurIPS 论文中的可分析模型族，以及 FEM 论文对特征质量的研究。随后回到上面的框架，理解每项结果在研究纲领中的位置。",
+    "guide_title": "从综述开始",
+    "guide_body": "了解从神经正切核理论到自适应特征研究的整体背景。",
     "survey": "Towards a Statistical Understanding of Neural Networks: Beyond the Neural Tangent Kernel Theories",
     "survey_meta": "Yicheng Li, Haobo Zhang, Jianfa Lai, Qian Lin, Jun S. Liu · arXiv:2412.18756v2",
-    "footer": "自适应特征研究的独立专题介绍",
+    "footer": "一个持续发展的研究纲领",
     "checked": "来源核对",
     "top": "返回顶部",
     "chart_aria": "六个坐标上真实信号、固定特征估计和自适应特征估计的柱状图。",
@@ -385,70 +565,49 @@
         "预测器如何在给定表示下学习，又如何与表示共同演化？"
       ]
     ],
-    "dynamics_kicker": "02 / 三个互补的分析视角",
-    "dynamics_title": "固定、局部、整体。",
-    "dynamics_intro": "在同一抽象回归框架中，从三个视角提出关于学习的问题。切换下方视角，查看分析中固定什么、考察什么变化，以及希望解释什么。",
-    "dynamics_nav": "选择动力学分析视角",
-    "dynamics_question": "核心问题",
-    "dynamics_focus": "分析关注点",
-    "dynamics_diagram": "概念示意",
+    "dynamics_kicker": "02 / 三个互补视角",
+    "dynamics_title": "从给定表示，<br>到表示的形成。",
+    "dynamics_intro": "固定、局部与整体分析关注不同的问题，共同帮助我们理解特征表示的统计质量及其随训练发生的变化。",
+    "dynamics_nav": "选择分析视角",
+    "dynamics_question": "希望回答的问题",
+    "dynamics_focus": "关键因素",
+    "dynamics_diagram": "分析的出发点",
     "dynamics": [
       {
         "id": "fixed",
-        "label": "固定",
-        "title": "固定特征映射，研究回归学习。",
-        "body": "选定一个表示 Φ₀，分析输出系数的学习过程。这为理解给定特征本身能够支持怎样的学习提供参照。",
-        "question": "在这一表示下，训练能学到什么？特征结构如何影响误差？",
-        "focus": "系数动力学、逼近能力、谱结构与统计误差。",
-        "symbols": [
-          "Φ₀",
-          "βₜ",
-          "fₜ"
-        ],
-        "labels": [
-          "固定映射",
-          "系数演化",
-          "预测函数"
-        ],
-        "caption": "表示保持固定，预测器在这一表示下训练。"
+        "label": "固定 / 静态",
+        "title": "给定表示，刻画学习难度。",
+        "body": "从固定特征映射出发，分析目标信号、谱结构、噪声与估计方法如何共同决定预测风险。精细风险、ESD 与 FEM 为比较表示质量提供工具。",
+        "question": "怎样评价一个表示？目标匹配、谱复杂度与估计方法分别起什么作用？",
+        "focus": "目标正则性 · 核谱 · 正则化与早停 · 噪声",
+        "formula": "Φ fixed → βₜ → fₜ",
+        "caption": "在给定特征下研究回归与风险，为分析动态表示建立参照。",
+        "source": "风险等价与序列模型",
+        "url": "https://arxiv.org/abs/2609.08817"
       },
       {
         "id": "local",
         "label": "局部",
-        "title": "在当前状态附近，考察变化与响应。",
-        "body": "研究特征映射与输出系数在邻域中的变化，考察一次小的更新如何改变预测，以及两部分如何相互影响。",
-        "question": "哪些局部变化影响学习？局部描述在怎样的范围内有效？",
-        "focus": "扰动、响应、耦合关系与局部近似的适用范围。",
-        "symbols": [
-          "Φ + δΦ",
-          "β + δβ",
-          "f + δf"
-        ],
-        "labels": [
-          "特征变化",
-          "系数变化",
-          "预测响应"
-        ],
-        "caption": "通过邻域中的变化，理解学习动力学的局部结构。"
+        "title": "考察表示与预测系数的耦合。",
+        "body": "在当前状态附近研究特征的变化与响应，关注谱方向、谱权重和预测系数的共同变化，以及一般非线性参数耦合下的学习机制。",
+        "question": "局部变化怎样影响表示质量与预测风险？近似在什么条件下有效？",
+        "focus": "谱结构扰动 · 参数耦合 · 局部近似 · 样本依赖",
+        "formula": "(Φ, β) ↔ (Φ + δΦ, β + δβ)",
+        "caption": "从邻域中的变化出发，辨析特征学习的局部机制。",
+        "source": "特征质量的动态分析",
+        "url": "https://arxiv.org/abs/2511.09425"
       },
       {
         "id": "global",
         "label": "整体",
-        "title": "沿训练过程，追踪表示的演化。",
-        "body": "研究特征与输出系数共同演化的轨迹，理解表示在整个学习过程中如何改变，以及这些改变带来怎样的统计后果。",
-        "question": "整体轨迹如何重塑特征？这又如何影响对新数据的预测？",
-        "focus": "特征演化、不同训练时刻之间的相互作用及其统计后果。",
-        "symbols": [
-          "(Φ₀, β₀)",
-          "(Φₜ, βₜ)",
-          "fₜ"
-        ],
-        "labels": [
-          "初始状态",
-          "共同演化",
-          "预测函数"
-        ],
-        "caption": "分析从单个邻域延伸到整个学习过程。"
+        "title": "理解有利特征的形成与保持。",
+        "body": "沿训练轨迹追踪特征与系数的共同演化，研究初始化、参数化和训练机制何时有利于特征形成，以及这些特征能否在后续训练中保持。",
+        "question": "怎样从局部机制走向整体训练分析，并与泛化能力建立联系？",
+        "focus": "初始化 · 训练机制 · 参数化深度 · 早停",
+        "formula": "(Φ₀, β₀) → ··· → (Φₜ, βₜ)",
+        "caption": "把局部机制放回整个学习过程，考察其长期统计作用。",
+        "source": "自适应特征模型",
+        "url": "https://arxiv.org/abs/2501.08679"
       }
     ],
     "cycle_kicker": "03 / 理论与神经网络的往返",
@@ -482,6 +641,187 @@
       "泛化能力"
     ],
     "goal_note": "这是研究纲领所追求的目标；各项具体结果的适用范围由相应论文中的模型与假设决定。",
-    "prototype_open": "展开序列模型的交互示例"
+    "prototype_open": "探索交互序列模型",
+    "hero_note_label": "核心问题",
+    "hero_note": "有利于泛化的特征，<br>如何在训练中形成并保持？",
+    "framework_label": "01 / 研究框架",
+    "framework_title": "抽象与具体，在循环中相遇。",
+    "figure_open": "查看完整框架图",
+    "figure_download": "下载框架图",
+    "board_theory": "抽象理论",
+    "board_family": "一族特征映射回归",
+    "board_definition": "Φ 将输入映射到特征空间，β 给出输出系数；映射族 𝓕 的结构假设随研究逐步修正。",
+    "board_views": "三个互补的分析视角",
+    "board_levels": [
+      [
+        "fixed",
+        "固定 / 静态",
+        "表示质量与风险"
+      ],
+      [
+        "local",
+        "局部",
+        "谱结构与系数耦合"
+      ],
+      [
+        "global",
+        "整体",
+        "特征形成与保持"
+      ]
+    ],
+    "board_tools": "精细风险 · ESD / FEM · 可解析模型",
+    "board_apply": "理论应用",
+    "board_correspondence": "建立对应",
+    "board_concrete": "具体模型",
+    "board_network": "神经网络",
+    "board_network_types": "全连接 · 卷积 · 残差网络",
+    "board_observations": [
+      "特征谱与经验目标匹配",
+      "冻结特征后的独立重拟合",
+      "原网络的泛化表现"
+    ],
+    "board_return": "网络反馈",
+    "board_return_detail": "修正特征映射族的假设，再次分析",
+    "board_goal_label": "研究目标",
+    "board_goal": "神经网络动力学 <span>↔</span> 泛化能力",
+    "feedback_kicker": "03 / 来自网络的反馈",
+    "feedback_title": "让网络中的观察，<br>反过来检验理论。",
+    "feedback_intro": "在具体网络中建立对应后，需要分别观察表示的变化、表示的预测能力与原网络的泛化表现，再用这些证据提炼模型、检验条件并修正假设。",
+    "feedback_items": [
+      [
+        "观察表示结构",
+        "特征谱与经验目标匹配",
+        "记录训练中的特征谱与经验匹配指标，观察表示怎样变化，以及这些变化是否与理论预期一致。"
+      ],
+      [
+        "评价表示的预测能力",
+        "冻结特征，独立重拟合",
+        "冻结训练中获得的特征，在独立样本上重新拟合预测器，考察所学表示能够支持怎样的预测。"
+      ],
+      [
+        "对照整体学习表现",
+        "原网络的泛化能力",
+        "考察原网络在新数据上的表现，与表示评价及重拟合结果对照，理解特征学习与整体训练的关系。"
+      ]
+    ],
+    "feedback_note": "全连接、卷积与残差网络上的初步实验已提供现象依据。不同观察所评价的对象不同，需要结合起来解释。",
+    "feedback_return": "观察现象 → 检验理论条件 → 修正模型假设",
+    "agenda_kicker": "04 / 研究基础与下一步",
+    "agenda_title": "以已有工具，<br>推进尚待解决的问题。",
+    "agenda_intro": "具体模型中的结果为更一般的分析提供起点。研究计划进一步关注动态表示、非线性耦合与有利特征的形成条件。",
+    "established_label": "已有研究基础",
+    "established_items": [
+      [
+        "精细风险分析",
+        "学习曲线、最优性、高维速率、饱和效应，以及固定表示下的风险等价。",
+        "risk"
+      ],
+      [
+        "表示质量评价",
+        "有效跨度维数 ESD、特征误差度量 FEM，以及目标匹配与统计质量。",
+        "fem"
+      ],
+      [
+        "可解析自适应模型",
+        "过参数化序列模型、对角自适应核模型与特定方向模型。",
+        "sequence"
+      ]
+    ],
+    "questions_label": "拟推进的研究问题",
+    "questions_items": [
+      [
+        "动态表示的风险分析",
+        "处理谱结构扰动，以及训练所得表示对样本的依赖。"
+      ],
+      [
+        "一般非线性耦合演化",
+        "理解局部近似的适用条件及其可能带来的泛化收益。"
+      ],
+      [
+        "有利特征的形成与保持",
+        "分析常见初始化与具体训练机制下的形成和保持条件。"
+      ]
+    ],
+    "agenda_note": "已有理论结论适用于相应模型与条件；右侧列出进一步研究的方向。",
+    "figure_alt": "自适应特征研究循环：抽象特征映射回归，固定、局部和整体分析，应用到具体神经网络，并由网络反馈修正假设，逐步连接动力学与泛化能力。",
+    "site_pages": [
+      "整体策略",
+      "研究专题",
+      "交互原型",
+      "论文"
+    ],
+    "page_intros": [
+      "从抽象特征映射族出发，通过固定、局部和整体分析，与神经网络实验反复对话，探索特征形成、训练动力学与泛化能力的联系。",
+      "从三个互补视角展开分析，再用具体网络的反馈检验和修正假设。下面区分已有研究基础与尚待解决的问题。",
+      "对角序列模型固定基函数、学习坐标尺度。展开示例，比较固定特征与自适应特征的动力学。",
+      "从可解析模型到特征评价，再到精细风险分析。这些工作为研究纲领提供不同的工具与切入点。"
+    ],
+    "routes_title": "从整体策略，进入具体研究。",
+    "routes_intro": "沿三条相互关联的分析路线展开；每个专题都回到动力学与泛化的共同目标。",
+    "routes_link": "查看研究专题",
+    "cycle_short_title": "研究如何向前推进",
+    "featured_title": "代表性研究进展",
+    "featured_intro": "具体模型中的结果与跨模型的证据，为下一轮研究提供起点。",
+    "all_papers": "查看全部论文",
+    "strategy_back": "回到整体策略",
+    "prototype_context": "本页将对角序列模型作为研究纲领中的一个具体原型。固定、局部与整体分析的完整背景见研究专题。",
+    "scope_note": "这是研究纲领所追求的目标；各项具体结果的适用范围由相应论文中的模型与假设决定。",
+    "simple_title": "理解特征学习与泛化",
+    "simple_intro": "从抽象的特征映射回归出发，研究学习动力学；再与具体神经网络对照，不断修正理论假设。",
+    "simple_strategy": "整体策略",
+    "simple_steps": [
+      "提出特征映射族",
+      "分析固定、局部与整体动力学",
+      "与具体神经网络对照",
+      "根据反馈修正假设"
+    ],
+    "simple_routes_title": "进一步了解",
+    "simple_routes": [
+      "三个分析视角、网络反馈与开放问题。",
+      "用一个小型序列模型观察特征自适应。",
+      "相关工作的论文、作者与出版信息。"
+    ],
+    "simple_scope": "目标是连接神经网络动力学与泛化能力；具体结论仍取决于各项工作的模型与假设。",
+    "display_title": [
+      "从特征学习，",
+      "理解泛化。"
+    ],
+    "display_kicker": "自适应特征 · 研究纲领",
+    "strategy_caption": "三个互补的分析视角，共同连接具体神经网络。",
+    "explore_label": "探索研究",
+    "return_caption": "反馈推动下一轮研究",
+    "cartoon_alts": [
+      "研究者用积木搭建模型，象征提出特征映射族。",
+      "研究者用放大镜观察三条路径，象征固定、局部和整体分析。",
+      "研究者比较纸上模型与屏幕上的神经网络。",
+      "研究者修改笔记，回转箭头象征根据反馈修正假设。"
+    ],
+    "cartoon_caption": "概念示意：静态、局部与整体是并列视角，图中曲线不表示实验结果。",
+    "framework_family": "抽象特征映射回归族",
+    "framework_views": [
+      {
+        "id": "fixed",
+        "label": "静态",
+        "summary": "表示质量与风险",
+        "alt": "研究者观察固定模型，象征静态分析。"
+      },
+      {
+        "id": "local",
+        "label": "局部",
+        "summary": "表示变化与耦合",
+        "alt": "研究者放大相邻特征的差异，象征局部分析。"
+      },
+      {
+        "id": "global",
+        "label": "整体",
+        "summary": "特征形成与保持",
+        "alt": "研究者追踪特征演化的路径，象征整体分析。"
+      }
+    ],
+    "framework_down": "理论应用与对照",
+    "framework_up": "网络反馈，修正假设",
+    "framework_network": "神经网络",
+    "framework_network_note": "在具体网络中检验理论，再将反馈带回特征映射族。",
+    "framework_network_alt": "两位研究者对照模型与屏幕上的神经网络。"
   }
 }

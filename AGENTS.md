@@ -6,8 +6,8 @@ This is a new, independent GitHub Pages website about Qian Lin and collaborators
 
 - Preserve the author’s framing of the program: start from a family of abstract feature-map regressions; study fixed, local and global dynamics; apply the framework to concrete neural networks; use network feedback to revise assumptions about the family and repeat. The guiding objective is to relate neural-network dynamics to generalization.
 - Present fixed, local and global dynamics as complementary analytical views. The diagonal sequence model is one concrete prototype within the program. Distinguish the broader research objective from results established for particular model classes.
-- Maintain English (`index.html`) and Chinese (`index.zh.html`) together. Apply changes to both languages and check every page, shared navigation, paper record, and link affected by an update.
-- Edit shared content in `data/content.json` and layout in `scripts/render.rb`; run `ruby scripts/render.rb` to regenerate both pages. Commit generated HTML alongside its sources.
+- Maintain English and Chinese versions of all four sections together: `index`, `research`, `prototype`, and `papers` (each with `.html` and `.zh.html`). Apply changes to both languages and check every page, shared navigation, paper record, and link affected by an update.
+- Edit shared content in `data/content.json` and layout in `scripts/render.rb`; run `ruby scripts/render.rb` to regenerate all eight pages. Commit generated HTML alongside its sources.
 - Preserve author order, verified publication metadata, links, and the distinction between published papers and preprints. Check publisher or conference records before changing a paper’s status. Cite primary sources in the website and record verification in `SOURCES.md`.
 - Merge versions of the same work; document former titles when relevant. The papers here are a selected research trajectory, not an exhaustive publication list.
 - Clearly distinguish definitions, conditional theoretical findings, conjectures and teaching illustrations. Do not present the small interactive example as a reproduction of paper experiments or a proof about general neural networks.
@@ -17,7 +17,7 @@ This is a new, independent GitHub Pages website about Qian Lin and collaborators
 
 - Keep the site buildless for visitors: committed HTML, local CSS and JavaScript, relative paths, and no required external fonts, scripts or analytics.
 - The model in `assets/model.js` follows diagonal factor gradient flow. Learned feature weights are `a_j²`, not the full tangent scale `a_j² + β_j²`.
-- Run `node tests/model.test.cjs` for numerical changes. Run `ruby scripts/check.rb` after any content, template or asset changes.
+- Run `node tests/model.test.cjs` for numerical changes and `node tests/program.test.cjs` when changing analytical-view navigation. Run `ruby scripts/check.rb` after any content, template or asset changes.
 - Check both languages at desktop and mobile widths after layout or interaction changes. Verify the fixed/local/global tabs with mouse and keyboard, no-JavaScript readability, prototype expansion, sliders, alignment controls, reset, readable chart data, and no horizontal overflow.
 - Use a separate repository for publication. Do not replace an existing unrelated repository or change its Pages settings.
 
